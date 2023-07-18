@@ -1,9 +1,7 @@
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { useState, useEffect } from "react";
-import Loader from "@/components/Loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className={`bg-zinc-100`}>
-          <Navbar />
-          {children}
-        </div>
+      <body className={`bg-zinc-100`}>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

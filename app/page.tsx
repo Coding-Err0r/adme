@@ -8,7 +8,6 @@ import Instruction from "@/components/Instruction";
 import QRCode from "@/components/QRCodes";
 import Review from "@/components/Review";
 
-
 const Home = () => {
   return (
     <div>
@@ -19,7 +18,6 @@ const Home = () => {
       <QRCode />
       <Faq />
       <Review />
-      <Footer />
     </div>
   );
 };

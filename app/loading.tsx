@@ -1,10 +1,8 @@
-import Loader from '@/components/Loader'
-import React from 'react'
+import Loader from "@/components/Loader";
+import React from "react";
 
-const LoadingPage = () => {
-  return (
-    <Loader />
-  )
-}
+const Loading = () => {
+  return <Loader />;
+};
 
-export default LoadingPage
+export default Loading;
