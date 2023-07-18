@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -18,22 +17,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
-  }, []);
-
   return (
     <html lang="en">
       <body>
-        {loading === true ? (
-          <Loader />
-        ) : (
-          <div className={`bg-zinc-100`}>
-            <Navbar />
-            {children}
-          </div>
-        )}
+        <div className={`bg-zinc-100`}>
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
