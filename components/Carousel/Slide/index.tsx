@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -16,10 +17,12 @@ const Slide = ({ image, description, index, id }: Props) => {
       >
         View Product
       </Link>
-      <img
+      <Image
         src={image}
         className="w-[40rem] h-[25rem] md:rounded-[20px] object-cover rounded-2xl "
         alt=""
+        width={2000}
+        height={2000}
       />
 
       <p className="py-4 text-xs font-semibold text-blue-600 md:text-xl group-[.swiper-slide-active]:block hidden ">

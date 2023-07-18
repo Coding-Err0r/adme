@@ -63,8 +63,7 @@ const Cart = () => {
   useEffect(() => {
     dimensions.current.width = ref.current.offsetWidth;
     dimensions.current.height = ref.current.offsetHeight;
-    console.log(isOpen);
-  }, []);
+  }, [dimensions]);
 
   return (
     <motion.nav
