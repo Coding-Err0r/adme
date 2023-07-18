@@ -37,11 +37,12 @@ const Navbar = () => {
         </div>
         <div className="flex items-center px-5 space-x-4 md:px-12 md:space-x-6 lg:space-x-10">
           <div className="flex items-center">
-            <img
+            <a href="https://drake-five.vercel.app/" ><img
               src={images.person}
               alt=""
               className="w-8 h-8 rounded-full md:h-10 md:w-10"
-            />
+            /></a>
+           
             <FontAwesomeIcon
               icon={faChevronDown}
               className="w-3 h-3 px-2 text-white"
