@@ -1,0 +1,10 @@
+.backdropClear {
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
