@@ -44,7 +44,7 @@ const CartList = ({ title, image, price }: Props) => {
           <p className="ml-2 font-semibold cursor-pointer">৳{price}</p>
         </div>
       </div>
-      <button className="absolute mt-24 md:mt-32 right-6">
+      <button className="relative mt-16 md:mt-20 right-6">
         <FontAwesomeIcon
           icon={faX}
           className="w-2 h-2 p-[5px] text-white border-2 rounded-full"

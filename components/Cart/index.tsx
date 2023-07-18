@@ -87,16 +87,16 @@ const Cart = () => {
           className="relative z-20 w-full h-full px-3 overflow-scroll text-white md:px-7 top-24"
         >
           <div className="flex flex-col space-y-3 ">
-            <motion.li variants={menuItems}>
-              {data.cart.map((item: any, index: number) => (
+            {data.cart.map((item: any, index: number) => (
+              <motion.li variants={menuItems} key={index}>
                 <CartList
                   title={item.title}
                   image={item.image}
                   price={item.price}
                   key={index}
                 />
-              ))}
-            </motion.li>
+              </motion.li>
+            ))}
           </div>
         </motion.ul>
         <div className="absolute bottom-0 z-30 w-full px-3 py-4 text-xl font-semibold text-white md:py-8 md:px-7 bg-zinc-900">
