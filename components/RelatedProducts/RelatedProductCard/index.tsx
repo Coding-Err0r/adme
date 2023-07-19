@@ -22,7 +22,7 @@ const RelatedProductCard = ({
         height={2000}
         className="w-72 h-72 rounded-xl"
       />
-      <div className="w-64 py-2">
+      <div className="px-4 py-2">
         <Link href="#">
           <h1 className="text-lg font-bold text-black ">{title}</h1>
         </Link>
@@ -33,7 +33,7 @@ const RelatedProductCard = ({
             </p>
             <p className="font-semibold line-through">৳{price}</p>
           </div>
-          <button className="px-5 text-xs text-white rounded-lg bg-gradient-to-b from-blue-800 via-indigo-500 to-cyan-300">
+          <button className="w-20 text-xs font-bold text-white rounded-lg bg-gradient-to-b from-blue-800 via-indigo-500 to-cyan-300">
             Add to cart
           </button>
         </div>

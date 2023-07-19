@@ -5,7 +5,7 @@ import React from "react";
 
 const ProductDetails = () => {
   return (
-    <section className="p-6 text-black bg-white shadow-lg  rounded-xl">
+    <section className="p-6 text-black bg-white shadow-lg rounded-xl">
       <div className="flex flex-col items-center max-w-sm px-8 space-y-8 md:px-4 md:max-w-lg md:items-start">
         <h1 className="text-lg font-bold text-gray-700 lg:text-3xl md:text-2xl">
           Mandana Gold - Metal Business Card | QR Support | NFC-enabled |
@@ -21,11 +21,11 @@ const ProductDetails = () => {
           <p className="text-lg text-blue-600 md:text-xl">YOU SAVE UP TO 40%</p>
         </div>
         <div className="grid grid-rows-2 gap-2 md:space-x-4 md:flex">
-          <button className="flex items-center px-10 py-3 text-xl text-white rounded-full md:text-2xl bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400">
+          <button className="flex items-center px-6 py-3 text-lg font-bold text-white rounded-full md:text-xl bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400">
             Add To Cart
             <img src={images.cart} alt="" className="w-7 h-7" />
           </button>
-          <button className="px-10 py-3 text-xl text-white rounded-full md:text-2xl bg-gradient-to-br from-green-700 via-emerald-500 to-emerald-400">
+          <button className="px-10 py-3 text-lg font-bold text-white rounded-full md:text-xl bg-gradient-to-br from-green-700 via-emerald-500 to-emerald-400">
             Buy Now
           </button>
         </div>

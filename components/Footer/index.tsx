@@ -1,22 +1,17 @@
 import images from "@/config/images";
 import Image from "next/image";
 import React from "react";
+import FloadingButton from "../FloadingButton";
 
 const Footer = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col items-center w-full pt-12">
+        <FloadingButton />
         <div className="w-[80%] max-w-7xl">
           <div className="flex flex-col items-start ">
             <div className="absolute z-10 w-full mt-20 -translate-x-1/2 left-1/2 max-w-7xl">
               <div className="flex items-center justify-around">
-                <Image
-                  width={2000}
-                  height={2000}
-                  alt=""
-                  src={images.whatsapp}
-                  className="relative z-0 hidden w-12 h-12 ml-4 md:block lg:block"
-                />
                 <div className="flex flex-col items-center space-y-2">
                   <Image
                     width={2000}
@@ -32,13 +27,6 @@ const Footer = () => {
                     +880 1324-242432
                   </p>
                 </div>
-                <Image
-                  width={2000}
-                  height={2000}
-                  alt=""
-                  src={images.messenger}
-                  className="relative z-0 hidden w-12 h-12 mr-4 md:block lg:block"
-                />
               </div>
             </div>
             <Image

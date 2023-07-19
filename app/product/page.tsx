@@ -11,7 +11,7 @@ const Product = () => {
   return (
     <section className="w-full h-full bg-zinc-100">
       <div className="flex flex-col items-center w-full py-36">
-        <div className=" w-[80%] max-w-7xl">
+        <div className=" w-[80%] max-w-7xl flex flex-col items-center">
           <div className="grid justify-center grid-rows-2 lg:space-x-6 lg:flex">
             <div className="flex flex-col items-center space-y-6">
               <ProductSlider />
