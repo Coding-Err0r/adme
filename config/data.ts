@@ -204,46 +204,46 @@ const data = {
       price: 2399.0,
       id: 1,
     },
-    // {
-    //   title:
-    //     "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
-    //   image: images.cartImage,
-    //   amount: 1,
-    //   price: 2399.0,
-    //   id: 1,
-    // },
-    // {
-    //   title:
-    //     "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
-    //   image: images.cartImage,
-    //   amount: 1,
-    //   price: 2399.0,
-    //   id: 1,
-    // },
-    // {
-    //   title:
-    //     "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
-    //   image: images.cartImage,
-    //   amount: 1,
-    //   price: 2399.0,
-    //   id: 1,
-    // },
-    // {
-    //   title:
-    //     "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
-    //   image: images.cartImage,
-    //   amount: 1,
-    //   price: 2399.0,
-    //   id: 1,
-    // },
-    // {
-    //   title:
-    //     "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
-    //   image: images.cartImage,
-    //   amount: 1,
-    //   price: 2399.0,
-    //   id: 1,
-    // },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
   ],
   productPreview: [
     images.productOne,
