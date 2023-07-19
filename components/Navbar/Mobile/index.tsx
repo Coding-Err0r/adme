@@ -5,7 +5,7 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.css";
 import images from "@/config/images";
-import Link from "next/link";
+
 interface Props {
   links: string[];
 }
@@ -90,14 +90,14 @@ const MobileNavbar = ({ links }: Props) => {
           variants={variants}
           className="relative z-20 flex flex-col items-center justify-center w-full h-full space-y-4 -mt-[5rem]"
         >
-          <Link href="/">
+          <a href="/">
             <motion.img
               src={images.logoTwo}
               alt=""
               className="h-16 ml-6"
               variants={menuItems}
             />
-          </Link>
+          </a>
           {links.map((link: string, index: number) => (
             <motion.li
               variants={menuItems}
@@ -107,7 +107,7 @@ const MobileNavbar = ({ links }: Props) => {
               className="font-bold menu-item"
               data-fill-text={link}
             >
-              <Link href={`/${link.toLowerCase()}`}>{link}</Link>
+              <a href={`/${link.toLowerCase()}`}>{link}</a>
             </motion.li>
           ))}
         </motion.ul>
