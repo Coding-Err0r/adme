@@ -37,7 +37,7 @@ const ReviewCard = ({
             />
           </div>
 
-          <div className="flex items-center w-full h-[4rem] ml-16">
+          <div className="flex items-center w-full h-[4rem] ml-16 -mr-20 md:-mr-0">
             <div className="flex flex-col px-4 ">
               <p className="text-lg font-semibold md:text-2xl w-[15rem]">
                 {name}

@@ -14,8 +14,8 @@ const Review = () => {
               What Our Happy Clients Say About Us
             </h1>
           </div>
-          <div className="px-2 overflow-hidden" ref={emblaRef}>
-            <div className="flex space-x-2 md:space-x-5 md:mb-12">
+          <div className="overflow-hidden " ref={emblaRef}>
+            <div className="flex px-2 py-5">
               {data.reviews.map((review: any, index: number) => (
                 <div className="p-2" key={index}>
                   <ReviewCard

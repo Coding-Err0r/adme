@@ -6,9 +6,9 @@ import Slideup from "../Slideup";
 
 const QRCode = () => {
   const [selectedQR, setSelectedQR] = useState<any>({
-    selected: false,
-    qrImage: images.qrFour,
-    qrTitle: "",
+    selected: true,
+    qrImage: data.qrCodes[0].image,
+    qrTitle: data.qrCodes[0].title,
   });
 
   return (
@@ -44,7 +44,7 @@ const QRCode = () => {
                     className={`w-20 h-20 bg-white  shadow-lg rounded-xl ${
                       selectedQR.selected &&
                       (selectedQR.qrTitle === item.title
-                        ? "border-2 border-gray-300"
+                        ? "border-2 border-blue-700"
                         : null)
                     }`}
                   >
@@ -56,7 +56,14 @@ const QRCode = () => {
                       className="object-cover p-2"
                     />
                   </div>
-                  <p className="relative z-10 px-6 text-lg font-bold text-gray-500 cursor-pointer lg:text-4xl hover:text-blue-800 md:text-2xl">
+                  <p
+                    className={`relative z-10 px-6 text-lg font-bold  cursor-pointer lg:text-4xl hover:text-black md:text-2xl ${
+                      selectedQR.selected &&
+                      (selectedQR.qrTitle === item.title
+                        ? "text-blue-700 hover:text-blue-700"
+                        : "text-gray-500")
+                    }`}
+                  >
                     {item.title}
                   </p>
                 </div>
