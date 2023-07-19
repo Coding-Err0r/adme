@@ -1,4 +1,5 @@
-import React from 'react'
+import { useRouter } from "next/router";
+import React from "react";
 
 const Loader = () => {
   return (
@@ -6,6 +7,6 @@ const Loader = () => {
       <div className="w-24 h-24 border-8 border-blue-400 border-solid rounded-full border-t-transparent animate-spin"></div>
     </div>
   );
-}
+};
 
-export default Loader
+export default Loader;

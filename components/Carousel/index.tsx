@@ -7,12 +7,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./style.css";
 import data from "@/config/data";
+import { useRouter } from "next/navigation";
+
 const Carousel = () => {
   const ref = useRef<any | null>(null);
-
+  const route = useRouter();
   const [activeSlide, setActiveSlide] = useState<number>(0);
   const [swiperModifier, setSwiperModifier] = useState<number>(4);
-  const [currentIndex, setCurrrentIndex] = useState<number>(0);
 
   const handleResize = () => {
     if (window.innerWidth < 1000) {
@@ -54,8 +55,8 @@ const Carousel = () => {
           initialSlide={2}
           onSlideChange={(swiper) => {
             setActiveSlide(swiper.activeIndex);
-            setCurrrentIndex((swiper.activeIndex + 1) % data.swiper.length);
           }}
+          className="w-auto"
         >
           {Object.values(data.swiper).map((item: any, index: number) => (
             <SwiperSlide key={index} className="group">

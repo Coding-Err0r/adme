@@ -5,7 +5,7 @@ import FloadingButton from "../FloadingButton";
 
 const Footer = () => {
   return (
-    <section className="w-full">
+    <section className="w-full ">
       <div className="flex flex-col items-center w-full pt-12">
         <FloadingButton />
         <div className="w-[80%] max-w-7xl">
