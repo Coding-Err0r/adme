@@ -13,7 +13,7 @@ const Slide = ({ image, description, index, id }: Props) => {
     <section className="flex flex-col items-center w-full h-full cursor-move group">
       <Link
         href="/product"
-        className="absolute hidden px-2 py-1 text-xs font-bold text-white -translate-y-1/2 rounded-full md:py-2 md:px-4 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 top-1/2 group-hover:block lg:text-base md:text-sm"
+        className="absolute hidden px-2 py-1 text-xs font-bold text-white -translate-y-1/2 rounded-full md:py-2 md:px-4 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 top-1/2 group-hover:group-[.swiper-slide-active]:block lg:text-base md:text-sm"
       >
         View Product
       </Link>
