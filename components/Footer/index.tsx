@@ -34,7 +34,7 @@ const Footer = () => {
               height={2000}
               alt=""
               src={images.footer}
-              className="w-full  h-[16rem] md:rounded-t-[120px] rounded-t-[80px] relative z-0"
+              className="w-full  h-[14rem] md:rounded-t-[120px] rounded-t-[80px] relative z-0"
             />
           </div>
         </div>

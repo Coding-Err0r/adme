@@ -14,7 +14,7 @@ const RelatedProductCard = ({
   discountedPrice,
 }: Props) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center ">
       <Image
         src={image}
         alt=""
@@ -22,12 +22,12 @@ const RelatedProductCard = ({
         height={2000}
         className="w-72 h-72 rounded-xl"
       />
-      <div className="px-4 py-2">
+      <div className="px-6 py-2">
         <Link href="#">
           <h1 className="text-lg font-bold text-black ">{title}</h1>
         </Link>
         <div className="flex space-x-6">
-          <div className="flex items-center space-x-3 text-xl">
+          <div className="flex items-center space-x-2 text-lg md:text-xl">
             <p className="text-2xl font-bold text-blue-600">
               ৳{discountedPrice}
             </p>

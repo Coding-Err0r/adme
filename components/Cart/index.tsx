@@ -105,12 +105,12 @@ const Cart = () => {
               <p> Subtotal</p>
               <p> ৳2399.00</p>
             </div>
-            <div className="flex flex-col justify-center space-y-4 md:space-x-10 md:grid md:grid-cols-2 md:space-y-0">
-              <button className="md:px-[70px] py-2 text-black bg-gray-300 rounded-full ">
+            <div className="flex flex-col justify-center space-y-4 text-center md:space-x-10 md:grid md:grid-cols-2 md:space-y-0">
+              <button className="md:px-[40px] py-2 text-black bg-gray-300 rounded-full ">
                 {" "}
                 View Cart
               </button>
-              <button className="md:px-[70px] py-2 text-black bg-gray-300 rounded-full ">
+              <button className="md:px-[40px] py-2 text-black bg-gray-300 rounded-full ">
                 {" "}
                 Checkout
               </button>

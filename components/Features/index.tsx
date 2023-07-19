@@ -7,162 +7,166 @@ import data from "@/config/data";
 const Features = () => {
   return (
     <section className="w-full">
-      <div className="flex flex-col items-center space-y-10">
-        <h1 className="py-12 text-3xl font-bold text-center text-gray-800 lg:text-6xl md:text-5xl">
-          Features
-        </h1>
-        <div className="flex flex-col items-center space-y-6">
-          <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0 ">
-            <SlideupImage
-              duration={1}
-              frontSide={
-                <Card
-                  image={data.features[0].imagefront}
-                  imgPosition={data.features[0].position}
-                  size={data.features[0].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+      <div className="flex flex-col items-center w-full">
+        <div className=" w-[80%] max-w-7xl">
+          <div className="flex flex-col items-center space-y-10">
+            <h1 className="py-12 text-3xl font-bold text-center text-gray-800 lg:text-6xl md:text-5xl">
+              Features
+            </h1>
+            <div className="flex flex-col items-center space-y-6">
+              <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0 ">
+                <SlideupImage
+                  duration={1}
+                  frontSide={
+                    <Card
+                      image={data.features[0].imagefront}
+                      imgPosition={data.features[0].position}
+                      size={data.features[0].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[0].plusicon}
+                    />
                   }
-                  plusIcon={data.features[0].plusicon}
-                />
-              }
-              backSide={
-                <Card
-                  image={data.features[0].imageback}
-                  imgPosition={data.features[0].position}
-                  size={data.features[0].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                  backSide={
+                    <Card
+                      image={data.features[0].imageback}
+                      imgPosition={data.features[0].position}
+                      size={data.features[0].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[0].plusicon}
+                    />
                   }
-                  plusIcon={data.features[0].plusicon}
+                  leftToRight={data.features[0].leftToRight}
+                  bottomToTop={data.features[0].bottomToTop}
                 />
-              }
-              leftToRight={data.features[0].leftToRight}
-              bottomToTop={data.features[0].bottomToTop}
-            />
-            <SlideupImage
-              duration={1}
-              frontSide={
-                <Card
-                  image={data.features[1].imagefront}
-                  imgPosition={data.features[1].position}
-                  size={data.features[1].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                <SlideupImage
+                  duration={1}
+                  frontSide={
+                    <Card
+                      image={data.features[1].imagefront}
+                      imgPosition={data.features[1].position}
+                      size={data.features[1].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[1].plusicon}
+                    />
                   }
-                  plusIcon={data.features[1].plusicon}
-                />
-              }
-              backSide={
-                <Card
-                  image={data.features[1].imageback}
-                  imgPosition={data.features[1].position}
-                  size={data.features[1].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                  backSide={
+                    <Card
+                      image={data.features[1].imageback}
+                      imgPosition={data.features[1].position}
+                      size={data.features[1].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[1].plusicon}
+                    />
                   }
-                  plusIcon={data.features[1].plusicon}
+                  leftToRight={data.features[1].leftToRight}
+                  bottomToTop={data.features[1].bottomToTop}
                 />
-              }
-              leftToRight={data.features[1].leftToRight}
-              bottomToTop={data.features[1].bottomToTop}
-            />
-          </div>
-          <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0">
-            <SlideupImage
-              duration={1}
-              frontSide={
-                <Card
-                  image={data.features[2].imagefront}
-                  imgPosition={data.features[2].position}
-                  size={data.features[2].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+              </div>
+              <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0">
+                <SlideupImage
+                  duration={1}
+                  frontSide={
+                    <Card
+                      image={data.features[2].imagefront}
+                      imgPosition={data.features[2].position}
+                      size={data.features[2].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[2].plusicon}
+                    />
                   }
-                  plusIcon={data.features[2].plusicon}
-                />
-              }
-              backSide={
-                <Card
-                  image={data.features[2].imageback}
-                  imgPosition={data.features[2].position}
-                  size={data.features[2].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                  backSide={
+                    <Card
+                      image={data.features[2].imageback}
+                      imgPosition={data.features[2].position}
+                      size={data.features[2].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[2].plusicon}
+                    />
                   }
-                  plusIcon={data.features[2].plusicon}
+                  leftToRight={data.features[2].leftToRight}
+                  bottomToTop={data.features[2].bottomToTop}
                 />
-              }
-              leftToRight={data.features[2].leftToRight}
-              bottomToTop={data.features[2].bottomToTop}
-            />
-            <SlideupImage
-              duration={1}
-              frontSide={
-                <Card
-                  image={data.features[3].imagefront}
-                  imgPosition={data.features[3].position}
-                  size={data.features[3].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                <SlideupImage
+                  duration={1}
+                  frontSide={
+                    <Card
+                      image={data.features[3].imagefront}
+                      imgPosition={data.features[3].position}
+                      size={data.features[3].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[3].plusicon}
+                    />
                   }
-                  plusIcon={data.features[3].plusicon}
-                />
-              }
-              backSide={
-                <Card
-                  image={data.features[3].imageback}
-                  imgPosition={data.features[3].position}
-                  size={data.features[3].size}
-                  details={
-                    <p className="tracking-wide ">
-                      Curated by experts.{" "}
-                      <span className="text-blue-800">
-                        Handpic ked for you.
-                      </span>
-                    </p>
+                  backSide={
+                    <Card
+                      image={data.features[3].imageback}
+                      imgPosition={data.features[3].position}
+                      size={data.features[3].size}
+                      details={
+                        <p className="tracking-wide ">
+                          Curated by experts.{" "}
+                          <span className="text-blue-800">
+                            Handpic ked for you.
+                          </span>
+                        </p>
+                      }
+                      plusIcon={data.features[1].plusicon}
+                    />
                   }
-                  plusIcon={data.features[1].plusicon}
+                  leftToRight={data.features[1].leftToRight}
+                  bottomToTop={data.features[1].bottomToTop}
                 />
-              }
-              leftToRight={data.features[1].leftToRight}
-              bottomToTop={data.features[1].bottomToTop}
-            />
+              </div>
+            </div>
           </div>
         </div>
       </div>
