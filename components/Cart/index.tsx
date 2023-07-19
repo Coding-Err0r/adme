@@ -84,7 +84,7 @@ const Cart = () => {
         </button>
         <motion.ul
           variants={variants}
-          className="relative z-20 w-full h-full px-3 overflow-scroll text-white md:px-7 top-24"
+          className="relative z-20 w-full h-full px-3 overflow-scroll text-white md:px-7 md:top-24 top-12"
         >
           <div className="flex flex-col space-y-3 ">
             {data.cart.map((item: any, index: number) => (
