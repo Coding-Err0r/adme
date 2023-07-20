@@ -13,9 +13,9 @@ interface Props {
 const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
   if (size.toLowerCase() === "medium") {
     return (
-      <div className="px-12 bg-white shadow-2xl 2xl:w-[55rem] rounded-[40px] md:w-[40rem] md:h-[25rem] lg:h-[33rem] w-[20rem] h-[25rem] lg:w-[50rem]">
-        <div className="flex flex-col items-center justify-center md:space-x-10 lg:gap-x-20 md:gap-x-8 md:grid md:grid-cols-2">
-          <h1 className="lg:text-5xl font-bold lg:w-[20rem] md:text-3xl text-lg md:w-[15rem] md:py-0 lg:py-0 py-12 h-[11.4rem]">
+      <div className="px-12 bg-white shadow-2xl 2xl:w-[55rem] xl:rounded-[40px] rounded-[25px] md:w-[30rem] md:h-[20rem] 2xl:h-[33rem] w-[20rem] h-[25rem] xl:w-[50rem] xl:h-[30rem] lg:w-[45rem] lg:h-[25rem] ">
+        <div className="flex flex-col items-center justify-center md:space-x-10 xl:gap-x-20 md:gap-x-8 md:grid md:grid-cols-2 lg:gap-x-28">
+          <h1 className="2xl:text-5xl font-bold lg:w-[20rem] md:text-3xl text-lg md:w-[12rem] md:py-0 lg:py-0 py-12 h-[11.4rem] xl:text-4xl lg:text-4xl">
             {details}
           </h1>
           {imgPosition.toLowerCase() === "bottom" ? (
@@ -24,7 +24,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
               alt=""
               width={2000}
               height={2000}
-              className="lg:w-[20.3rem] lg:h-[27rem]  md:w-[18rem] md:h-[20rem] w-[26rem] h-[13.6rem] rounded-t-xl md:mt-20 rounded-b-md lg:mt-24 pr-2"
+              className="2xl:w-[20.3rem] 2xl:h-[27rem]  md:w-[10rem] md:h-[15rem] w-[26rem] h-[13.6rem] rounded-t-xl md:mt-20 rounded-b-md lg:mt-24 pr-2 xl:w-[18rem] xl:h-[24rem] lg:w-[14rem] lg:h-[19rem]"
             />
           ) : imgPosition.toLowerCase() === "top" ? (
             <Image
@@ -32,7 +32,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
               alt=""
               width={2000}
               height={2000}
-              className="lg:w-[20.3rem] lg:h-[27rem]  md:w-[18rem] md:h-[20rem] w-[26rem] h-[13.7rem] rounded-b-xl md:mb-20 rounded-t-md lg:mb-24 pr-2"
+              className="2xl:w-[20.3rem] 2xl:h-[27rem]  md:w-[10rem] md:h-[15rem] w-[26rem] h-[13.6rem] rounded-t-xl  rounded-b-md  pr-2 xl:w-[18rem] xl:h-[24rem] lg:w-[14rem] lg:h-[19rem] "
             />
           ) : null}
         </div>
@@ -40,7 +40,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
     );
   } else if (size.toLowerCase() === "small") {
     return (
-      <div className="px-10 bg-white shadow-2xl 2xl:w-[25rem] rounded-[40px] lg:h-[33rem] md:w-[25rem] md:h-[28rem] w-[20rem] h-[25rem] lg:w-[21rem]">
+      <div className="px-10 bg-white shadow-2xl 2xl:w-[25rem] xl:rounded-[40px] rounded-[25px] 2xl:h-[33rem] md:w-[15rem] md:h-[20rem] w-[20rem] h-[25rem] xl:w-[22rem] xl:h-[30rem] lg:w-[20rem] lg:h-[25rem]">
         <div className="flex flex-col items-center">
           {imgPosition.toLowerCase() === "top" ? (
             <Image
@@ -48,10 +48,10 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
               alt=""
               width={2000}
               height={2000}
-              className="md:w-[25rem] lg:h-[15rem] rounded-b-xl w-[14rem]"
+              className="xl:w-[25rem] 2xl:h-[15rem] md:h-[7.3rem] h-[12rem]  rounded-t-xl w-[14rem]   xl:h-[12rem] lg:h-[10rem] lg:w-[13.5rem] md:w-[9rem] "
             />
           ) : null}
-          <h1 className="py-12 lg:text-4xl font-bold  md:text-3xl text-lg w-[22rem] lg:h-[18rem] text-center md:h-[12.7rem] lg:text-left md:text-center px-12 ">
+          <h1 className="py-12 xl:text-4xl font-bold  md:text-2xl text-lg lg:w-[22rem] md:w-[20rem] xl:h-[18rem] text-center md:h-[12.7rem] lg:text-left md:text-center px-12 lg:text-3xl lg:h-[15rem] w-[20rem] h-[9.5rem]">
             {details}
           </h1>
 
@@ -61,7 +61,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
               alt=""
               width={2000}
               height={2000}
-              className="md:w-[25rem] lg:h-[15rem] md:h-[15.3rem] h-[12rem]  rounded-t-xl w-[14rem] mt-14 md:mt-0"
+              className="xl:w-[25rem] 2xl:h-[15rem] md:h-[7.3rem] h-[12rem]  rounded-t-xl w-[14rem] mt-14 md:mt-0 xl:h-[12rem] lg:h-[10rem] lg:w-[13.5rem] md:w-[9rem]"
             />
           ) : null}
         </div>

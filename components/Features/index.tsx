@@ -14,7 +14,7 @@ const Features = () => {
               Features
             </h1>
             <div className="flex flex-col items-center space-y-6">
-              <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0 ">
+              <div className="grid items-center grid-rows-2 space-y-4 md:space-x-6 md:flex md:space-y-0 ">
                 <SlideupImage
                   duration={1}
                   frontSide={
@@ -90,7 +90,7 @@ const Features = () => {
                   bottomToTop={data.features[1].bottomToTop}
                 />
               </div>
-              <div className="grid items-center grid-rows-2 space-y-4 lg:space-x-6 lg:flex lg:space-y-0">
+              <div className="grid items-center grid-rows-2 space-y-4 md:space-x-6 md:flex md:space-y-0">
                 <SlideupImage
                   duration={1}
                   frontSide={
