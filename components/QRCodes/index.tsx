@@ -13,8 +13,8 @@ const QRCode = () => {
 
   return (
     <section className="w-full">
-      <div className="flex flex-col items-center w-full px-4 py-12">
-        <div className="w-full max-w-7xl">
+      <div className="flex flex-col items-center w-full py-12">
+        <div className=" w-[80%] max-w-7xl">
           <div className="flex flex-col items-start ">
             <h1 className="py-12 text-3xl font-bold text-left text-gray-800 lg:text-6xl md:text-5xl">
               Next genaration QR codes

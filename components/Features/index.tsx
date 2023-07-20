@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col items-center w-full">
-        <div className=" w-[80%] max-w-7xl">
+        <div className="w-full ">
           <div className="flex flex-col items-center space-y-10">
             <h1 className="py-12 text-3xl font-bold text-center text-gray-800 lg:text-6xl md:text-5xl">
               Features

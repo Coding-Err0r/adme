@@ -13,7 +13,7 @@ interface Props {
 const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
   if (size.toLowerCase() === "medium") {
     return (
-      <div className="px-12 bg-white shadow-2xl lg:w-[55rem] rounded-[40px] md:w-[40rem] md:h-[25rem] lg:h-[33rem] w-[20rem] h-[25rem]">
+      <div className="px-12 bg-white shadow-2xl 2xl:w-[55rem] rounded-[40px] md:w-[40rem] md:h-[25rem] lg:h-[33rem] w-[20rem] h-[25rem] lg:w-[50rem]">
         <div className="flex flex-col items-center justify-center md:space-x-10 lg:gap-x-20 md:gap-x-8 md:grid md:grid-cols-2">
           <h1 className="lg:text-5xl font-bold lg:w-[20rem] md:text-3xl text-lg md:w-[15rem] md:py-0 lg:py-0 py-12 h-[11.4rem]">
             {details}
@@ -40,7 +40,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
     );
   } else if (size.toLowerCase() === "small") {
     return (
-      <div className="px-10 bg-white shadow-2xl lg:w-[25rem] rounded-[40px] lg:h-[33rem] md:w-[25rem] md:h-[28rem] w-[20rem] h-[25rem] ">
+      <div className="px-10 bg-white shadow-2xl 2xl:w-[25rem] rounded-[40px] lg:h-[33rem] md:w-[25rem] md:h-[28rem] w-[20rem] h-[25rem] lg:w-[21rem]">
         <div className="flex flex-col items-center">
           {imgPosition.toLowerCase() === "top" ? (
             <Image
