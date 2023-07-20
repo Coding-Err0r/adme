@@ -43,8 +43,8 @@ const Carousel = () => {
           slidesPerView={"auto"}
           coverflowEffect={{
             rotate: 0,
-            stretch: 0,
-            depth: 150,
+            stretch: 100,
+            depth: 100,
             modifier: swiperModifier,
             slideShadows: false,
           }}
@@ -59,7 +59,7 @@ const Carousel = () => {
           className="w-auto"
         >
           {Object.values(data.swiper).map((item: any, index: number) => (
-            <SwiperSlide key={index} className="group">
+            <SwiperSlide key={index} className="group ">
               <Slide
                 image={item.image}
                 description={item.description}

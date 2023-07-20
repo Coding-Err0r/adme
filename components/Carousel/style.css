@@ -7,8 +7,8 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 160px !important;
-    height: 90px !important;
+    width: 300px !important;
+    height: 170px !important;
     position: relative;
     z-index: 5;
   }
@@ -22,8 +22,8 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 200px !important;
-    height: 110px !important;
+    width: 520px !important;
+    height: 300px !important;
   }
   .swiper {
     width: 95%;
@@ -35,21 +35,21 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px !important;
-    height: 200px !important;
+    width: 570px !important;
+    height: 330px !important;
   }
   .swiper {
     width: 95%;
     padding-top: 70px !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 110px !important;
   }
 }
 @media (min-width: 1025px) {
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 450px !important;
-    height: 280px !important;
+    width: 600px !important;
+    height: 350px !important;
   }
   .swiper {
     width: 95%;
@@ -62,14 +62,15 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 550px !important;
-    height: 300px !important;
+    width: 700px !important;
+    height: 450px !important;
   }
   .swiper {
     width: 98%;
     padding-top: 50px !important;
     padding-bottom: 130px !important;
   }
+  
 }
 
 @media (min-width: 320px) {

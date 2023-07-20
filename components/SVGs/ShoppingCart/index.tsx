@@ -10,7 +10,7 @@ const ShoppingCart = ({ value }: Props) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        className="w-8 h-8 text-white"
+        className="text-white w-7 h-7"
       >
         <rect width="36" height="36" fill="url(#pattern0)" />
         <defs>
@@ -31,8 +31,8 @@ const ShoppingCart = ({ value }: Props) => {
         </defs>
       </svg>
       {value && (
-        <div className="absolute w-5 h-5 ml-5 text-xs text-center text-white bg-red-500 border-2 border-white rounded-full text-bold ">
-          {value}
+        <div className="absolute w-4 h-4 ml-5  text-[10px] text-center text-white bg-red-500 border-2 border-white rounded-full text-bold ">
+          <p className="-mt-[2px]">{value}</p>
         </div>
       )}
     </div>

@@ -44,7 +44,7 @@ const Hero = () => {
 
   return (
     <section className="flex flex-col items-center justify-center">
-      <div className="absolute z-10 flex flex-col items-center md:space-y-36 lg:space-y-[20rem] space-y-28 lg:mt-8 md:mt-12 mt-14">
+      <div className="absolute z-10 flex flex-col items-center md:space-y-36 lg:space-y-[20rem] space-y-28 lg:mt-2 md:mt-12 mt-14">
         <Image
           src={images.logoOne}
           alt=""
