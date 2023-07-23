@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center px-5 space-x-2 md:px-12 md:space-x-2 lg:space-x-4">
           <div className="flex items-center">
-            <a href="drake-white.netlify.app">
+            <a href="https://drake-white.netlify.app/">
               <img
                 src={images.person}
                 alt=""
