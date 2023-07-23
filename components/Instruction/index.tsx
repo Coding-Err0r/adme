@@ -5,7 +5,7 @@ import Slideup from "../Slideup";
 
 const Instruction = () => {
   return (
-    <section className="w-full py-6">
+    <section className="w-full py-8">
       <div className="flex flex-col items-center w-full ">
         <div className=" w-[80%] max-w-7xl">
           <div className="flex flex-col">
