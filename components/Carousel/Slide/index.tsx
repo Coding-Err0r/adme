@@ -25,7 +25,7 @@ const Slide = ({ image, description, index, id }: Props) => {
         height={2000}
       />
 
-      <p className="py-4 text-xs font-semibold text-blue-600 md:text-xl group-[.swiper-slide-active]:block hidden ">
+      <p className="py-4 text-xs font-medium text-blue-600 md:text-2xl group-[.swiper-slide-active]:block hidden ">
         {description}
       </p>
     </section>

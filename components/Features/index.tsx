@@ -9,8 +9,8 @@ const Features = () => {
     <section className="w-full">
       <div className="flex flex-col items-center w-full">
         <div className="w-full ">
-          <div className="flex flex-col items-center space-y-10">
-            <h1 className="py-12 text-3xl font-bold text-center text-gray-800 lg:text-6xl md:text-5xl">
+          <div className="flex flex-col items-center space-y-4">
+            <h1 className="py-12 text-3xl font-bold text-center text-gray-800 lg:text-5xl md:text-4xl">
               Features
             </h1>
             <div className="flex flex-col items-center space-y-6">

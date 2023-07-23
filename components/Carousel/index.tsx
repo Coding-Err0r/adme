@@ -30,7 +30,7 @@ const Carousel = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col items-center ">
-        <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-2xl lg:py-16 md:py-12">
+        <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-4xl lg:py-14 md:py-8">
           <p className="font-bold">
             Take A Look At Our Designed Products Or Have
           </p>
@@ -38,7 +38,6 @@ const Carousel = () => {
         </div>
         <Swiper
           effect={"coverflow"}
-          grabCursor={true}
           centeredSlides={true}
           slidesPerView={"auto"}
           coverflowEffect={{

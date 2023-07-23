@@ -8,14 +8,14 @@ type Props = {
 const FaqCard = ({ question, answer }: Props) => {
   const [active, setActive] = useState<boolean>(false);
   return (
-    <div className="relative z-10 w-full bg-white shadow-md rounded-xl">
+    <div className="relative z-10 w-full bg-white rounded-lg shadow-md">
       <div className="flex items-center justify-between p-6 ">
         <div className="flex flex-col items-start space-y-1">
           <p className="text-base font-semibold text-gray-800 lg:text-2xl md:text-xl">
             {question}
           </p>
           {active && (
-            <p className="py-2 text-sm text-gray-600 lg:text-2xl font-base md:text-xl">
+            <p className="py-2 text-sm text-gray-600 lg:text-xl font-base md:text-lg">
               {answer}
             </p>
           )}

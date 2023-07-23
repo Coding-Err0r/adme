@@ -17,6 +17,15 @@
     padding-top: 50px !important;
     padding-bottom: 70px !important;
   }
+  .swiper-pagination-bullet-active {
+    background-color: rgb(87, 86, 86) !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .swiper-pagination-bullet {
+    height: 8px !important;
+    width: 8px !important;
+  }
 }
 @media (min-width: 480px) {
   .swiper-slide {
@@ -28,7 +37,17 @@
   .swiper {
     width: 95%;
     padding-top: 50px !important;
-    padding-bottom: 70px !important;
+    padding-bottom: 90px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: rgb(87, 86, 86) !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .swiper-pagination-bullet {
+    height: 10px !important;
+    width: 10px !important;
   }
 }
 @media (min-width: 801px) {
@@ -41,7 +60,17 @@
   .swiper {
     width: 95%;
     padding-top: 70px !important;
-    padding-bottom: 110px !important;
+    padding-bottom: 90px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: rgb(87, 86, 86) !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .swiper-pagination-bullet {
+    height: 12px !important;
+    width: 12px !important;
   }
 }
 @media (min-width: 1025px) {
@@ -54,7 +83,18 @@
   .swiper {
     width: 95%;
     padding-top: 50px !important;
-    padding-bottom: 70px !important;
+  }
+  .swiper-pagination {
+    margin-bottom: 20px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: rgb(87, 86, 86) !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .swiper-pagination-bullet {
+    height: 15px !important;
+    width: 15px !important;
   }
 }
 
@@ -67,10 +107,20 @@
   }
   .swiper {
     width: 98%;
-    padding-top: 50px !important;
-    padding-bottom: 130px !important;
+    padding-top: 10px !important;
   }
-  
+  .swiper-pagination {
+    margin-bottom: 20px !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: rgb(87, 86, 86) !important;
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .swiper-pagination-bullet {
+    height: 15px !important;
+    width: 15px !important;
+  }
 }
 
 @media (min-width: 320px) {

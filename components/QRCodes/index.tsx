@@ -16,10 +16,10 @@ const QRCode = () => {
       <div className="flex flex-col items-center w-full py-12">
         <div className=" w-[80%] max-w-7xl">
           <div className="flex flex-col items-start ">
-            <h1 className="py-12 text-3xl font-bold text-left text-gray-800 lg:text-6xl md:text-5xl">
+            <h1 className="py-6 text-3xl font-bold text-left text-gray-800 lg:text-5xl md:text-4xl">
               Next genaration QR codes
             </h1>
-            <p className="max-w-sm text-sm text-justify text-gray-500 lg:max-w-3xl lg:text-xl md:text-lg md:max-w-xl">
+            <p className="max-w-sm text-sm text-justify text-gray-500 lg:max-w-3xl lg:text-2xl md:text-xl md:max-w-xl">
               We were not impressed with the standard QR Code, so we added some
               color, shape and a logo to the mix. Fully customize your QR Code
               to match your branding and steel the show. Switch to digital
