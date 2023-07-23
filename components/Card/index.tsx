@@ -15,7 +15,7 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
     return (
       <div className="px-12 bg-white shadow-2xl 2xl:w-[55rem] xl:rounded-[40px] rounded-[25px] md:w-[30rem] md:h-[20rem] 2xl:h-[33rem] w-[20rem] h-[25rem] xl:w-[50rem] xl:h-[30rem] lg:w-[45rem] lg:h-[25rem] ">
         <div className="flex flex-col items-center justify-center md:space-x-10 xl:gap-x-20 md:gap-x-8 md:grid md:grid-cols-2 lg:gap-x-28">
-          <h1 className="2xl:text-5xl font-bold lg:w-[20rem] md:text-3xl text-lg md:w-[12rem] md:py-0 lg:py-0 py-12 h-[11.4rem] xl:text-4xl lg:text-4xl">
+          <h1 className=" font-bold lg:w-[20rem] md:text-3xl text-lg md:w-[12rem] md:py-0 lg:py-0 py-12 h-[11.4rem] xl:text-4xl lg:text-4xl">
             {details}
           </h1>
           {imgPosition.toLowerCase() === "bottom" ? (
@@ -48,10 +48,10 @@ const Card = ({ image, details, imgPosition, size, plusIcon }: Props) => {
               alt=""
               width={2000}
               height={2000}
-              className="xl:w-[25rem] 2xl:h-[15rem] md:h-[7.3rem] h-[12rem]  rounded-t-xl w-[14rem]   xl:h-[12rem] lg:h-[10rem] lg:w-[13.5rem] md:w-[9rem] "
+              className="xl:w-[25rem] 2xl:h-[10rem] md:h-[6rem] h-[10rem]  rounded-t-xl w-[14rem]   xl:h-[9rem] lg:h-[8rem] lg:w-[13.5rem] md:w-[9rem] "
             />
           ) : null}
-          <h1 className="py-12 xl:text-4xl font-bold  md:text-2xl text-lg lg:w-[22rem] md:w-[20rem] xl:h-[18rem] text-center md:h-[12.7rem] lg:text-left md:text-center px-12 lg:text-3xl lg:h-[15rem] w-[20rem] h-[9.5rem]">
+          <h1 className="py-12 xl:text-4xl font-bold  md:text-2xl text-xl lg:w-[22rem] md:w-[20rem] xl:h-[18rem] text-center md:h-[12.7rem] lg:text-left md:text-center px-12 lg:text-3xl lg:h-[15rem] w-[20rem] h-[9.5rem]">
             {details}
           </h1>
 
