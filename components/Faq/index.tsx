@@ -23,6 +23,7 @@ const Faq = () => {
                     question={faq.question}
                     answer={faq.answer}
                     key={index}
+                    id={index}
                   />
                 ))}
               </div>

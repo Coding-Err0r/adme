@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import Loader from "../Loader";
+import { Provider } from "react-redux";
+import { store } from "@/redux/Store";
 
 const Layout = ({ children }: any) => {
   const [loading, setLoading] = useState(true);
@@ -18,9 +20,11 @@ const Layout = ({ children }: any) => {
   } else {
     return (
       <>
-        <Navbar />
-        {children}
-        <Footer />
+        <Provider store={store}>
+          <Navbar />
+          {children}
+          <Footer />
+        </Provider>
       </>
     );
   }
