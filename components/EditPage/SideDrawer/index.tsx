@@ -4,22 +4,7 @@ import { Drawer } from "rsuite";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 import { CountryDropdown, RegionDropdown } from "react-country-region-selector";
-import { WithContext as ReactTags } from "react-tag-input";
 import { LANGUAGES } from "@/config/languages";
-import "./style.css";
-const suggestions = LANGUAGES.map((language) => {
-  return {
-    id: language,
-    text: language,
-  };
-});
-
-const KeyCodes = {
-  comma: 188,
-  enter: 13,
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 const SideDrawer = () => {
   const [data, setData] = useState<any>({
@@ -58,8 +43,6 @@ const SideDrawer = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const [languages, setLanguages] = useState<any>([]);
-
   const handleResize = () => {
     if (window.innerWidth < 720) {
       setIsMobile(true);
@@ -72,24 +55,6 @@ const SideDrawer = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
   });
-
-  const handleDelete = (i: any) => {
-    setLanguages(
-      languages.filter((language: any, index: number) => index !== i)
-    );
-    setData({ ...data, languages: languages });
-  };
-  const handleAddition = (language: any) => {
-    setLanguages([...languages, language]);
-    setData({ ...data, languages: [...languages, language] });
-  };
-
-  const handleDrag = (language: any, currPos: any, newPos: any) => {
-    const newLanguage = languages.slice();
-    newLanguage.splice(currPos, 1);
-    newLanguage.splice(newPos, 0, language);
-    setLanguages(newLanguage);
-  };
 
   return (
     <div>
@@ -229,22 +194,9 @@ const SideDrawer = () => {
             <CountryDropdown
               value={data.citizenship}
               classes="w-full h-[40px] px-4 bg-gray-100 focus:outline-1 border-2 border-gray-300"
-              onChange={(country) =>
-                setData({ ...data, citizenship: country })
-              }
+              onChange={(country) => setData({ ...data, citizenship: country })}
             />
 
-            <ReactTags
-              tags={data.languages}
-              suggestions={suggestions}
-              delimiters={delimiters}
-              handleDelete={handleDelete}
-              handleAddition={handleAddition}
-              handleDrag={handleDrag}
-              autocomplete
-              editable
-              placeholder="Enter Language"
-            />
             <textarea
               className="w-full bp5-input bp5-large bp5-intent-primary"
               placeholder="Introduction"
