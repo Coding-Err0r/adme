@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Checkbox, DatePicker, Drawer } from "rsuite";
+import ImageDnD from "./ImageDnD";
 
 const ProjectDrawer = () => {
   const [data, setData] = useState<any>({
@@ -8,7 +9,7 @@ const ProjectDrawer = () => {
     department: "",
     toolsUsed: "",
     description: "",
-    images: "",
+    images: [],
   });
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,7 +27,7 @@ const ProjectDrawer = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
   });
-
+  console.log(data);
   return (
     <div>
       <button
@@ -115,13 +116,7 @@ const ProjectDrawer = () => {
 
             <div className="flex flex-col w-full space-y-2">
               <label className="text-lg"> Project Images</label>
-              <input
-                className="w-full bp5-input bp5-large bp5-intent-primary"
-                type="text"
-                placeholder="Project Images"
-                dir="auto"
-                onChange={(e) => setData({ ...data, images: e.target.value })}
-              />
+              <ImageDnD data={data} setData={setData} />
               <span className="text-xs">
                 Please enter the department that you worked on.
               </span>

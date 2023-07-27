@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/EditPage/Projects/ProjectDrawer/ImageDnD/index.jsx", "components/EditPage/Projects/ProjectDrawer/Preview/index.jsx", "components/EditPage/Projects/ProjectDrawer/Uploader/index.jsx"],
   "exclude": ["node_modules"]
 }
