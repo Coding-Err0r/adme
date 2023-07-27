@@ -56,6 +56,8 @@ const images = {
   productInfoSix: "/assets/images/productinfo/Group(6).png",
 
   cart: "/assets/images/cart.png",
+
+  user: "/assets/images/user.webp",
   // images for testing
   test1: "/assets/test/test (1).jpg",
   test2: "/assets/test/test (2).jpg",
