@@ -15,8 +15,33 @@ import Twitter from "../SVGIcons/Twitter";
 import UserIcon from "../SVGIcons/UserIcon";
 import Youtube from "../SVGIcons/Youtube";
 import BasicInfoSideDrawer from "./BasicInfoSideDrawer";
+import BookIcon from "../SVGIcons/BookIcon";
+import { Button, Popover, Whisper } from "rsuite";
 
 const languages = ["Bangla", "Hindi", "English"];
+
+const speaker = (
+  <Popover className="w-[85%]">
+    <div className="flex flex-col items-start p-4 space-y-2 md:p-8">
+      <h1 className="text-[18px] font-bold text-black ">Tips</h1>
+      <p className="text-[15px]">
+        To make your profile look professional please follow the below guideline
+        :
+      </p>
+      <ul className="space-y-3 text-[15px] list-disc ml-4 lg:py-6">
+        <li>
+          Upload a high quality profile picture where your face is visible
+        </li>
+        <li>Keep your introduction short and as much as descriptive</li>
+        <li>Give your working email address</li>
+        <li>Give your working phone number</li>
+        <li>Give your full address</li>
+        <li>Add all the social media’s you are active in</li>
+      </ul>
+    </div>
+  </Popover>
+);
+
 const BasicInformation = () => {
   return (
     <section className="w-full font-light bg-white font-sunflower">
@@ -155,6 +180,18 @@ const BasicInformation = () => {
                   </h5>
                 </div>
               </div>
+            </div>
+            <div className="block float-right -mt-8 md:block lg:hidden xl:hidden 2xl:hidden">
+              <Whisper
+                placement="topEnd"
+                trigger="click"
+                controlId="control-id-click"
+                speaker={speaker}
+              >
+                <Button>
+                  <BookIcon />
+                </Button>
+              </Whisper>
             </div>
           </Card>
         </div>

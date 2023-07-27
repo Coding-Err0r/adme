@@ -5,6 +5,25 @@ import ProjectList from "./ProjectList";
 import Required from "../Required";
 import images from "@/config/images";
 import ProjectDrawer from "./ProjectDrawer";
+import { Button, Popover, Whisper } from "rsuite";
+import BookIcon from "../SVGIcons/BookIcon";
+
+const speaker = (
+  <Popover className="w-[85%]">
+    <div className="flex flex-col items-start p-4 space-y-2 md:p-8">
+      <h1 className="text-[18px] font-bold text-black ">Tips</h1>
+      <p className="text-[15px] ">
+        To make your profile look professional please follow the below guideline
+        :
+      </p>
+      <ul className="space-y-3 text-[15px] list-disc  ml-4 lg:py-6">
+        <li>
+          Upload a high quality profile picture where your face is visible
+        </li>
+      </ul>
+    </div>
+  </Popover>
+);
 
 const projects = [
   {
@@ -55,6 +74,18 @@ const Projects = () => {
                   message={"You haven’t added any work experience yet"}
                 />
               )}
+            </div>
+            <div className="block float-right -mt-8 md:block lg:hidden xl:hidden 2xl:hidden">
+              <Whisper
+                placement="topEnd"
+                trigger="click"
+                controlId="control-id-click"
+                speaker={speaker}
+              >
+                <Button>
+                  <BookIcon />
+                </Button>
+              </Whisper>
             </div>
           </Card>
         </div>

@@ -4,6 +4,25 @@ import EducationIcon from "../SVGIcons/EducationIcon";
 import EducationList from "./EducationList";
 import Required from "../Required";
 import EducationDrawer from "./EducationDrawer";
+import { Button, Popover, Whisper } from "rsuite";
+import BookIcon from "../SVGIcons/BookIcon";
+
+const speaker = (
+  <Popover className="w-[85%]">
+    <div className="flex flex-col items-start p-4 space-y-2 md:p-8">
+      <h1 className="text-[18px] font-bold text-black ">Tips</h1>
+      <p className="text-[15px] ">
+        To make your profile look professional please follow the below guideline
+        :
+      </p>
+      <ul className="space-y-3 text-[15px] list-disc ml-4 lg:py-6">
+        <li>
+          Upload a high quality profile picture where your face is visible
+        </li>
+      </ul>
+    </div>
+  </Popover>
+);
 
 const educations = [
   {
@@ -50,6 +69,18 @@ const Education = () => {
               ) : (
                 <Required message={"You haven’t added any education yet"} />
               )}
+            </div>
+            <div className="block float-right -mt-8 md:block lg:hidden xl:hidden 2xl:hidden">
+              <Whisper
+                placement="topEnd"
+                trigger="click"
+                controlId="control-id-click"
+                speaker={speaker}
+              >
+                <Button>
+                  <BookIcon />
+                </Button>
+              </Whisper>
             </div>
           </Card>
         </div>
