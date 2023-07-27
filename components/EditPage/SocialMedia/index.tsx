@@ -45,42 +45,49 @@ const SocialMedia = ({ data, setData }: any) => {
     <div className="flex flex-col space-y-2">
       {formFields.map((form, index) => {
         return (
-          <div key={index} className="flex items-center space-x-2">
-            <button onClick={addFields}>
-              <FontAwesomeIcon
-                icon={faPlus}
-                className="w-3 h-3 p-1 text-white bg-green-500 rounded-full"
+          <div
+            key={index}
+            className="grid w-full grid-rows-2 gap-4 md:space-x-2 md:items-center md:flex"
+          >
+            <div className="flex items-center space-x-2">
+              <button onClick={addFields}>
+                <FontAwesomeIcon
+                  icon={faPlus}
+                  className="w-3 h-3 p-1 text-white bg-green-500 rounded-full"
+                />
+              </button>
+              <select
+                className="w-full h-10 font-semibold text-center"
+                onChange={(event) => handleFormChange(event, index)}
+                name="title"
+              >
+                {Add.map((address: string, index: number) => (
+                  <option
+                    value={address}
+                    key={index}
+                    selected={index === 0 ? true : false}
+                  >
+                    {address.toUpperCase()}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex items-center space-x-2">
+              <input
+                className="w-full bp5-input bp5-large bp5-intent-primary "
+                type="text"
+                placeholder="Social media link"
+                dir="auto"
+                name="link"
+                onChange={(event) => handleFormChange(event, index)}
               />
-            </button>
-            <select
-              className="w-full h-10 font-semibold text-center"
-              onChange={(event) => handleFormChange(event, index)}
-              name="title"
-            >
-              {Add.map((address: string, index: number) => (
-                <option
-                  value={address}
-                  key={index}
-                  selected={index === 0 ? true : false}
-                >
-                  {address.toUpperCase()}
-                </option>
-              ))}
-            </select>
-            <input
-              className="w-full bp5-input bp5-large bp5-intent-primary "
-              type="text"
-              placeholder="Social media link"
-              dir="auto"
-              name="link"
-              onChange={(event) => handleFormChange(event, index)}
-            />
-            <button onClick={() => removeFields(index)}>
-              <FontAwesomeIcon
-                icon={faMinus}
-                className="w-3 h-3 p-1 text-white bg-red-500 rounded-full"
-              />
-            </button>
+              <button onClick={() => removeFields(index)}>
+                <FontAwesomeIcon
+                  icon={faMinus}
+                  className="w-3 h-3 p-1 text-white bg-red-500 rounded-full"
+                />
+              </button>
+            </div>
           </div>
         );
       })}

@@ -6,6 +6,7 @@ const SkillDrawer = () => {
   const [data, setData] = useState<any>({
     title: "",
     percentage: "",
+    description: "",
   });
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -78,6 +79,19 @@ const SkillDrawer = () => {
               <span className="text-xs">
                 Please enter the department that you worked on.
               </span>
+            </div>
+
+            <div className="flex flex-col w-full space-y-2">
+              <label className="text-lg"> Description</label>
+              <textarea
+                className="w-full bp5-input bp5-large bp5-intent-primary"
+                placeholder="Description"
+                dir="auto"
+                onChange={(e) =>
+                  setData({ ...data, description: e.target.value })
+                }
+              />
+              <span className="text-xs">Please enter the Description.</span>
             </div>
 
             <button

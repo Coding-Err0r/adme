@@ -1,122 +1,83 @@
-import React, { Component, Fragment } from "react";
-import { Media } from "reactstrap";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-class Preview extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      previewImages: [],
-      dragId: "",
-    };
-  }
+const Preview = ({ imagesPreviewUrls, deleteImage }) => {
+  const [previewImages, setPreviewImages] = useState([]);
+  const [dragId, setDragId] = useState("");
 
-  componentDidMount() {
-    const { imagesPreviewUrls } = this.props;
-    this.setState({
-      previewImages: imagesPreviewUrls,
-    });
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    if (props.imagesPreviewUrls !== state.previewImages) {
-      return {
-        previewImages: props.imagesPreviewUrls,
-      };
-    }
-    return null;
-  }
-
-  deleteImage = (id) => {
-    const { deleteImage } = this.props;
+  const deleteImages = (id) => {
     deleteImage(id);
   };
-
-  handleOver = (ev) => {
+  const handleOver = (ev) => {
     ev.preventDefault();
   };
 
-  handleDrag = (ev) => {
-    this.setState({
-      dragId: ev.currentTarget.id,
-    });
+  const handleDrag = (ev) => {
+    setDragId(ev.currentTarget.id);
   };
 
-  handleDrop = (ev) => {
+  const handleDrop = (ev) => {
     ev.preventDefault();
-    const { previewImages } = this.state;
-    const { dragId } = this.state;
     const dragImage = previewImages.find((image) => image.id == dragId);
     const dropImage = previewImages.find(
       (image) => image.id == ev.currentTarget.id
     );
-    const arr = this.moveItem(dragImage.id - 1, dropImage.id - 1);
-
-    this.setState({
-      previewImages: arr,
-    });
+    const arr = moveItem(dragImage.id - 1, dropImage.id - 1);
+    setPreviewImages([...arr]);
   };
 
-  moveItem(from, to) {
-    const { previewImages } = this.state;
+  const moveItem = (from, to) => {
     const f = previewImages.splice(from, 1)[0];
     previewImages.splice(to, 0, f);
     return previewImages;
-  }
+  };
 
-  renderPreview() {
-    const { previewImages } = this.state;
+  useEffect(() => {
+    setPreviewImages(imagesPreviewUrls);
+  }, [imagesPreviewUrls]);
+
+  useEffect(() => {
     if (previewImages.length > 0) {
       previewImages.map((items, index) => {
         items.id = index + 1;
       });
     }
-    return (
-      <Fragment>
-        {previewImages.length > 0 &&
-          previewImages.map((element, index) => {
-            return (
-              <div
-                className="float-left w-[140px] h-[100px] flex items-start space-x-1 "
-                key={index}
-                id={element.id}
-                draggable
-                onDragOver={(e) => this.handleOver(e)}
-                onDragStart={(e) => this.handleDrag(e)}
-                onDrop={(e) => this.handleDrop(e)}
-              >
-                <img
-                  src={element.file}
-                  alt={element.name}
-                  className="object-cover w-full h-full rounded-lg"
+    console.log("Array Update ", previewImages.slice(0));
+  }, [previewImages]);
+
+  return (
+    <div className="grid w-full grid-cols-4 gap-2">
+      {previewImages.length > 0 &&
+        previewImages.map((element, index) => (
+          <div
+            className="w-[140px] h-[100px] flex items-start space-x-1 hover:shadow-2xl"
+            key={index}
+            id={element.id}
+            draggable
+            onDragOver={(e) => handleOver(e)}
+            onDragStart={(e) => handleDrag(e)}
+            onDrop={(e) => handleDrop(e)}
+          >
+            <img
+              src={element.file}
+              alt={element.name}
+              className="object-cover w-full h-full rounded-lg "
+            />
+
+            <div className="desc">
+              <div className="image-order">
+                <FontAwesomeIcon
+                  className="text-red-500"
+                  onClick={() => deleteImages(element.id)}
+                  icon={faTrash}
                 />
-
-                <div className="desc">
-                  <div className="image-order">
-                    <FontAwesomeIcon
-                      className="text-red-500"
-                      onClick={() => this.deleteImage(element.id)}
-                      icon={faTrash}
-                    />
-                  </div>
-                </div>
               </div>
-            );
-          })}
-      </Fragment>
-    );
-  }
-
-  render() {
-    const { previewImages } = this.state;
-    console.log("image order", previewImages);
-    return (
-      <div className="grid w-full grid-cols-4 gap-4">
-        {this.renderPreview()}
-      </div>
-    );
-  }
-}
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+};
 
 export default Preview;

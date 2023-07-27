@@ -10,7 +10,7 @@ class Uploader extends React.Component {
 
   filesSelectedHandler = (e) => {
     if (this.checkMimeType(e)) {
-      const { imagesPreviewUrls } = this.props;
+      const { imagesPreviewUrl } = this.props;
       const files = Array.from(e.target.files);
       files.forEach((file, index) => {
         const reader = new FileReader();
@@ -21,7 +21,7 @@ class Uploader extends React.Component {
             name: file.name,
           };
           this.setState({ imageValidationError: null });
-          imagesPreviewUrls(result);
+          imagesPreviewUrl(result);
         };
         reader.readAsDataURL(file);
       });

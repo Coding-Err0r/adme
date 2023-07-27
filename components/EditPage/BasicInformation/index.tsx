@@ -88,7 +88,7 @@ const BasicInformation = () => {
                   <h1 className="py-4 text-[24px] font-bold text-black ">
                     Social Media
                   </h1>
-                  <div className="grid grid-cols-5 gap-8">
+                  <div className="grid grid-cols-5 gap-3 md:gap-8">
                     <Facebook />
                     <Twitter />
                     <Instagram />

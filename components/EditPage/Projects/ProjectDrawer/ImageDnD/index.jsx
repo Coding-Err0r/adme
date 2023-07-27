@@ -1,47 +1,31 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import Preview from "../Preview";
 import Uploader from "../Uploader";
 
-class ImageDnD extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imagesPreviewUrls: [],
-    };
-  }
+const ImageDnD = () => {
+  const [imagesPreviewUrls, setImagesPreviewUrls] = useState([]);
 
-  imagesPreviewUrls = (result) => {
-    this.setState({
-      imagesPreviewUrls: [...this.state.imagesPreviewUrls, result],
-    });
+  const imagesPreviewUrl = (result) => {
+    setImagesPreviewUrls((imagesPreviewUrls) => [...imagesPreviewUrls, result]);
   };
-
-  deleteImage = (id) => {
-    const { imagesPreviewUrls } = this.state;
+  const deleteImage = (id) => {
     if (imagesPreviewUrls.length > 0) {
       const filterImages = imagesPreviewUrls.filter((image) => image.id !== id);
-      this.setState({
-        imagesPreviewUrls: filterImages,
-      });
+      setImagesPreviewUrls(filterImages);
     }
   };
 
-  render() {
-    const { imagesPreviewUrls } = this.state;
-    // console.log(imagesPreviewUrls);
-
-    return (
-      <div>
-        <Uploader imagesPreviewUrls={this.imagesPreviewUrls} />
-        {imagesPreviewUrls.length > 0 ? (
-          <Preview
-            imagesPreviewUrls={imagesPreviewUrls}
-            deleteImage={this.deleteImage}
-          />
-        ) : null}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Uploader imagesPreviewUrl={imagesPreviewUrl} />
+      {imagesPreviewUrls.length > 0 ? (
+        <Preview
+          imagesPreviewUrls={imagesPreviewUrls}
+          deleteImage={deleteImage}
+        />
+      ) : null}
+    </div>
+  );
+};
 
 export default ImageDnD;

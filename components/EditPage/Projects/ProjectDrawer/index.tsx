@@ -10,6 +10,7 @@ const ProjectDrawer = () => {
     toolsUsed: "",
     description: "",
     images: [],
+    links: [],
   });
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,7 +28,7 @@ const ProjectDrawer = () => {
     window.addEventListener("resize", handleResize);
     handleResize();
   });
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <button
@@ -115,8 +116,20 @@ const ProjectDrawer = () => {
             </div>
 
             <div className="flex flex-col w-full space-y-2">
+              <label className="text-lg"> Project Link</label>
+              <input
+                className="w-full bp5-input bp5-large bp5-intent-primary"
+                type="text"
+                placeholder="Project Link"
+                dir="auto"
+                onChange={(e) => setData({ ...data, link: e.target.value })}
+              />
+              <span className="text-xs">Please enter the project link.</span>
+            </div>
+
+            <div className="flex flex-col w-full space-y-2">
               <label className="text-lg"> Project Images</label>
-              <ImageDnD data={data} setData={setData} />
+              <ImageDnD />
               <span className="text-xs">
                 Please enter the department that you worked on.
               </span>

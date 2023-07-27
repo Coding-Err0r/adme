@@ -8,7 +8,7 @@ import images from "@/config/images";
 
 const ImageCrop = () => {
   const [src, setSrc] = useState<any>(null);
-  const [crop, setCrop] = useState<any>({ aspect: 16 / 9 });
+  const [crop, setCrop] = useState<any>({ aspect: 8 / 8 });
   const [image, setImage] = useState<any>(null);
   const [output, setOutput] = useState<any>(null);
   const [open, setOpen] = useState<boolean>(false);

@@ -19,21 +19,23 @@ const WorkExperienceList = ({
           <div>
             <CubeIcon />
           </div>
-          <div className="flex flex-col space-y-3">
-            <div className="flex justify-between ">
-              <p className="font-bold">{company}</p>
-              <div className="items-center hidden space-x-3 group-hover:block">
-                <button className="text-blue-500 hover:text-blue-800">
-                  Edit
-                </button>
-                <button className="text-red-500 hover:text-red-800">
-                  Delete
-                </button>
+          <div className="grid md:space-x-2 md:flex">
+            <div className="flex flex-col flex-1 space-y-3">
+              <div className="flex justify-between ">
+                <p className="font-bold">{company}</p>
               </div>
+              <p>{position}</p>
+              <p>{year}</p>
+              <p>{description}</p>
             </div>
-            <p>{position}</p>
-            <p>{year}</p>
-            <p>{description}</p>
+            <div className="items-center hidden space-x-3 group-hover:block ml-[60%] md:ml-0 md:py-0 py-4">
+              <button className="text-blue-500 hover:text-blue-800">
+                Edit
+              </button>
+              <button className="text-red-500 hover:text-red-800">
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>

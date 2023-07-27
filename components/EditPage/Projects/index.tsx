@@ -20,6 +20,7 @@ const projects = [
       "https://miro.medium.com/v2/resize:fit:1400/1*SyLNGKR1-32dI5cIMcJWVA.jpeg",
       "https://miro.medium.com/v2/resize:fit:1400/1*SyLNGKR1-32dI5cIMcJWVA.jpeg",
     ],
+    link: "",
   },
 ];
 const Projects = () => {
