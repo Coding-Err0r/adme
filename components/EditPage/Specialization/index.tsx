@@ -1,30 +1,14 @@
 "use client";
 import { Card, Elevation } from "@blueprintjs/core";
-
 import Required from "../Required";
-import WorkIcon from "../SVGIcons/WorkIcon";
 import SpecializationList from "./SpecializationList";
 import SpecializationIcon from "../SVGIcons/SpecializationIcon";
 import SpecializationDrawer from "./SpecializationDrawer";
-import { Button, Popover, Whisper } from "rsuite";
-import BookIcon from "../SVGIcons/BookIcon";
+import TipsMobile from "../Tips/TipMobile";
+import TipsDesktop from "../Tips/TipsDesktop";
 
-const speaker = (
-  <Popover className="w-[85%]">
-    <div className="flex flex-col items-start p-4 space-y-2 md:p-8">
-      <h1 className="text-[18px] font-bold text-black ">Tips</h1>
-      <p className="text-[15px] ">
-        To make your profile look professional please follow the below guideline
-        :
-      </p>
-      <ul className="space-y-3 text-[15px] list-disc  ml-4 lg:py-6">
-        <li>
-          Upload a high quality profile picture where your face is visible
-        </li>
-      </ul>
-    </div>
-  </Popover>
-);
+
+
 
 const specializations = [
   {
@@ -56,7 +40,7 @@ const Specialization = () => {
             <SpecializationDrawer />
           </div>
           <Card elevation={Elevation.ONE} className="rounded-lg">
-            <div className="flex flex-col space-y-6">
+            <div className="flex flex-col py-8 space-y-6">
               {specializations.length > 0 ? (
                 specializations.map((specialization: any, index: number) => (
                   <SpecializationList
@@ -73,32 +57,22 @@ const Specialization = () => {
                 />
               )}
             </div>
-            <div className="block float-right -mt-8 md:block lg:hidden xl:hidden 2xl:hidden">
-              <Whisper
-                placement="topEnd"
-                trigger="click"
-                controlId="control-id-click"
-                speaker={speaker}
-              >
-                <Button>
-                  <BookIcon />
-                </Button>
-              </Whisper>
-            </div>
+            <TipsMobile
+              text={`To make your profile look professional please follow the below
+            guideline`}
+              list={[
+                `Upload a high quality profile picture where your face is visible`,
+              ]}
+            />
           </Card>
         </div>
-        <div className=" flex-col items-start font-light text-black font-sunflower lg:mt-[4rem] lg:px-6 lg:block md:hidden hidden">
-          <h1 className="py-8 text-[24px] font-bold text-black ">Tips</h1>
-          <p className="text-[18px]">
-            To make your profile look professional please follow the below
-            guideline :
-          </p>
-          <ul className="space-y-3 text-[18px] list-disc lg:ml-4 lg:py-6">
-            <li>
-              Upload a high quality profile picture where your face is visible
-            </li>
-          </ul>
-        </div>
+        <TipsDesktop
+          text={`To make your profile look professional please follow the below
+            guideline`}
+          list={[
+            `Upload a high quality profile picture where your face is visible`,
+          ]}
+        />
       </div>
     </section>
   );

@@ -1,86 +1,87 @@
-import React, { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from "react";
 
-const Test = ({ imagesPreviewUrls, deleteImage }) => {
-  const [previewImages, setPreviewImages] = useState([]);
-  const [dragId, setDragId] = useState("");
+const Test = ({ imagesPreviewUrl }) => {
+  const [imageValidationError, setImageValidationError] = useState(null);
 
-  const deleteImages = (id) => {
-    deleteImage(id);
-  };
-  const handleOver = (ev) => {
-    ev.preventDefault();
-  };
-
-  const handleDrag = (ev) => {
-    setDragId(ev.currentTarget.id);
-  };
-
-  const handleDrop = (ev) => {
-    ev.preventDefault();
-    const dragImage = previewImages.find((image) => image.id == dragId);
-    const dropImage = previewImages.find(
-      (image) => image.id == ev.currentTarget.id
-    );
-    const arr = moveItem(dragImage.id - 1, dropImage.id - 1);
-    setPreviewImages(arr);
-  };
-
-  const moveItem = (from, to) => {
-    const f = previewImages.splice(from, 1)[0];
-    previewImages.splice(to, 0, f);
-    return previewImages;
-  };
-  useEffect(() => {
-    setPreviewImages(imagesPreviewUrls);
-    if (imagesPreviewUrls !== previewImages) {
-      setPreviewImages(imagesPreviewUrls);
-    }
-  });
-
-  const renderPreview = () => {
-    if (previewImages.length > 0) {
-      previewImages.map((items, index) => {
-        items.id = index + 1;
+  const filesSelectedHandler = (e) => {
+    if (checkMimeType(e)) {
+      const files = Array.from(e.target.files);
+      files.forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const result = {
+            file: reader.result,
+            size: file.size,
+            name: file.name,
+          };
+          setImageValidationError(null);
+          imagesPreviewUrl(result);
+        };
+        reader.readAsDataURL(file);
       });
     }
-    return (
-      <React.Fragment>
-        {previewImages.length > 0 &&
-          previewImages.map((element, index) => {
-            return (
-              <div
-                className="float-left w-[140px] h-[100px] flex items-start space-x-1 "
-                key={index}
-                id={element.id}
-                draggable
-                onDragOver={(e) => handleOver(e)}
-                onDragStart={(e) => handleDrag(e)}
-                onDrop={(e) => handleDrop(e)}
-              >
-                <img
-                  src={element.file}
-                  alt={element.name}
-                  className="object-cover w-full h-full rounded-lg"
-                />
-
-                <div className="desc">
-                  <div className="image-order">
-                    <FontAwesomeIcon
-                      className="text-red-500"
-                      onClick={() => deleteImage(element.id)}
-                      icon={faTrash}
-                    />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-      </React.Fragment>
-    );
   };
-  return <div className="grid w-full grid-cols-4 gap-4">{renderPreview}</div>;
+  const checkMimeType = (event) => {
+    const { files } = event.target;
+    let err = "";
+    const types = ["image/png", "image/jpeg", "image/jpg"];
+    for (let x = 0; x < files.length; x += 1) {
+      if (types.every((type) => files[x].type !== type)) {
+        err += `${files[x].type} is not a supported format\n`;
+      }
+    }
+
+    if (err !== "") {
+      event.target.value = null;
+      setImageValidationError(err);
+      return false;
+    }
+    return true;
+  };
+  return (
+    <>
+      <div id="main">
+        <div className="w-full">
+          <label className="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
+            <span className="flex items-center space-x-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+              <span className="font-medium text-gray-600">
+                Drop images to Attach, or
+                <span className="text-blue-600 underline"> browse</span>
+              </span>
+            </span>
+            <input
+              type="file"
+              name="file"
+              id="file"
+              onChange={filesSelectedHandler}
+              accept="image/png, image/jpeg"
+              multiple
+              className="hidden"
+            />
+          </label>
+        </div>
+
+        <p>Drag your images here or click in this area.</p>
+        {imageValidationError ? (
+          <span className="error-msg">{imageValidationError}</span>
+        ) : null}
+      </div>
+    </>
+  );
 };
 
 export default Test;

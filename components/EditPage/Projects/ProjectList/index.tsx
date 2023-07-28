@@ -34,7 +34,7 @@ const ProjectList = ({
 
   return (
     <div className="w-full text-[18px] font-light text-black bg-white font-sunflower ">
-      <div className="px-6 py-10 rounded-lg hover:bg-cyan-100 md:px-10 lg:px-14 group">
+      <div className="px-6 py-10 rounded-lg hover:bg-cyan-100 md:px-10 lg:px-6 group">
         <div className="flex items-start space-x-3">
           <div>
             <FolderAtIcon />
@@ -60,7 +60,7 @@ const ProjectList = ({
               </div>
               <div className="flex space-x-6 ">
                 {images
-                  .filter((item, index) => index < (isMobile === true ? 1 : 4))
+                  .filter((item, index) => index < (isMobile === true ? 1 : 3))
                   .map((image: string, index: number) => (
                     <div key={index} className="w-[140px] h-[100px] rounded-lg">
                       <img
@@ -72,7 +72,7 @@ const ProjectList = ({
                   ))}
               </div>
             </div>
-            <div className="items-center hidden space-x-3 group-hover:block ml-[60%] md:ml-0 md:py-0 py-4">
+            <div className="items-center hidden space-x-2 group-hover:block ml-[60%] md:ml-0 md:py-0 py-4  w-[6rem] h-[2rem]">
               <button className="text-blue-500 hover:text-blue-800">
                 Edit
               </button>

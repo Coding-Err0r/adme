@@ -29,7 +29,7 @@ const SpecializationList = ({
               <p>{numberOfProjects} projects</p>
               <p>{description}</p>
             </div>
-            <div className="items-center hidden space-x-3 group-hover:block ml-[60%] md:ml-0 md:py-0 py-4">
+            <div className="items-center hidden space-x-3 group-hover:block ml-[60%] md:ml-0 md:py-0 py-4 w-[6rem] h-[2rem]">
               <button className="text-blue-500 hover:text-blue-800">
                 Edit
               </button>

@@ -15,37 +15,16 @@ import Twitter from "../SVGIcons/Twitter";
 import UserIcon from "../SVGIcons/UserIcon";
 import Youtube from "../SVGIcons/Youtube";
 import BasicInfoSideDrawer from "./BasicInfoSideDrawer";
-import BookIcon from "../SVGIcons/BookIcon";
-import { Button, Popover, Whisper } from "rsuite";
+
+import TipsDesktop from "../Tips/TipsDesktop";
+import TipsMobile from "../Tips/TipMobile";
 
 const languages = ["Bangla", "Hindi", "English"];
-
-const speaker = (
-  <Popover className="w-[85%]">
-    <div className="flex flex-col items-start p-4 space-y-2 md:p-8">
-      <h1 className="text-[18px] font-bold text-black ">Tips</h1>
-      <p className="text-[15px]">
-        To make your profile look professional please follow the below guideline
-        :
-      </p>
-      <ul className="space-y-3 text-[15px] list-disc ml-4 lg:py-6">
-        <li>
-          Upload a high quality profile picture where your face is visible
-        </li>
-        <li>Keep your introduction short and as much as descriptive</li>
-        <li>Give your working email address</li>
-        <li>Give your working phone number</li>
-        <li>Give your full address</li>
-        <li>Add all the social media’s you are active in</li>
-      </ul>
-    </div>
-  </Popover>
-);
 
 const BasicInformation = () => {
   return (
     <section className="w-full font-light bg-white font-sunflower">
-      <div className="flex justify-center w-full">
+      <div className="flex justify-center w-full ">
         <div className="xl:w-[90%]  xl:max-w-7xl xl:py-10 xl:px-12 md:p-4 w-full p-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -57,7 +36,7 @@ const BasicInformation = () => {
             <BasicInfoSideDrawer />
           </div>
           <Card elevation={Elevation.ONE} className="rounded-lg">
-            <div className="grid grid-cols-1 p-4 xl:gap-16 md:grid-cols-2 md:gap-24">
+            <div className="grid grid-cols-1 px-4 py-8 xl:gap-16 md:grid-cols-2 md:gap-24">
               <div className="flex flex-col space-y-6">
                 <div className="grid justify-center gap-4 md:space-x-4 md:items-center md:flex md:justify-start">
                   <ImageCrop />
@@ -181,37 +160,33 @@ const BasicInformation = () => {
                 </div>
               </div>
             </div>
-            <div className="block float-right -mt-8 md:block lg:hidden xl:hidden 2xl:hidden">
-              <Whisper
-                placement="topEnd"
-                trigger="click"
-                controlId="control-id-click"
-                speaker={speaker}
-              >
-                <Button>
-                  <BookIcon />
-                </Button>
-              </Whisper>
-            </div>
+            <TipsMobile
+              text={`To make your profile look professional please follow the below
+          guideline `}
+              list={[
+                `Upload a high quality profile picture where your face is visible.`,
+                `Keep your introduction short and as much as descriptive.`,
+                `Give your working email address.`,
+                `Give your working phone number.`,
+                `Give your full address.`,
+                `Add all the social media’s you are active in.`,
+              ]}
+            />
           </Card>
         </div>
-        <div className=" flex-col items-start font-light text-black font-sunflower lg:mt-[4rem] lg:px-6  lg:hidden md:hidden hidden xl:block">
-          <h1 className="py-8 text-[24px] font-bold text-black ">Tips</h1>
-          <p className="text-[18px]">
-            To make your profile look professional please follow the below
-            guideline :
-          </p>
-          <ul className="space-y-3 text-[18px] list-disc  lg:ml-4 lg:py-6">
-            <li>
-              Upload a high quality profile picture where your face is visible
-            </li>
-            <li>Keep your introduction short and as much as descriptive</li>
-            <li>Give your working email address</li>
-            <li>Give your working phone number</li>
-            <li>Give your full address</li>
-            <li>Add all the social media’s you are active in</li>
-          </ul>
-        </div>
+
+        <TipsDesktop
+          text={`To make your profile look professional please follow the below
+          guideline `}
+          list={[
+            `Upload a high quality profile picture where your face is visible.`,
+            `Keep your introduction short and as much as descriptive.`,
+            `Give your working email address.`,
+            `Give your working phone number.`,
+            `Give your full address.`,
+            `Add all the social media’s you are active in.`,
+          ]}
+        />
       </div>
     </section>
   );

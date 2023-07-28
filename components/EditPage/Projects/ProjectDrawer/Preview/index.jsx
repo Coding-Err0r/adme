@@ -43,9 +43,8 @@ const Preview = ({ imagesPreviewUrls, deleteImage }) => {
         items.id = index + 1;
       });
     }
-    console.log("Array Update ", previewImages.slice(0));
   }, [previewImages]);
-
+  console.log("Array Update ", previewImages);
   return (
     <div className="grid w-full grid-cols-4 gap-2">
       {previewImages.length > 0 &&

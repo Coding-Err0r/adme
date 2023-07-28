@@ -15,7 +15,7 @@ const EducationList = ({ university, degree, year }: Props) => {
         </div>
         <div className="py-6 md:py-0">
           <p className="block text-[18px] group-hover:hidden ">{year}</p>
-          <div className="items-center hidden space-x-3 group-hover:block">
+          <div className="items-center hidden space-x-3 group-hover:block w-[6rem] h-[2rem]">
             <button className="text-blue-500 hover:text-blue-800">Edit</button>
             <button className="text-red-500 hover:text-red-800">Delete</button>
           </div>
