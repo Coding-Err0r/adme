@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faMinus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 
 const Preview = ({ imagesPreviewUrls, deleteImage }) => {
@@ -47,22 +47,26 @@ const Preview = ({ imagesPreviewUrls, deleteImage }) => {
                         {...provided.dragHandleProps}
                         {...provided.draggableProps}
                       >
-                        <div className="md:w-[140px] md:h-[100px] flex items-start space-x-1 hover:shadow-2xl w-[100px] h-[80px] cursor-move">
+                        <div className=" md:h-[100px] flex items-center space-x-1 hover:border-2 rounded-lg h-[80px] cursor-move justify-between w-[50%] p-2 hover:border-cyan-400">
                           <img
                             src={element.file}
                             alt={element.name}
-                            className="object-cover w-full h-full rounded-lg "
+                            className="object-cover w-[100px] h-full rounded-lg md:w-[140px]"
                           />
 
-                          <div className="desc">
-                            <div className="image-order">
-                              <FontAwesomeIcon
-                                className="text-red-500 cursor-pointer"
-                                onClick={() => deleteImages(element.id)}
-                                icon={faTrash}
-                              />
-                            </div>
-                          </div>
+                          <p className="text-2xl font-bold text-gray-500">
+                            {element.id}
+                          </p>
+                          {index === 0 ? (
+                            <p className="mt-1 text-xl font-bold text-blue-600">
+                              Primary
+                            </p>
+                          ) : null}
+                          <FontAwesomeIcon
+                            className="p-1 text-white bg-red-500 rounded-full cursor-pointer"
+                            onClick={() => deleteImages(element.id)}
+                            icon={faMinus}
+                          />
                         </div>
                       </div>
                     )}

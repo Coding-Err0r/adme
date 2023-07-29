@@ -14,7 +14,7 @@ const SkillList = ({ title, percentage }: Props) => {
             <p className="block text-[18px] group-hover:hidden ">
               {percentage}%
             </p>
-            <div className="items-center hidden space-x-3 group-hover:block w-[6rem] h-[2rem]">
+            <div className="items-center hidden space-x-3 group-hover:block w-[6rem] mt-1">
               <button className="text-blue-500 hover:text-blue-800">
                 Edit
               </button>
