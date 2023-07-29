@@ -42,7 +42,7 @@ const ProjectDrawer = () => {
         onClose={() => setIsOpen(false)}
         size={isMobile ? "xs" : "md"}
         backdrop={true}
-        className="pl-8"
+        className="pl-6"
       >
         <Drawer.Header>
           <Drawer.Title className="text-2xl font-semibold">

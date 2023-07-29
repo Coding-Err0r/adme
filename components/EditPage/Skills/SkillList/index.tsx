@@ -11,7 +11,17 @@ const SkillList = ({ title, percentage }: Props) => {
         <div className="flex flex-col space-y-3">
           <div className="flex items-center justify-between">
             <p className="mt-2 font-bold">{title}</p>
-            <p>{percentage}%</p>
+            <p className="block text-[18px] group-hover:hidden ">
+              {percentage}%
+            </p>
+            <div className="items-center hidden space-x-3 group-hover:block w-[6rem] h-[2rem]">
+              <button className="text-blue-500 hover:text-blue-800">
+                Edit
+              </button>
+              <button className="text-red-500 hover:text-red-800">
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>

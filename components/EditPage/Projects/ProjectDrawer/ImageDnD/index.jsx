@@ -10,10 +10,18 @@ const ImageDnD = () => {
   };
   const deleteImage = (id) => {
     if (imagesPreviewUrls.length > 0) {
-      const filterImages = imagesPreviewUrls.filter((image) => image.id !== id);
+      const filterImages = imagesPreviewUrls.filter(
+        (image, index) => image.id !== id
+      );
       setImagesPreviewUrls(filterImages);
     }
   };
+
+  useEffect(() => {
+    imagesPreviewUrls.forEach((item, i) => {
+      item.id = i + 1;
+    });
+  }, [imagesPreviewUrls]);
 
   return (
     <div>

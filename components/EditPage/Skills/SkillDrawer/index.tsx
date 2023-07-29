@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Checkbox, DatePicker, Drawer } from "rsuite";
+import { Checkbox, DatePicker, Drawer, Slider } from "rsuite";
 
 const SkillDrawer = () => {
   const [data, setData] = useState<any>({
@@ -31,14 +31,14 @@ const SkillDrawer = () => {
         className="py-2 text-sm text-white rounded-lg cursor-pointer bg-sky-600 md:text-xl px-7 hover:bg-sky-800"
         onClick={() => setIsOpen(true)}
       >
-        Edit
+        Add
       </button>
       <Drawer
         open={isOpen}
         onClose={() => setIsOpen(false)}
         size={isMobile ? "xs" : "md"}
         backdrop={true}
-        className="pl-8"
+        className="pl-6"
       >
         <Drawer.Header>
           <Drawer.Title className="text-2xl font-semibold">
@@ -67,14 +67,12 @@ const SkillDrawer = () => {
 
             <div className="flex flex-col w-full space-y-2">
               <label className="text-lg"> Skill Percentage</label>
-              <input
-                className="w-full bp5-input bp5-large bp5-intent-primary"
-                type="number"
-                placeholder="Skill Percentage"
-                dir="auto"
-                onChange={(e) =>
-                  setData({ ...data, percentage: e.target.value })
-                }
+              <Slider
+                progress
+                defaultValue={10}
+                onChange={(value: any) => {
+                  setData({ ...data, percentage: value });
+                }}
               />
               <span className="text-xs">
                 Please enter the department that you worked on.
