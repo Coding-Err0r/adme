@@ -47,7 +47,7 @@ const Preview = ({ imagesPreviewUrls, deleteImage }) => {
                         {...provided.dragHandleProps}
                         {...provided.draggableProps}
                       >
-                        <div className=" md:h-[100px] flex items-center space-x-1 hover:border-2 rounded-lg h-[80px] cursor-move justify-between w-[50%] p-2 hover:border-cyan-400">
+                        <div className=" md:h-[100px] flex items-center space-x-1 hover:border-2 rounded-lg h-[80px] cursor-move justify-between md:w-[60%] p-2 hover:border-cyan-400 w-full">
                           <img
                             src={element.file}
                             alt={element.name}
