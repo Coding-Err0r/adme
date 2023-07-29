@@ -46,11 +46,11 @@ const Preview = ({ imagesPreviewUrls, deleteImage }) => {
   }, [previewImages]);
   console.log("Array Update ", previewImages);
   return (
-    <div className="grid w-full grid-cols-4 gap-2">
+    <div className="grid w-full grid-cols-2 gap-2 md:grid-cols-4">
       {previewImages.length > 0 &&
         previewImages.map((element, index) => (
           <div
-            className="w-[140px] h-[100px] flex items-start space-x-1 hover:shadow-2xl"
+            className="md:w-[140px] md:h-[100px] flex items-start space-x-1 hover:shadow-2xl w-[100px] h-[80px] cursor-move"
             key={index}
             id={element.id}
             draggable

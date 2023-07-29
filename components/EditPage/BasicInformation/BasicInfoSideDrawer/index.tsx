@@ -58,7 +58,7 @@ const BasicInfoSideDrawer = () => {
         onClose={() => setIsOpen(false)}
         size={isMobile ? "xs" : "md"}
         backdrop={true}
-        className="pl-4"
+        className="pl-8"
       >
         <Drawer.Header>
           <Drawer.Title className="text-2xl font-semibold">
