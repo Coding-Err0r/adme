@@ -8,7 +8,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SignInSignUpLayout from "../Signin&SignupLayout";
 
-const SignupPage = () => {
+const SigninPage = () => {
   const [visible, setVisible] = useState(false);
 
   const handleChange = () => {
@@ -17,24 +17,11 @@ const SignupPage = () => {
 
   return (
     <SignInSignUpLayout
-      title={"Create your account."}
-      message={"Already have an account?"}
-      redirectTitle={"Sign In"}
-      redirectUrl={"/signin"}
+      title={"Login to Your Account"}
+      message={"Don’t have an account?"}
+      redirectTitle={"Sign Up"}
+      redirectUrl={"/signup"}
     >
-      <div className="flex flex-col items-start space-y-1">
-        <div className="flex">
-          <span className="text-black">Full name</span>{" "}
-          <p className="text-red-500">*</p>
-        </div>
-        <Input
-          type="text"
-          placeholder="Steven Stallion"
-          classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
-          style={{ width: "100%" }}
-        />
-      </div>
-
       <div className="flex flex-col items-start space-y-1">
         <div className="flex">
           <span className="text-black">Email address</span>{" "}
@@ -72,10 +59,10 @@ const SignupPage = () => {
         <Checkbox> I agree to the terms and condition</Checkbox>
       </div>
       <button className="p-2 text-2xl text-white rounded-full bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500">
-        Sign Up
+        Sign In
       </button>
     </SignInSignUpLayout>
   );
 };
 
-export default SignupPage;
+export default SigninPage;
