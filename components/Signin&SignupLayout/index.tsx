@@ -21,7 +21,7 @@ const SignInSignUpLayout = ({
   return (
     <section className="w-full h-screen bg-gray-200">
       <div className="flex flex-col items-center w-full h-full">
-        <div className="w-full h-full overflow-hidden">
+        <div className="w-full h-full mt-24 md:mt-14">
           <div className="flex items-center justify-center h-full bottom-[-4rem] relative md:bottom-0">
             <div className="flex bg-white  lg:w-[100rem] md:rounded-[30px] shadow-xl md:w-[80%]  lg:h-[60rem] relative z-10 w-full h-[55rem] md:rounded-t-0 rounded-t-[30px]">
               <div className="relative flex flex-col w-full h-full overflow-hidden lg:rounded-l-[30px] items-center justify-center md:rounded-[30px] lg:rounded-none">
@@ -30,7 +30,7 @@ const SignInSignUpLayout = ({
                   alt=""
                   className="absolute h-52 lg:top-[-10px] lg:left-[-155px] -rotate-[19deg] md:top-[-45px] md:left-[-160px] md:block lg:block hidden"
                 />
-                <div className="absolute z-20 flex items-center text-lg text-black top-5 md:right-5">
+                <div className="absolute z-20 flex items-center text-sm text-black md:text-lg top-5 right-5">
                   <FontAwesomeIcon icon={faChevronLeft} className="w-4 h-3" />
                   <a
                     href="/"
@@ -40,13 +40,13 @@ const SignInSignUpLayout = ({
                   </a>
                 </div>
 
-                <div className="flex flex-col lg:w-[68%] md:p-4 text-lg text-gray-500  lg:space-y-5 relative z-10  md:w-[70%] p-14 space-y-3 w-full">
+                <div className="flex flex-col lg:w-[68%] md:p-4 md:text-lg text-gray-500  lg:space-y-5 relative z-10  md:w-[70%] p-8 space-y-3 w-full text-base">
                   <div className="flex flex-col items-center py-4 space-y-2 lg:py-0">
                     <img
                       src={images.logoTwo}
                       className="h-12 lg:my-5 lg:h-16 lg:w-60 md:h-14 md:w-52"
                     />
-                    <h1 className="text-3xl text-black lg:text-4xl md:text-3xl">
+                    <h1 className="text-2xl text-black lg:text-4xl md:text-3xl">
                       {title}
                     </h1>
                     <p>
