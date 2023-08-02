@@ -2,17 +2,13 @@
 import data from "@/config/data";
 import images from "@/config/images";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MobileNavbar from "./Mobile";
 import Cart from "../Cart";
 import { useState } from "react";
-import { auth } from "@/utils/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [user, loading] = useAuthState(auth);
   return (
     <section className="fixed z-30 w-full">
       <div className="flex justify-between md:p-1 bg-zinc-950/90 backdrop-blur-md">
@@ -41,7 +37,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="https://drake-white.netlify.app/">
               <img
-                src={!user ? images.person : user?.photoURL}
+                src={images.person}
                 alt=""
                 className="w-8 h-8 rounded-full md:h-8 md:w-8"
               />
