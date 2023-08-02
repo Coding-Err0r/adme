@@ -55,10 +55,10 @@ const SignInSignUpLayout = ({
   };
 
   return (
-    <section className="w-full h-full bg-gray-200">
+    <section className="relative w-full h-full bg-gray-200 lg:fixed">
       <div className="flex flex-col items-center w-full h-full ">
         <div className="w-full h-full mt-24 md:mt-0 ">
-          <div className="relative flex items-center justify-center h-full p-0 lg:p-20 md:bottom-0 md:p-32 ">
+          <div className="relative flex items-center justify-center h-full px-0 md:bottom-0 lg:px-[15%] lg:py-20 md:py-10 md:px-20">
             <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[48rem] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] ">
               <div className="relative flex flex-col w-full h-full overflow-hidden lg:rounded-l-[30px] items-center justify-center md:rounded-[30px] lg:rounded-none">
                 <img
@@ -76,7 +76,7 @@ const SignInSignUpLayout = ({
                   </a>
                 </div>
 
-                <div className="flex flex-col lg:w-[80%] md:p-4 md:text-base text-gray-500   relative z-10  md:w-[70%] p-8 space-y-2 w-full text-sm">
+                <div className="flex flex-col lg:w-[75%] md:p-4 md:text-base text-gray-500   relative z-10  md:w-[70%] p-8 space-y-2 w-full text-sm">
                   <div className="flex flex-col items-center py-4 space-y-2 lg:py-0">
                     <img src={images.logoTwo} className="h-12 my-2" />
                     <h1 className="text-xl text-black md:text-2xl">{title}</h1>
@@ -125,7 +125,7 @@ const SignInSignUpLayout = ({
                 <img
                   src={images.frame2}
                   alt=""
-                  className="absolute lg:h-40 lg:bottom-[-70px] md:right-[-115px] rotate-[16deg] md:bottom-[-50px] bottom-[-50px] h-32 right-[-120px] lg:right-[-155px]"
+                  className="absolute lg:h-40 lg:bottom-[-70px] md:right-[-115px] rotate-[16deg] md:bottom-[-50px] bottom-[-40px] md:h-32 right-[-90px] lg:right-[-155px] h-24"
                 />
               </div>
               <img
