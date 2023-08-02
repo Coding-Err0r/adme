@@ -62,6 +62,8 @@ const images = {
   frame1: "/assets/images/login/frame (1).png",
   frame2: "/assets/images/login/frame (2).png",
   frame3: "/assets/images/login/frame (3).png",
+  frame4: "/assets/images/login/frame (4).png",
+  frame5: "/assets/images/login/frame (5).png",
   social1: "/assets/images/login/social (1).png",
   social2: "/assets/images/login/social (2).png",
   social3: "/assets/images/login/social (3).png",

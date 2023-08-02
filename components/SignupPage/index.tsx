@@ -24,44 +24,44 @@ const SignupPage = () => {
     >
       <div className="flex flex-col items-start space-y-1">
         <div className="flex">
-          <span className="text-black">Full name</span>{" "}
+          <span className="text-base text-black 2xl:text-lg">Full name</span>{" "}
           <p className="text-red-500">*</p>
         </div>
         <Input
           type="text"
           placeholder="Steven Stallion"
-          classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
+          classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
           style={{ width: "100%" }}
         />
       </div>
 
       <div className="flex flex-col items-start space-y-1">
         <div className="flex">
-          <span className="text-black">Email address</span>{" "}
+          <span className="text-base text-black 2xl:text-lg">Email address</span>{" "}
           <p className="text-red-500">*</p>
         </div>
         <Input
           type="text"
           placeholder="Example@gmail.com"
-          classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
+          classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
           style={{ width: "100%" }}
         />
       </div>
 
       <div className="flex flex-col items-start space-y-1">
         <div className="flex">
-          <span className="text-black">Password</span>{" "}
+          <span className="text-base text-black 2xl:text-lg">Password</span>{" "}
           <p className="text-red-500">*</p>
         </div>
         <InputGroup inside>
           <Input
             type={visible ? "text" : "password"}
-            classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
+            classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
             style={{ width: "100%" }}
           />
           <InputGroup.Button
             onClick={handleChange}
-            style={{ right: 10, top: 10 }}
+            style={{ right: 10, top: 5 }}
             classPrefix="hover:bg-transparent"
           >
             {visible ? <EyeIcon /> : <EyeSlashIcon />}
