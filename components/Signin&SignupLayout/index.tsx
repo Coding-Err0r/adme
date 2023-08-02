@@ -10,7 +10,6 @@ import {
 } from "firebase/auth";
 import { auth } from "@/utils/firebase";
 import { redirect } from "next/navigation";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 interface Props {
   title: string;
@@ -54,8 +53,6 @@ const SignInSignUpLayout = ({
       console.log("Error", e);
     }
   };
-
-  const [user, loading] = useAuthState(auth);
 
   return (
     <section className="w-full h-screen bg-gray-200">

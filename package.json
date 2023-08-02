@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.2.0",
     "@blueprintjs/core": "^5.1.5",
     "@blueprintjs/select": "^5.0.7",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -27,9 +26,7 @@
     "eslint-config-next": "13.4.9",
     "firebase": "^10.1.0",
     "framer-motion": "^10.12.18",
-    "html-react-parser": "^4.2.0",
     "next": "13.4.9",
-    "next-auth": "^4.22.3",
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -39,7 +36,6 @@
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "18.2.0",
     "react-drag-drop-files": "^2.3.10",
-    "react-firebase-hooks": "^5.1.1",
     "react-gesture-responder": "^2.1.0",
     "react-grid-dnd": "^2.1.2",
     "react-image-crop": "9.0.5",
