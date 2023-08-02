@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import parse from "html-react-parser";
 
 import FolderAtIcon from "../../SVGIcons/FolderAtIcon";
 interface Props {
