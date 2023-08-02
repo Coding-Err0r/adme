@@ -1,3 +1,4 @@
+import Auth0 from "@/components/Auth0";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-zinc-100`}>{children}</body>
+      <body className={`bg-zinc-100`}>
+        <Auth0>{children}</Auth0>
+      </body>
     </html>
   );
 }

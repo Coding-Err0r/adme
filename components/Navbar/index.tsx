@@ -1,21 +1,18 @@
 "use client";
 import data from "@/config/data";
 import images from "@/config/images";
-import {
-  faCartShopping,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import ShoppingCart from "../SVGs/ShoppingCart";
 import MobileNavbar from "./Mobile";
 import Cart from "../Cart";
-import { Dropdown } from "rsuite";
 import { useState } from "react";
+import { auth } from "@/utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [user, loading] = useAuthState(auth);
   return (
     <section className="fixed z-30 w-full">
       <div className="flex justify-between md:p-1 bg-zinc-950/90 backdrop-blur-md">
@@ -24,7 +21,7 @@ const Navbar = () => {
             <img
               src={images.logoTwo}
               alt=""
-              className="hidden h-6 mt-2 lg:h-10 md:h-8 md:block lg:block"
+              className="hidden h-6 my-2 mt-2 lg:h-10 md:h-8 md:block lg:block"
             />
           </a>
           <div className="block md:hidden lg:hidden">
@@ -44,7 +41,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="https://drake-white.netlify.app/">
               <img
-                src={images.person}
+                src={!user ? images.person : user?.photoURL}
                 alt=""
                 className="w-8 h-8 rounded-full md:h-8 md:w-8"
               />

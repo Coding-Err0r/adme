@@ -1,7 +1,17 @@
 import images from "@/config/images";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  FacebookAuthProvider,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "@/utils/firebase";
+import { redirect } from "next/navigation";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 interface Props {
   title: string;
@@ -18,6 +28,36 @@ const SignInSignUpLayout = ({
   redirectUrl,
   children,
 }: Props) => {
+  const googleProvider = new GoogleAuthProvider();
+  const googleLogin = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+      redirect("/");
+    } catch (e) {
+      console.log("Error", e);
+    }
+  };
+
+  const facebookProvider = new FacebookAuthProvider();
+  const facebookLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, facebookProvider);
+      const credantial = await FacebookAuthProvider.credentialFromResult(
+        result
+      );
+      const token = credantial?.accessToken;
+      let photoUrl = result.user.photoURL + "?height=800&access_token=" + token;
+      if (auth.currentUser) {
+        await updateProfile(auth.currentUser, { photoURL: photoUrl });
+      }
+      redirect("/");
+    } catch (e) {
+      console.log("Error", e);
+    }
+  };
+
+  const [user, loading] = useAuthState(auth);
+
   return (
     <section className="w-full h-screen bg-gray-200">
       <div className="flex flex-col items-center w-full h-full">
@@ -64,18 +104,25 @@ const SignInSignUpLayout = ({
                     <div className="flex-grow border-t border-gray-500" />
                   </section>
                   <div className="flex items-center justify-center space-x-8">
-                    <a className="w-12 h-12 p-3 bg-white shadow-xl rounded-xl ">
+                    <div
+                      className="w-12 h-12 p-3 bg-white shadow-xl cursor-pointer rounded-xl"
+                      onClick={googleLogin}
+                    >
                       <img
                         src={images.social3}
                         className="object-cover w-full h-full"
+                        alt=""
                       />
-                    </a>
-                    <a className="w-12 h-12 p-3 bg-white shadow-xl rounded-xl ">
+                    </div>
+                    <div
+                      className="w-12 h-12 p-3 bg-white shadow-xl cursor-pointer rounded-xl"
+                      onClick={facebookLogin}
+                    >
                       <img
                         src={images.social2}
                         className="object-cover w-full h-full"
                       />
-                    </a>
+                    </div>
                     <a className="w-12 h-12 p-3 bg-white shadow-xl rounded-xl ">
                       <img
                         src={images.social1}
