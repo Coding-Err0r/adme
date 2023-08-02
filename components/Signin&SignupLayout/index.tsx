@@ -11,7 +11,6 @@ import {
 import { auth } from "@/utils/firebase";
 import { redirect } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from "next/router";
 
 interface Props {
   title: string;
