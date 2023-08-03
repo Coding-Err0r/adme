@@ -55,8 +55,9 @@ const SignInSignUpLayout = ({
   };
 
   return (
-    <section className="relative w-full h-full bg-gray-200 lg:fixed">
-      <div className="flex flex-col items-center w-full h-full ">
+    <section className="relative grid w-full h-full overflow-y-auto bg-gray-200 lg:fixed place-items-center">
+      <div className="lg:max-w-[1800px] w-full h-full lg:max-h-[800px] ">
+        <div className="flex flex-col items-center w-full h-full ">
         <div className="w-full h-full mt-24 md:mt-0 ">
           <div className="relative flex items-center justify-center h-full px-0 md:bottom-0 lg:px-[15%] lg:py-20 md:py-10 md:px-20">
             <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[48rem] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] ">
@@ -141,6 +142,7 @@ const SignInSignUpLayout = ({
           alt=""
           className="fixed z-0 block object-cover w-full h-full lg:hidden xl:hidden md:block top-[-40%] md:top-0"
         />
+      </div>
       </div>
     </section>
   );
