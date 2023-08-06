@@ -56,11 +56,11 @@ const SignInSignUpLayout = ({
 
   return (
     <section className="relative grid w-full h-full overflow-y-auto bg-gray-200 lg:fixed place-items-center">
-      <div className="lg:max-w-[1800px] w-full h-full lg:max-h-[800px] ">
-        <div className="flex flex-col items-center w-full h-full ">
-        <div className="w-full h-full mt-24 md:mt-0 ">
-          <div className="relative flex items-center justify-center h-full px-0 md:bottom-0 lg:px-[15%] lg:py-20 md:py-10 md:px-20">
-            <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[48rem] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] ">
+      <div className="w-full h-full lg:max-w-screen-xl">
+        <div className="flex flex-col items-center justify-center w-full h-full">
+        <div className="w-full h-full lg:p-4 mt-24 md:mt-0 md:p-28">
+          <div className="relative flex items-center justify-center h-full md:bottom-0 ">
+            <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[720px] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] lg:w-[1366px]">
               <div className="relative flex flex-col w-full h-full overflow-hidden lg:rounded-l-[30px] items-center justify-center md:rounded-[30px] lg:rounded-none">
                 <img
                   src={images.frame3}

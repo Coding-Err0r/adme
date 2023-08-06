@@ -53,7 +53,7 @@ const SignupPage = () => {
           <span className="text-base text-black 2xl:text-lg">Password</span>{" "}
           <p className="text-red-500">*</p>
         </div>
-        <InputGroup inside>
+        <InputGroup inside style={{width:"100%" }} classPrefix="focus:outline-none">
           <Input
             type={visible ? "text" : "password"}
             classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
@@ -61,8 +61,8 @@ const SignupPage = () => {
           />
           <InputGroup.Button
             onClick={handleChange}
-            style={{ right: 10, top: 5 }}
-            classPrefix="hover:bg-transparent"
+            style={{ right: 10, top: 5, border:"none" , }}
+            classPrefix="hover:bg-transparent "
           >
             {visible ? <EyeIcon /> : <EyeSlashIcon />}
           </InputGroup.Button>
