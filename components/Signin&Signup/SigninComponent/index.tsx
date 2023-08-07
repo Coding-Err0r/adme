@@ -1,14 +1,10 @@
 "use client";
-import images from "@/config/images";
 import React, { useState } from "react";
 import { Checkbox, Input, InputGroup } from "rsuite";
 import EyeIcon from "@rsuite/icons/legacy/Eye";
 import EyeSlashIcon from "@rsuite/icons/legacy/EyeSlash";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SignInSignUpLayout from "../Signin&SignupLayout";
 
-const SigninPage = () => {
+const SigninComponent = () => {
   const [visible, setVisible] = useState(false);
 
   const handleChange = () => {
@@ -16,13 +12,8 @@ const SigninPage = () => {
   };
 
   return (
-    <SignInSignUpLayout
-      title={"Login to Your Account"}
-      message={"Don’t have an account?"}
-      redirectTitle={"Sign Up"}
-      redirectUrl={"/signup"}
-    >
-      <div className="flex flex-col items-start space-y-1">
+    <div className="w-full">
+      <div className="flex flex-col items-start py-2 space-y-1">
         <div className="flex">
           <span className="text-black">Email address</span>{" "}
           <p className="text-red-500">*</p>
@@ -35,34 +26,37 @@ const SigninPage = () => {
         />
       </div>
 
-      <div className="flex flex-col items-start space-y-1">
+      <div className="flex flex-col items-start py-2 space-y-1">
         <div className="flex">
           <span className="text-black">Password</span>{" "}
           <p className="text-red-500">*</p>
         </div>
-        <InputGroup inside>
+        <InputGroup
+          inside
+          style={{ width: "100%" }}
+          classPrefix="focus:outline-none"
+        >
           <Input
             type={visible ? "text" : "password"}
-            classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
+            classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
             style={{ width: "100%" }}
           />
           <InputGroup.Button
             onClick={handleChange}
-            style={{ right: 10, top: 10 }}
-            classPrefix="hover:bg-transparent"
+            style={{
+              right: "-87%",
+              top: "-2.4rem",
+              border: "none",
+              backgroundColor: "transparent",
+            }}
+            classPrefix="hover:bg-transparent focus:outline-none"
           >
             {visible ? <EyeIcon /> : <EyeSlashIcon />}
           </InputGroup.Button>
         </InputGroup>
       </div>
-      <div className="-ml-2">
-        <Checkbox> I agree to the terms and condition</Checkbox>
-      </div>
-      <button className="p-2 text-2xl text-white rounded-full bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500">
-        Sign In
-      </button>
-    </SignInSignUpLayout>
+    </div>
   );
 };
 
-export default SigninPage;
+export default SigninComponent;
