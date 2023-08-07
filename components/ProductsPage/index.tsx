@@ -2,12 +2,13 @@
 import images from "@/config/images";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../RelatedProducts/ProductCard";
-import { InputGroup, Input, Dropdown } from "rsuite";
+import { InputGroup, Input } from "rsuite";
 import SearchIcon from "@rsuite/icons/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { handleFilter } from "@/redux/FilterSlice";
 import ReactPaginate from "react-paginate";
 import CustomerService from "../CustomerService";
+import Dropdown from "../Dropdown";
 
 const buttons = [
   "All products",
@@ -46,7 +47,7 @@ const ProductsPage = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full font-poppins">
       <div className="flex flex-col items-center justify-center w-full py-12">
         <h1 className="px-2 py-4 text-xl font-light text-center text-gray-800 lg:py-10 lg:text-3xl md:text-2xl md:py-8">
           <strong className="text-blue-600">Up to 10 % Discount</strong>. Grab
@@ -60,21 +61,7 @@ const ProductsPage = () => {
         </div>
         <div className="w-full py-8 lg:py-16 lg:max-w-screen-xl">
           <div className="grid items-center grid-rows-2 px-8 pb-8 md:justify-between md:flex lg:hidden ">
-            <select
-              name="filter"
-              id="filter"
-              className="px-3 py-2 text-lg text-center text-white rounded-lg bg-zinc-800"
-            >
-              {buttons.map((button: string, index: number) => (
-                <option
-                  value={button}
-                  key={index}
-                  className=" hover:bg-zinc-500"
-                >
-                  {button.length > 12 ? `${button.slice(0, 12)}...` : button}
-                </option>
-              ))}
-            </select>
+            <Dropdown items={buttons} header={"All Products"} />
             <div className="mt-3">
               <InputGroup inside style={styles}>
                 <Input

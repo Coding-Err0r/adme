@@ -42,6 +42,7 @@ module.exports = {
     },
     fontFamily: {
       sunflower: ["Sunflowe", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   plugins: [FlipClass],
