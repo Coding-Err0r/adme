@@ -60,7 +60,7 @@ const SignupComponent = () => {
             onClick={handleChange}
             style={{
               right: "-87%",
-              top: "-2.4rem",
+              top: "-2.3rem",
               border: "none",
               backgroundColor: "transparent",
             }}

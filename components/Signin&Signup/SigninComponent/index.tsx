@@ -21,7 +21,7 @@ const SigninComponent = () => {
         <Input
           type="text"
           placeholder="Example@gmail.com"
-          classPrefix="w-full p-3 pl-5 text-base border-2 rounded-full"
+          classPrefix="w-full 2xl:p-3 pl-5 text-sm border-2 rounded-full p-2"
           style={{ width: "100%" }}
         />
       </div>
