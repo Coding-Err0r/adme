@@ -23,13 +23,13 @@ const ProductCard = ({ title, image, price, discountedPrice }: Props) => {
     handleResize();
   });
   return (
-    <div className="overflow-hidden bg-white shadow-xl rounded-2xl md:w-[300px] md:h-[480px] w-[160px] h-[260px]">
+    <div className="overflow-hidden bg-white shadow-xl rounded-2xl md:w-[300px] md:h-[480px] w-[160px] h-[255px]">
       <div className="flex flex-col text-black">
         <img
           src={image}
           className="w-full md:h-[300px] rounded-2xl h-[160px]"
         />
-        <div className="p-2 space-y-1 md:space-y-2 md:p-4">
+        <div className="p-2 md:space-y-2 md:p-4">
           <h4 className="text-xs font-semibold text-left md:text-sm font-sunflower">
             {isMobile === true ? `${title.slice(0, 45)}...` : title}
           </h4>

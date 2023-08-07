@@ -9,6 +9,8 @@ import { handleFilter } from "@/redux/FilterSlice";
 import ReactPaginate from "react-paginate";
 import CustomerService from "../CustomerService";
 import Dropdown from "../Dropdown";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const buttons = [
   "All products",
@@ -60,36 +62,44 @@ const ProductsPage = () => {
           />
         </div>
         <div className="w-full py-8 lg:py-16 lg:max-w-screen-xl">
-          <div className="grid items-center grid-rows-2 px-8 pb-8 md:justify-between md:flex lg:hidden ">
-            <Dropdown items={buttons} header={"All Products"} />
-            <div className="mt-3">
-              <InputGroup inside style={styles}>
-                <Input
-                  placeholder="Search for anything"
-                  style={{ textAlign: "center" }}
+          <div className="grid items-center grid-rows-2 gap-4 px-8 pb-8 md:justify-between md:flex lg:hidden">
+            <div className="order-last md:order-first">
+              <Dropdown items={buttons} header={"All Products"} />
+            </div>
+            <div className="mt-3 ">
+              <div>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  className="absolute mt-3 ml-5"
                 />
-                <InputGroup.Button>
-                  <SearchIcon />
-                </InputGroup.Button>
-              </InputGroup>
+                <input
+                  type="text"
+                  placeholder="Search here anyhting"
+                  className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
+                />
+              </div>
             </div>
           </div>
           <div className="flex justify-center lg:space-x-10">
             <div className="flex-col hidden space-y-8 lg:block md:hidden">
               <div className="flex flex-col items-start space-y-5">
-                <h3 className="text-3xl font-semibold">Search</h3>
-                <InputGroup inside style={styles}>
-                  <Input
-                    placeholder="Search for anything"
-                    style={{ textAlign: "center" }}
-                  />
-                  <InputGroup.Button>
-                    <SearchIcon />
-                  </InputGroup.Button>
-                </InputGroup>
+                <h3 className="text-3xl font-medium">Search</h3>
+                <div className="mt-3 ">
+                  <div>
+                    <FontAwesomeIcon
+                      icon={faMagnifyingGlass}
+                      className="absolute mt-3 ml-5"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Search here anyhting"
+                      className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="flex flex-col items-start space-y-5">
-                <h3 className="text-3xl font-semibold">Categories</h3>
+                <h3 className="text-3xl font-medium">Categories</h3>
                 {buttons.map((button: string, index: number) => (
                   <button
                     className={`px-4 py-2 text-lg font-medium text-white rounded-lg  ${

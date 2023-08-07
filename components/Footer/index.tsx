@@ -8,7 +8,7 @@ const Footer = () => {
     <section className="w-full ">
       <div className="flex flex-col items-center w-full pt-12">
         <FloadingButton />
-        <div className="w-[80%] max-w-7xl">
+        <div className="w-full md:max-w-screen-xl">
           <div className="flex flex-col items-start ">
             <div className="absolute z-10 w-full mt-20 -translate-x-1/2 left-1/2 max-w-7xl">
               <div className="flex items-center justify-around">
@@ -34,7 +34,7 @@ const Footer = () => {
               height={2000}
               alt=""
               src={images.footer}
-              className="w-full  h-[14rem] md:rounded-t-[120px] rounded-t-[80px] relative z-0"
+              className="w-full  h-[14rem] md:rounded-t-[70px] rounded-t-[50px] relative z-0"
             />
           </div>
         </div>

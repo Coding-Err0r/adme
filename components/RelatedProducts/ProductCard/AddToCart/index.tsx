@@ -1,7 +1,7 @@
 "use client";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const AddToCart = () => {
   const [amount, setAmount] = useState<number>(0);
@@ -11,11 +11,24 @@ const AddToCart = () => {
   };
   const handleDecrement = () => {
     if (amount <= 0) {
+      setAddToCart(false);
       setAmount(0);
     } else {
       setAmount(amount - 1);
     }
   };
+
+  useEffect(() => {
+    if (addToCart === true) {
+      setAmount(amount + 1);
+    }
+  }, [addToCart]);
+
+  useEffect(() => {
+    if (amount <= 0) {
+      setAddToCart(false);
+    }
+  }, [amount]);
 
   if (addToCart) {
     return (
@@ -26,7 +39,7 @@ const AddToCart = () => {
         >
           <FontAwesomeIcon icon={faMinus} className="w-3 h-3 -mr-2" />
         </button>
-        <p className="px-8 py-1 text-white md:py-2 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400">
+        <p className="text-center text-white w-60 md:py-2 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400 py-[2px]">
           {amount}
         </p>
         <button
