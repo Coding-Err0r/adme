@@ -93,7 +93,7 @@ const ProductsPage = () => {
                     <input
                       type="text"
                       placeholder="Search here anyhting"
-                      className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
+                      className="w-full py-2 text-xs text-center border-2 border-gray-500 rounded-lg"
                     />
                   </div>
                 </div>
