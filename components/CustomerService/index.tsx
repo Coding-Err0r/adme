@@ -22,7 +22,7 @@ const CustomerService = () => {
           <Chatbox />
         </div>
       </div>
-      <div className="flex justify-center px-4 py-10 space-x-10">
+      <div className="flex justify-center px-4 py-10 lg:space-x-10">
         <div className="hidden lg:block md:hidden">
           <Chatbox />
         </div>
