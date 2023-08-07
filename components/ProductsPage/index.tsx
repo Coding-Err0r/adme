@@ -51,7 +51,7 @@ const ProductsPage = () => {
   return (
     <section className="w-full font-poppins">
       <div className="flex flex-col items-center justify-center w-full py-12">
-        <h1 className="px-2 py-4 text-xl font-light text-center text-gray-800 lg:py-10 lg:text-3xl md:text-2xl md:py-8">
+        <h1 className="px-2 py-4 mt-2 text-xl font-light text-center text-gray-800 lg:py-10 lg:text-3xl md:text-2xl md:py-8">
           <strong className="text-blue-600">Up to 10 % Discount</strong>. Grab
           your card asap .
         </h1>
@@ -67,17 +67,15 @@ const ProductsPage = () => {
               <Dropdown items={buttons} header={"All Products"} />
             </div>
             <div className="mt-3 ">
-              <div>
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  className="absolute mt-3 ml-5"
-                />
-                <input
-                  type="text"
-                  placeholder="Search here anyhting"
-                  className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
-                />
-              </div>
+              <FontAwesomeIcon
+                icon={faMagnifyingGlass}
+                className="absolute mt-3 ml-5 "
+              />
+              <input
+                type="text"
+                placeholder="Search here"
+                className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
+              />
             </div>
           </div>
           <div className="flex justify-center lg:space-x-10">
@@ -92,7 +90,7 @@ const ProductsPage = () => {
                     />
                     <input
                       type="text"
-                      placeholder="Search here anyhting"
+                      placeholder="Search here"
                       className="w-full py-2 text-xs text-center border-2 border-gray-500 rounded-lg"
                     />
                   </div>
