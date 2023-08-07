@@ -67,6 +67,10 @@ const images = {
   social1: "/assets/images/login/social (1).png",
   social2: "/assets/images/login/social (2).png",
   social3: "/assets/images/login/social (3).png",
+
+  productBanner: "/assets/images/products/banner.png",
+  productImg: "/assets/images/products/Card 5.png",
+  serviceBG: "/assets/images/products/Texture 10.png",
   // images for testing
   test1: "/assets/test/test (1).jpg",
   test2: "/assets/test/test (2).jpg",
