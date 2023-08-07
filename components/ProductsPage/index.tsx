@@ -74,7 +74,7 @@ const ProductsPage = () => {
               <input
                 type="text"
                 placeholder="Search here"
-                className="w-full py-2 text-center border-2 border-gray-500 rounded-lg"
+                className="w-full py-2 text-center border-2 border-gray-500 rounded-lg "
               />
             </div>
           </div>
@@ -86,12 +86,12 @@ const ProductsPage = () => {
                   <div>
                     <FontAwesomeIcon
                       icon={faMagnifyingGlass}
-                      className="absolute mt-3 ml-5"
+                      className="absolute mt-3 ml-3 group-focus:text-purple-400"
                     />
                     <input
                       type="text"
                       placeholder="Search here"
-                      className="w-full py-2 text-xs text-center border-2 border-gray-500 rounded-lg"
+                      className="py-2 text-xs text-center border-2 border-gray-500 rounded-lg w-60 focus:group"
                     />
                   </div>
                 </div>
