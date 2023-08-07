@@ -66,15 +66,15 @@ const ProductsPage = () => {
             <div className="order-last md:order-first">
               <Dropdown items={buttons} header={"All Products"} />
             </div>
-            <div className="mt-3 ">
+            <div className="mt-3 group">
               <FontAwesomeIcon
                 icon={faMagnifyingGlass}
-                className="absolute mt-3 ml-5 "
+                className="absolute mt-3 ml-5 group-focus-within:hidden"
               />
               <input
                 type="text"
                 placeholder="Search here"
-                className="w-full py-2 text-center border-2 border-gray-500 rounded-lg "
+                className="py-2 text-center border-2 border-gray-500 rounded-lg w-60 "
               />
             </div>
           </div>
@@ -82,18 +82,16 @@ const ProductsPage = () => {
             <div className="flex-col hidden space-y-8 lg:block md:hidden">
               <div className="flex flex-col items-start space-y-5">
                 <h3 className="text-3xl font-medium">Search</h3>
-                <div className="mt-3 ">
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faMagnifyingGlass}
-                      className="absolute mt-3 ml-3 group-focus:text-purple-400"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Search here"
-                      className="py-2 text-xs text-center border-2 border-gray-500 rounded-lg w-60 focus:group"
-                    />
-                  </div>
+                <div className="mt-3 group">
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    className="absolute mt-3 ml-3 group-focus-within:hidden"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search here"
+                    className="py-2 text-xs text-center border-2 border-gray-500 rounded-lg w-60"
+                  />
                 </div>
               </div>
               <div className="flex flex-col items-start space-y-5">
@@ -117,7 +115,7 @@ const ProductsPage = () => {
             </div>
 
             <div className="flex flex-col items-center space-y-6 md:space-y-12">
-              <div className="grid items-center grid-cols-2 gap-4 p-2 md:gap-14 lg:grid-cols-3">
+              <div className="grid items-center grid-cols-2 gap-4 p-2 md:gap-14 xl:grid-cols-3">
                 {currentItems.map((item: any, index: number) => (
                   <ProductCard
                     title={
