@@ -5,7 +5,7 @@ import React from "react";
 
 const ProductDetails = () => {
   return (
-    <section className="px-4 py-4 text-black bg-white shadow-lg rounded-xl font-poppins md:py-8 md:px-10">
+    <section className="px-4 py-4 text-black bg-white shadow-xl rounded-xl font-poppins md:py-8 md:px-10">
       <div className="flex flex-col items-start max-w-sm px-2 space-y-6 md:px-4 md:max-w-lg md:items-start">
         <h1 className="text-sm font-bold text-gray-700 md:text-2xl">
           Mandana Gold - Metal Business Card | QR Support | NFC-enabled |

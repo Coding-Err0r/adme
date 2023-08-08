@@ -3,7 +3,7 @@ import Layout from "@/components/Layout";
 const Term = () => {
   return (
     <Layout>
-      <section className="w-full">
+      <section className="w-full ">
         <div className="flex flex-col items-center w-full py-12">
           <div className=" w-[80%] max-w-7xl">
             <div className="flex flex-col items-center ">
