@@ -32,14 +32,14 @@ const AddToCart = () => {
 
   if (addToCart) {
     return (
-      <div className="flex items-center justify-center w-32 px-2 space-x-4 rounded-full md:w-40 bg-gradient-to-l from-cyan-300 via-sky-300 to-indigo-300">
+      <div className="flex items-center justify-center w-32 h-6 space-x-4 rounded-full md:h-9 md:w-40 bg-gradient-to-l from-cyan-300 via-sky-300 to-indigo-300">
         <button
           className="w-full -mt-1 focus:outline-none"
           onClick={handleDecrement}
         >
           <FontAwesomeIcon icon={faMinus} className="w-3 h-3 -mr-2" />
         </button>
-        <p className="text-center text-white w-60 md:py-2 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400 py-[2px]">
+        <p className="flex items-center justify-center h-full text-center text-white w-60 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400">
           {amount}
         </p>
         <button
@@ -54,7 +54,7 @@ const AddToCart = () => {
     return (
       <>
         <button
-          className="w-32 px-6 py-1 text-xs text-white rounded-full md:py-2 md:w-40 bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 md:text-base"
+          className="w-32 h-6 text-xs text-white rounded-full md:w-40 bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 md:text-base md:h-9"
           onClick={() => setAddToCart(true)}
         >
           ADD TO CART
