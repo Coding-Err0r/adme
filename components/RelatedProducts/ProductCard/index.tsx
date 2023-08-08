@@ -23,7 +23,7 @@ const ProductCard = ({ title, image, price, discountedPrice }: Props) => {
     handleResize();
   });
   return (
-    <div className="overflow-hidden bg-white shadow-xl rounded-2xl md:w-[300px] md:h-[30rem] w-[160px] h-[15.94rem]">
+    <div className="overflow-hidden bg-white shadow-xl rounded-2xl md:w-[300px] md:h-[30rem] w-[160px] h-full">
       <div className="flex flex-col text-black">
         <a href="/product">
           <img

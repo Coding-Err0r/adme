@@ -1,7 +1,7 @@
 import images from "./images";
 
 const data = {
-  navbar: ["Overview", "Features", "Product"],
+  navbar: ["Overview", "Features", "Products"],
 
   swiper: [
     {
