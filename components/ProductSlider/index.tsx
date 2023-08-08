@@ -14,7 +14,7 @@ const ProductSlider = () => {
   return (
     <section className="p-2 md:shadow-xl bg-white/40 md:bg-white rounded-2xl md:p-4">
       <div className="flex flex-col items-center justify-center gap-2 ">
-        <div className="md:w-[35rem] md:h-[668px]  w-[337px] h-[337px] relative z-0">
+        <div className="md:w-[35rem] md:h-[41.75rem]  w-[20.8rem] h-[337px] relative z-0">
           <Swiper
             spaceBetween={10}
             modules={[Navigation, Pagination]}
@@ -31,12 +31,12 @@ const ProductSlider = () => {
             {data.productPreview.map((item, index) => (
               <SwiperSlide
                 key={index}
-                className="md:w-[35rem] md:h-[668px]  w-[337px] h-[337px] rounded-xl "
+                className="md:w-[35rem] md:h-[41.75rem]  w-[21rem] h-[21rem] rounded-xl "
               >
                 <img
                   src={item}
                   alt="product images"
-                  className="md:w-[35rem] md:h-[658px] w-[337px] h-[328px] rounded-xl object-cover"
+                  className="md:w-[35rem] md:h-[658px] w-[21.2rem] h-[20.5rem] rounded-xl object-cover"
                 />
               </SwiperSlide>
             ))}
