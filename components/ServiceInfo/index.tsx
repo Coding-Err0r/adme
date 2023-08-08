@@ -4,11 +4,19 @@ import data from "@/config/data";
 
 const ServiceInfo = () => {
   return (
-    <div className="grid grid-cols-2 gap-6 md:grid-rows-2 md:grid-cols-3">
-      {data.productInfos.map((info: any, index: number) => (
-        <ServiceInfoCard title={info.title} image={info.image} key={index} />
-      ))}
-    </div>
+    <section className="p-4 bg-white shadow-lg rounded-2xl">
+      <div className="md:w-[35rem] w-[320px] h-full relative z-0">
+        <div className="grid grid-cols-2 gap-10 md:gap-6 md:grid-rows-2 md:grid-cols-3 ">
+          {data.productInfos.map((info: any, index: number) => (
+            <ServiceInfoCard
+              title={info.title}
+              image={info.image}
+              key={index}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

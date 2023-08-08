@@ -8,7 +8,7 @@ interface Props {
 
 const ServiceInfoCard = ({ title, image }: Props) => {
   return (
-    <div className="flex flex-col items-center px-8 bg-white shadow-lg rounded-bl-[40px] rounded-xl  space-y-4 py-6">
+    <div className="flex flex-col items-center md:p-2 font-poppins">
       <Image
         src={image}
         alt=""
@@ -16,7 +16,7 @@ const ServiceInfoCard = ({ title, image }: Props) => {
         height={2000}
         className="object-contain h-14 w-14"
       />
-      <p className="text-base font-semibold text-black">{title}</p>
+      <p className="text-xs font-medium text-black">{title}</p>
     </div>
   );
 };

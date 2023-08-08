@@ -5,9 +5,11 @@ import ProductCard from "./ProductCard";
 
 const RelatedProducts = () => {
   return (
-    <div className="flex flex-col items-center py-12 space-y-8 lg:items-start">
-      <h1 className="text-4xl font-bold ">Related products</h1>
-      <div className="grid grid-cols-1 gap-6 lg:space-x-6 lg:flex md:grid-cols-2">
+    <div className="flex-col items-center hidden py-4 space-y-8 lg:items-start md:block">
+      <h1 className="hidden text-4xl font-bold lg:block md:hidden">
+        Related products
+      </h1>
+      <div className="grid grid-cols-1 gap-4 lg:flex md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-2">
         {data.relatedProducts.map((relatedProduct: any, index: number) => (
           <ProductCard
             title={relatedProduct.title}

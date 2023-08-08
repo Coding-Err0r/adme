@@ -48,13 +48,20 @@ const ProductsPage = () => {
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [itemOffset]);
+
   return (
     <section className="w-full font-poppins">
       <div className="flex flex-col items-center justify-center w-full py-12">
-        <h1 className="px-2 py-4 mt-2 text-xl font-light text-center text-gray-800 lg:py-10 lg:text-3xl md:text-2xl md:py-8">
-          <strong className="text-blue-600">Up to 10 % Discount</strong>. Grab
-          your card asap .
-        </h1>
+        <div className="flex items-center justify-center w-full h-20 px-2 text-xl font-light text-center text-gray-800 md:mt-2 lg:h-32 lg:text-3xl md:text-2xl md:h-24">
+          <p>
+            <strong className="text-blue-600">Up to 10 % Discount</strong>. Grab
+            your card asap .
+          </p>
+        </div>
+
         <div className="w-full lg:h-[470px] md:h-[304px] h-[230px]">
           <img
             src={images.productBanner}
@@ -74,7 +81,7 @@ const ProductsPage = () => {
               <input
                 type="text"
                 placeholder="Search here"
-                className="py-2 text-center border-2 border-gray-500 rounded-lg w-60 "
+                className="w-full py-2 text-center border-2 border-gray-500 rounded-lg md:w-60 "
               />
             </div>
           </div>

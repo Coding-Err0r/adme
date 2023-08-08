@@ -1,55 +1,61 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import data from "@/config/data";
-import { Navigation, Thumbs } from "swiper/modules";
-import "./slider.scss";
+import { Navigation, Thumbs, Pagination } from "swiper/modules";
 import "swiper/css";
-
+import "swiper/css/pagination";
+import "./slider.scss";
+import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ProductSlider = () => {
   const [activeThumb, setActiveThumb] = useState<any>();
+  const swiperRef: any = useRef();
   return (
-    <section className="bg-white shadow-lg p-7 rounded-2xl">
-      <div className="flex items-center justify-center gap-2 ">
-        <Swiper
-          onSwiper={setActiveThumb}
-          slidesPerView={3}
-          direction={"vertical"}
-          modules={[Navigation, Thumbs]}
-          className="md:h-[18rem] md:w-24 verticalPagination h-44 w-14"
-          initialSlide={0}
-        >
-          {data.productPreview.map((item, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={item}
-                alt=""
-                className="w-12 h-12 rounded-lg md:h-20 md:w-20"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="md:w-[30rem] md:h-[30rem]  w-64 h-64">
+    <section className="p-2 bg-white shadow-lg rounded-2xl md:p-4">
+      <div className="flex flex-col items-center justify-center gap-2 ">
+        <div className="md:w-[35rem] md:h-[668px]  w-[337px] h-[337px] relative z-0">
           <Swiper
             spaceBetween={10}
-            navigation={true}
-            modules={[Navigation, Thumbs]}
+            modules={[Navigation, Pagination]}
             grabCursor={true}
             thumbs={{ swiper: activeThumb }}
+            pagination={{
+              el: ".swiper-custom-pagination",
+              clickable: true,
+            }}
+            onBeforeInit={(swiper: any) => {
+              swiperRef.current = swiper;
+            }}
           >
             {data.productPreview.map((item, index) => (
               <SwiperSlide
                 key={index}
-                className="md:w-[30rem] md:h-[29.7rem]  w-64 h-64rounded-xl "
+                className="md:w-[35rem] md:h-[668px]  w-[337px] h-[337px] rounded-xl "
               >
                 <img
                   src={item}
                   alt="product images"
-                  className="md:w-[30rem] md:h-[29.7rem] w-64 h-64 rounded-xl"
+                  className="md:w-[35rem] md:h-[658px] w-[337px] h-[328px] rounded-xl object-cover"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="absolute z-10 flex items-center justify-center w-full -mt-12 md:-mt-12 h-14 bg-zinc-800 rounded-b-xl">
+            <div className="flex items-center justify-between w-full">
+              <FontAwesomeIcon
+                icon={faAnglesLeft}
+                className="pl-4 text-white cursor-pointer"
+                onClick={() => swiperRef.current?.slidePrev()}
+              />
+              <div className="flex justify-center swiper-custom-pagination" />
+              <FontAwesomeIcon
+                icon={faAnglesRight}
+                className="pr-4 text-white cursor-pointer"
+                onClick={() => swiperRef.current?.slideNext()}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
-.verticalPagination .swiper-slide-thumb-active {
-  opacity: 1 !important;
+.swiper-pagination-bullet-active {
+  background-color: rgb(117, 117, 117) !important;
 }
-.verticalPagination .swiper-slide {
-  opacity: 0.6;
+.swiper-pagination-bullet {
+  background-color: rgb(148, 147, 147);
+  height: 12px;
+  width: 12px;
 }

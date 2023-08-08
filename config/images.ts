@@ -48,12 +48,12 @@ const images = {
   productThree: "/assets/images/product/product (3).png",
   productFour: "/assets/images/product/product (4).png",
 
-  productInfoOne: "/assets/images/productinfo/Group(1).png",
-  productInfoTwo: "/assets/images/productinfo/Group(2).png",
-  productInfoThree: "/assets/images/productinfo/Group(3).png",
-  productInfoFour: "/assets/images/productinfo/Group(4).png",
-  productInfoFive: "/assets/images/productinfo/Group(5).png",
-  productInfoSix: "/assets/images/productinfo/Group(6).png",
+  productInfoOne: "/assets/images/productinfo/Group (1).png",
+  productInfoTwo: "/assets/images/productinfo/Group (2).png",
+  productInfoThree: "/assets/images/productinfo/Group (3).png",
+  productInfoFour: "/assets/images/productinfo/Group (4).png",
+  productInfoFive: "/assets/images/productinfo/Group (5).png",
+  productInfoSix: "/assets/images/productinfo/Group (6).png",
 
   cart: "/assets/images/cart.png",
 
