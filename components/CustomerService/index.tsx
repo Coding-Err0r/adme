@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CustomerService = () => {
   return (
-    <section className="text-black mt-44 ">
-      <div className="flex flex-col gap-6 px-4 md:grid-cols-2 md:grid lg:flex lg:items-center">
+    <section className="text-black mt-44">
+      <div className="flex flex-col gap-2 px-4 md:grid-cols-2 md:grid lg:flex lg:items-center">
         <div className="flex flex-col p-4 space-y-8 text-lg font-light lg:w-1/2 lg:text-center md:text-left lg:p-0">
           <h1 className="text-2xl font-semibold md:text-4xl">
             Did not match with your taste ?{" "}
@@ -26,7 +26,7 @@ const CustomerService = () => {
         <div className="hidden lg:block md:hidden">
           <Chatbox />
         </div>
-        <div className="lg:w-[798px] md:h-[440px] rounded-2xl overflow-hidden w-full text-white relative h-60">
+        <div className="lg:w-[50rem] md:h-[27.5rem] rounded-2xl overflow-hidden w-full text-white relative h-60">
           <div className="absolute flex items-center md:right-12 md:top-12 right-4 top-4">
             <Badge />
             <h1 className="text-base font-semibold md:text-5xl">Your Logo</h1>

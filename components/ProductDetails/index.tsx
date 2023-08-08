@@ -2,6 +2,7 @@ import images from "@/config/images";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import AddToCardBtn from "./AddToCartBtn";
 
 const ProductDetails = () => {
   return (
@@ -23,10 +24,7 @@ const ProductDetails = () => {
           </p>
         </div>
         <div className="grid w-full grid-rows-2 gap-2 md:space-x-4 md:flex justify-items-center">
-          <button className="flex items-center px-6 py-3 text-lg font-semibold text-white rounded-full w-fit md:text-xl bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400">
-            Add To Cart
-            <img src={images.cart} alt="" className="w-7 h-7" />
-          </button>
+          <AddToCardBtn/>
           <button className="px-6 py-3 text-lg font-semibold text-white rounded-full md:text-xl bg-gradient-to-br from-green-700 via-emerald-500 to-emerald-400 w-fit ">
             Buy Now
           </button>

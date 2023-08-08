@@ -12,7 +12,7 @@ const ProductSlider = () => {
   const [activeThumb, setActiveThumb] = useState<any>();
   const swiperRef: any = useRef();
   return (
-    <section className="p-2 bg-white shadow-xl rounded-2xl md:p-4">
+    <section className="p-2 md:shadow-xl bg-gray-200/60 md:bg-white rounded-2xl md:p-4">
       <div className="flex flex-col items-center justify-center gap-2 ">
         <div className="md:w-[35rem] md:h-[668px]  w-[337px] h-[337px] relative z-0">
           <Swiper

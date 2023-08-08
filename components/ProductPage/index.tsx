@@ -10,7 +10,7 @@ const ProductPage = () => {
     <section className="w-full h-full ">
       <div className="fixed inset-0 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] -z-20" />
       <div className="flex flex-col items-center w-full py-24">
-        <div className=" w-[80%] max-w-7xl flex flex-col items-center">
+        <div className=" w-[80%] md:max-w-7xl flex flex-col items-center w-full">
           <div className="grid justify-center grid-rows-1 gap-6 xl:space-x-10 xl:flex">
             <div className="flex flex-col items-center space-y-6">
               <ProductSlider />
