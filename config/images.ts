@@ -71,6 +71,11 @@ const images = {
   productBanner: "/assets/images/products/banner.png",
   productImg: "/assets/images/products/Card 5.png",
   serviceBG: "/assets/images/products/Texture 10.png",
+
+  paymentOne: "/assets/images/payment/payment (1).png",
+  paymentTwo: "/assets/images/payment/payment (2).png",
+  paymentThree: "/assets/images/payment/payment (3).png",
+  paymentFour: "/assets/images/payment/payment (4).png",
   // images for testing
   test1: "/assets/test/test (1).jpg",
   test2: "/assets/test/test (2).jpg",

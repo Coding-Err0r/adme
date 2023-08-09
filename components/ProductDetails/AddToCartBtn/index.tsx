@@ -40,7 +40,7 @@ const AddToCardBtn = () => {
         >
           <FontAwesomeIcon icon={faMinus} className="w-3 h-3 -mr-2" />
         </button>
-        <p className="flex items-center justify-center h-full text-center text-white w-60 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400">
+        <p className="flex items-center justify-center h-full text-lg text-center text-white w-60 bg-gradient-to-l from-cyan-300 via-sky-500 to-indigo-400">
           {amount}
         </p>
         <button
