@@ -7,26 +7,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const CustomerService = () => {
   return (
-    <section className="text-black mt-44">
-      <div className="flex flex-col gap-2 px-4 md:grid-cols-2 md:grid xl:flex xl:items-center">
-        <div className="flex flex-col p-4 space-y-8 text-lg font-light xl:w-1/2 xl:text-center md:text-left lg:p-0">
-          <h1 className="text-2xl font-semibold md:text-4xl">
+    <section className="px-6 text-black mt-44 md:px-12">
+      <div className="grid grid-cols-1 gap-16 md:grid-cols-6 place-items-center">
+        <div className="flex flex-col items-center space-y-8 text-lg font-light xl:col-span-6 xl:text-center md:text-left md:col-span-3">
+          <h1 className="text-2xl font-semibold md:text-3xl xl:text-4xl">
             Did not match with your taste ?{" "}
           </h1>
-          <p>
+          <p className="w-full text-left xl:text-center xl:w-4/5">
             You can contact with us for custom design you like . we will connect
             you with our designer to help you build your dream card{" "}
           </p>
         </div>
-        <div className="flex-1 block lg:block md:block xl:hidden">
+        <div className="xl:col-span-2 md:col-span-3">
           <Chatbox />
         </div>
-      </div>
-      <div className="flex justify-center px-4 py-10 lg:space-x-10">
-        <div className="hidden lg:hidden md:hidden xl:block">
-          <Chatbox />
-        </div>
-        <div className="lg:w-[50rem] md:h-[27.5rem] rounded-2xl overflow-hidden w-full text-white relative h-60">
+        <div className="relative w-full h-48 overflow-hidden text-white md:h-full xl:col-span-4 rounded-2xl md:col-span-6">
           <div className="absolute flex items-center md:right-12 md:top-12 right-4 top-4">
             <Badge />
             <h1 className="text-base font-semibold md:text-5xl">Your Logo</h1>
