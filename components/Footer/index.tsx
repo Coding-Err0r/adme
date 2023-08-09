@@ -8,7 +8,7 @@ const Footer = () => {
     <section className="w-full ">
       <div className="flex flex-col items-center w-full pt-12">
         <FloadingButton />
-        <div className="w-full px-0 md:max-w-screen-xl md:px-6 ">
+        <div className="w-full px-0 md:max-w-screen-xl md:px-10 ">
           <div className="flex flex-col items-start ">
             <div className="absolute z-10 w-full mt-20 -translate-x-1/2 left-1/2 max-w-7xl">
               <div className="flex items-center justify-around">
