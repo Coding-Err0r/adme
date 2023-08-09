@@ -25,7 +25,7 @@ const ProductDetails = () => {
         </div>
         <div className="grid w-full grid-rows-2 gap-2 md:space-x-4 md:flex justify-items-center">
           <AddToCardBtn />
-          <button className="px-6 py-3 text-lg font-semibold text-white rounded-full md:text-xl bg-gradient-to-br from-green-700 via-emerald-500 to-emerald-400 w-fit ">
+          <button className="w-32 h-12 text-lg font-semibold text-white rounded-full md:text-xl bg-gradient-to-br from-green-700 via-emerald-500 to-emerald-400 ">
             Buy Now
           </button>
         </div>

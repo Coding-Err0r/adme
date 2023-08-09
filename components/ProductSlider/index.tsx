@@ -14,7 +14,7 @@ const ProductSlider = () => {
   return (
     <section className="p-2 md:shadow-xl bg-white/40 md:bg-white rounded-2xl md:p-4">
       <div className="flex flex-col items-center justify-center gap-2 ">
-        <div className="md:w-[35rem] md:h-[41.75rem]  w-[20.8rem] h-[337px] relative z-0">
+        <div className="md:w-[35rem] md:h-[41.75rem]  w-[20.8rem] h-[20.2rem] relative z-0 rounded-xl overflow-hidden bg-white">
           <Swiper
             spaceBetween={10}
             modules={[Navigation, Pagination]}
@@ -31,17 +31,17 @@ const ProductSlider = () => {
             {data.productPreview.map((item, index) => (
               <SwiperSlide
                 key={index}
-                className="md:w-[35rem] md:h-[41.75rem]  w-[21rem] h-[21rem] rounded-xl "
+                className="md:w-[35rem] md:h-[41.75rem]  w-[21rem] h-[21rem] rounded-xl overflow-hidden "
               >
                 <img
                   src={item}
                   alt="product images"
-                  className="md:w-[35rem] md:h-[658px] w-[21.2rem] h-[20.5rem] rounded-xl object-cover"
+                  className="md:w-[35rem] md:h-[41.7rem] w-[21.2rem] h-[20.2rem] rounded-xl object-cover"
                 />
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="absolute z-10 flex items-center justify-center w-full -mt-12 md:-mt-12 h-14 bg-zinc-800 rounded-b-xl">
+          <div className="absolute z-10 flex items-center justify-center w-full -mt-14 h-14 bg-black/60 rounded-b-xl ">
             <div className="flex items-center justify-between w-full">
               <FontAwesomeIcon
                 icon={faAnglesLeft}

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  id: null,
+  id: 3,
 };
 
 export const paymentMethodSlice = createSlice({

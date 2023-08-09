@@ -8,8 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const CustomerService = () => {
   return (
     <section className="text-black mt-44">
-      <div className="flex flex-col gap-2 px-4 md:grid-cols-2 md:grid lg:flex lg:items-center">
-        <div className="flex flex-col p-4 space-y-8 text-lg font-light lg:w-1/2 lg:text-center md:text-left lg:p-0">
+      <div className="flex flex-col gap-2 px-4 md:grid-cols-2 md:grid xl:flex xl:items-center">
+        <div className="flex flex-col p-4 space-y-8 text-lg font-light xl:w-1/2 xl:text-center md:text-left lg:p-0">
           <h1 className="text-2xl font-semibold md:text-4xl">
             Did not match with your taste ?{" "}
           </h1>
@@ -18,12 +18,12 @@ const CustomerService = () => {
             you with our designer to help you build your dream card{" "}
           </p>
         </div>
-        <div className="flex-1 block lg:hidden md:block">
+        <div className="flex-1 block lg:block md:block xl:hidden">
           <Chatbox />
         </div>
       </div>
       <div className="flex justify-center px-4 py-10 lg:space-x-10">
-        <div className="hidden lg:block md:hidden">
+        <div className="hidden lg:hidden md:hidden xl:block">
           <Chatbox />
         </div>
         <div className="lg:w-[50rem] md:h-[27.5rem] rounded-2xl overflow-hidden w-full text-white relative h-60">

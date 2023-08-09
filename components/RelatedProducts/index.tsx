@@ -9,7 +9,7 @@ const RelatedProducts = () => {
       <h1 className="hidden text-4xl font-bold lg:block md:hidden">
         Related products
       </h1>
-      <div className="grid grid-cols-1 gap-4 lg:flex md:grid-cols-2 xl:grid-cols-4 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data.relatedProducts.map((relatedProduct: any, index: number) => (
           <ProductCard
             title={relatedProduct.title}
