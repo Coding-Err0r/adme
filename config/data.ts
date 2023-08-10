@@ -319,6 +319,42 @@ Site, you (i) represent that you are eighteen (18) years of age or older and hav
     { title: "Nagad", image: images.paymentTwo },
     { title: "Cash on delivery", image: images.paymentOne },
   ],
+
+  trackings: [
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support |  NFC- enabled |  Premium Quality",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support |  NFC- enabled |  Premium Quality",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support |  NFC- enabled |  Premium Quality",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support |  NFC- enabled |  Premium Quality",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+
+  ],
 };
 
 export default data;

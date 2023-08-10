@@ -1,9 +1,10 @@
 import React from "react";
-import ProductDetails from "../ProductDetails";
-import ProductSlider from "../ProductSlider";
-import RelatedProducts from "../RelatedProducts";
-import ServiceInfo from "../ServiceInfo";
+
 import CustomerService from "../CustomerService";
+import ProductDetails from "./ProductDetails";
+import ProductSlider from "./ProductSlider";
+import RelatedProducts from "./RelatedProducts";
+import ServiceInfo from "./ServiceInfo";
 
 const ProductPage = () => {
   return (

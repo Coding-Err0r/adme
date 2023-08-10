@@ -76,6 +76,8 @@ const images = {
   paymentTwo: "/assets/images/payment/payment (2).png",
   paymentThree: "/assets/images/payment/payment (3).png",
   paymentFour: "/assets/images/payment/payment (4).png",
+
+  emptyTracking: "/assets/images/tracking/empty-box 1.png",
   // images for testing
   test1: "/assets/test/test (1).jpg",
   test2: "/assets/test/test (2).jpg",

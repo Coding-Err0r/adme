@@ -24,8 +24,10 @@ const CartItem = ({ title, image, price, amount }: Props) => {
           alt={image}
           className="object-cover w-20 h-20 rounded-lg"
         />
-        <p>{title.length > 12 ? `${title.slice(0, 60)}...` : title}</p>
-        <span>৳{price}.00 </span>
+        <div className="md:flex md:items-center md:space-x-4">
+          <p>{title.length > 12 ? `${title.slice(0, 60)}...` : title}</p>
+          <span>৳{price}.00 </span>
+        </div>
       </div>
     </div>
   );
