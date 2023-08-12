@@ -10,13 +10,15 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "@/utils/firebase";
-import { redirect } from "next/navigation";
+import { redirect, useParams } from "next/navigation";
 import { Checkbox } from "rsuite";
 import SignupComponent from "./SignupComponent";
 import SigninComponent from "./SigninComponent";
 
 const SignInSignUp = () => {
   const [toggleSigninSignup, setToggleSigninSignup] = useState(true);
+  const googleProvider = new GoogleAuthProvider();
+  const params = useParams();
   const SignInSignUpState = [
     {
       title: "Login to Your Account.",
@@ -32,7 +34,14 @@ const SignInSignUp = () => {
     },
   ];
 
-  const googleProvider = new GoogleAuthProvider();
+  useEffect(() => {
+    if (params.id !== null && params.id == "login") {
+      setToggleSigninSignup(true);
+    }
+    if (params.id !== null && params.id == "signup") {
+      setToggleSigninSignup(false);
+    }
+  }, []);
   const googleLogin = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
@@ -66,7 +75,7 @@ const SignInSignUp = () => {
         <div className="flex flex-col items-center justify-center w-full h-full">
           <div className="w-full h-full mt-24 lg:p-4 md:mt-0 md:p-28">
             <div className="relative flex items-center justify-center h-full md:bottom-0 ">
-              <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[720px] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] lg:w-[1366px]">
+              <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[45rem] relative z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] lg:w-[85.375rem]">
                 <div className="relative flex flex-col w-full h-full overflow-hidden lg:rounded-l-[30px] items-center justify-center md:rounded-[30px] lg:rounded-none">
                   <img
                     src={images.frame3}

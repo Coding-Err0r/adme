@@ -1,65 +1,120 @@
 "use client";
 import data from "@/config/data";
 import images from "@/config/images";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MobileNavbar from "./Mobile";
 import Cart from "../Cart";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import DropdownMenu from "./DropdownMenu";
+import { useDispatch } from "react-redux";
+import { toggleDropdown } from "@/redux/DropdownSlice";
+import CurrencyDropdown from "./CurrencyDropdown";
+import UserProfileDropdown from "./UserProfileDropdown";
+import LogoDark from "../SVGs/LogoDark";
+import LogoLight from "../SVGs/LogoLight";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const [scrollTop, setScrollTop] = useState(0);
+  const dispatch = useDispatch();
+  const dropdown = useSelector((state: any) => state.dropdown);
+  const [textColor, setTextColor] = useState<string>("");
+  const onScroll = () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+
+    setScrollTop(scrolled);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (scrollTop > 4) {
+      setTextColor("text-white");
+    } else {
+      setTextColor("text-zinc-800");
+    }
+  }, [scrollTop]);
+
   return (
     <section className="fixed z-30 w-full">
-      <div className="flex justify-between md:p-1 bg-zinc-950/90 backdrop-blur-md">
-        <div className="flex items-center px-2 md:space-x-10 lg:space-x-14 md:px-12">
-          <a href="/">
-            <img
-              src={images.logoTwo}
-              alt=""
-              className="hidden h-6 my-2 mt-2 lg:h-10 md:h-8 md:block lg:block"
-            />
+      <div
+        className={`flex items-center justify-between px-4 py-2  backdrop-blur-md font-sunflower ${
+          scrollTop > 4 ? "bg-zinc-950/90" : "bg-transparent"
+        }`}
+      >
+        <div className="flex items-center md:space-x-6 lg:space-x-14 ">
+          <a href="/" className={`${textColor} flex items-center  space-x-2`}>
+            {scrollTop > 4 ? <LogoLight /> : <LogoDark />}
+            <p className="hidden font-light xl:text-2xl font-syncopate md:block lg:block xl:block md:text-xl">
+              Rezoome
+            </p>
           </a>
-          <div className="block md:hidden lg:hidden">
-            <MobileNavbar links={data.navbar} />
-          </div>
-          {data.navbar.map((nav: string, index: number) => (
-            <a
-              href={`/${nav.toLowerCase()}`}
+
+          {data.navbar.map((nav: any, index: number) => (
+            <div
+              className="relative hidden text-xl font-medium md:block lg:block"
               key={index}
-              className="hidden text-xl font-medium text-white md:block lg:block"
             >
-              {nav}
-            </a>
+              <div className="flex items-center">
+                <a
+                  href={nav.href}
+                  className={`text-xl  font-poppins hover:no-underline hover:${textColor} ${textColor} focus:outline-none`}
+                >
+                  {nav.title}
+                </a>
+                {nav.subMenu.length > 0 && (
+                  <FontAwesomeIcon
+                    icon={
+                      dropdown.id == String(nav.title).toLowerCase() &&
+                      open === true
+                        ? faChevronUp
+                        : faChevronDown
+                    }
+                    className={`w-3 h-3 px-1  cursor-pointer ${textColor}`}
+                    onClick={() => {
+                      setOpen(!open);
+                      dispatch(
+                        toggleDropdown<any>({
+                          isOpen: !open,
+                          id: String(nav.title).toLowerCase(),
+                        })
+                      );
+                    }}
+                  />
+                )}
+              </div>
+              <div className="absolute z-10 let-0 w-44 top-12">
+                <DropdownMenu
+                  items={nav.subMenu}
+                  open={open}
+                  id={String(nav.title).toLowerCase()}
+                />
+              </div>
+            </div>
           ))}
         </div>
-        <div className="flex items-center px-5 space-x-2 md:px-12 md:space-x-2 lg:space-x-4">
+        {/* <div className="block md:hidden lg:hidden">
+          <MobileNavbar
+            items={data.navbar}
+            auth={"isNotAuthorized"}
+            textColor={textColor}
+          />
+        </div> */}
+        <div className="items-center hidden space-x-6 md:flex">
+          <CurrencyDropdown textColor={textColor} />
           <div className="flex items-center">
-            <a href="https://drake-white.netlify.app/">
-              <img
-                src={images.person}
-                alt=""
-                className="w-8 h-8 rounded-full md:h-8 md:w-8"
-              />
-            </a>
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className="w-3 h-3 px-1 text-white cursor-pointer"
-              onClick={() => setOpen(!open)}
-            />
-            {open && (
-              <div className="absolute p-6 lg:mr-12 w-44 md:top-[3.6rem] bg-zinc-900 right-4 rounded-lg border-2 border-gray-500 md:mr-8 top-[3.1rem]">
-                <div className="grid items-center grid-rows-3 gap-2 text-lg text-white divide-y-[1px] hover:text-blue-300">
-                  <a href="https://portfolio-x2.netlify.app/">Portfolio 1</a>
-                  <a href="https://drake-white.netlify.app">Portfolio 2</a>
-                  <a href="https://drake-five.vercel.app/">Portfolio 3</a>
-                </div>
-              </div>
-            )}
+            <Cart textColor={textColor} />
           </div>
-          <div className="flex items-center">
-            <Cart />
-          </div>
+          <UserProfileDropdown auth={"isNotAuthorized"} textColor={textColor} />
         </div>
       </div>
     </section>

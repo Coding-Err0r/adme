@@ -1,128 +1,162 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { motion, useCycle } from "framer-motion";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  faBars,
+  faChevronDown,
+  faChevronUp,
+  faX,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./style.css";
-import images from "@/config/images";
+import { toggleDropdown } from "@/redux/DropdownSlice";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import data from "@/config/data";
 
 interface Props {
-  links: string[];
+  items: any[];
+  auth: string;
+  textColor: string;
 }
-
-const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-    transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
-    },
-  }),
-  closed: {
-    clipPath: "circle(0px at 40px 40px)",
-    transition: {
-      delay: 0.5,
-      type: "spring",
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
-
-const variants = {
-  open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-  },
-  closed: {
-    transition: { staggerChildren: 0.05, staggerDirection: -1 },
-  },
-};
-
-const menuItems = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
-
-const MobileNavbar = ({ links }: Props) => {
-  const [isOpen, toggleOpen] = useCycle(false, true);
-  const ref = useRef<any>(null);
-  const dimensions = useRef({ width: 0, height: 0 });
-
-  useEffect(() => {
-    dimensions.current.width = ref.current.offsetWidth;
-    dimensions.current.height = ref.current.offsetHeight;
-    console.log(isOpen);
-  }, []);
-
-  useEffect(() => {
-    if (isOpen) {
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      document.documentElement.style.overflow = "scroll";
-    }
-  }, [isOpen]);
-
+const MobileNavbar = ({ items, auth, textColor }: Props) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [showSidebar, setShowSidebar] = useState(false);
+  const dispatch = useDispatch();
+  const dropdown = useSelector((state: any) => state.dropdown);
+  const [selected, setSelected] = useState(data.currency[0].title);
   return (
-    <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      // custom={dimensions.current.height}
-      ref={ref}
-    >
-      <motion.div
-        className="fixed top-0 bottom-0 left-0 right-0 z-10 w-screen h-screen bg-zinc-900"
-        variants={sidebar}
-      >
-        <motion.ul
-          variants={variants}
-          className="relative z-20 flex flex-col items-center justify-center w-full h-full space-y-4 -mt-[5rem]"
-        >
-          <a href="/">
-            <motion.img
-              src={images.logoTwo}
-              alt=""
-              className="h-16 ml-6"
-              variants={menuItems}
-            />
-          </a>
-          {links.map((link: string, index: number) => (
-            <motion.li
-              variants={menuItems}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              key={index}
-              className="font-bold menu-item"
-              data-fill-text={link}
-            >
-              <a href={`/${link.toLowerCase()}`}>{link}</a>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </motion.div>
+    <>
       <button
-        onClick={() => toggleOpen()}
-        className=" cursor-pointer  w-[50px] h-[50px] bg-transparent rounded-[50%] relative z-30"
+        onClick={() => setShowSidebar(!showSidebar)}
+        className="relative cursor-pointer focus:outline-none"
       >
-        {isOpen ? (
-          <FontAwesomeIcon icon={faX} className="text-white" />
-        ) : (
-          <FontAwesomeIcon icon={faBars} className="text-white" />
-        )}
+        <FontAwesomeIcon
+          icon={showSidebar === true ? faX : faBars}
+          className={`${textColor}`}
+        />
       </button>
-    </motion.nav>
+
+      <AnimatePresence>
+        {showSidebar && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{
+              x: 0,
+            }}
+            exit={{
+              x: "100%",
+            }}
+            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+            className="fixed top-0 right-0 w-full h-screen p-2 mt-12"
+          >
+            <ul className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
+              {items.map((item: any, index: number) => (
+                <li key={index} className="py-2 cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <a
+                      href={item.href}
+                      className="text-white hover:no-underline"
+                    >
+                      {item.title}
+                    </a>
+                    {item.subMenu.length > 0 && (
+                      <FontAwesomeIcon
+                        icon={
+                          dropdown.id === String(item.title).toLowerCase() &&
+                          open === true
+                            ? faChevronUp
+                            : faChevronDown
+                        }
+                        className="w-3 h-3 px-1 text-white cursor-pointer"
+                        onClick={() => {
+                          setOpen(!open);
+                          dispatch(
+                            toggleDropdown<any>({
+                              isOpen: !open,
+                              id: String(item.title).toLowerCase(),
+                            })
+                          );
+                        }}
+                      />
+                    )}
+                  </div>
+                  {String(item.title).toLowerCase() == "profile" ? null : (
+                    <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
+                  )}
+                  <ul className="flex flex-col w-full pl-6 space-y-1">
+                    {dropdown.id === String(item.title).toLowerCase() &&
+                    open === true
+                      ? item.subMenu.map((sub: any, i: number) => (
+                          <li key={i} className="py-2 cursor-pointer">
+                            <a
+                              href={sub.href}
+                              className="text-white hover:no-underline"
+                            ></a>
+                            {sub.title}
+                            <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
+                          </li>
+                        ))
+                      : null}
+                  </ul>
+                </li>
+              ))}
+              <div>
+                <li className="py-2 cursor-pointer">
+                  <div className="flex items-center justify-between">
+                    <p>{selected}</p>
+                    <FontAwesomeIcon
+                      icon={
+                        dropdown.id === String(selected).toLowerCase() &&
+                        open === true
+                          ? faChevronUp
+                          : faChevronDown
+                      }
+                      className="w-3 h-3 px-1 text-white cursor-pointer"
+                      onClick={() => {
+                        setOpen(!open);
+                        dispatch(
+                          toggleDropdown<any>({
+                            isOpen: !open,
+                            id: String(selected).toLowerCase(),
+                          })
+                        );
+                      }}
+                    />
+                  </div>
+                  <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
+                </li>
+                {dropdown.id === String(selected).toLowerCase() && open === true
+                  ? data.currency.map((item: any, index: number) => (
+                      <li key={index} className="py-2 pl-6 cursor-pointer">
+                        <p>{item.value}</p>
+
+                        <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
+                      </li>
+                    ))
+                  : null}
+              </div>
+
+              {data.profile
+                .filter((profileValue: any) => profileValue.title == auth)
+                .map((profileValue: any) =>
+                  profileValue.value.map((item: any, index: number) => (
+                    <li key={index} className="py-2 cursor-pointer">
+                      <a
+                        href={item.href}
+                        className="text-white hover:no-underline"
+                      >
+                        {item.title}
+                      </a>
+
+                      <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
+                    </li>
+                  ))
+                )}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

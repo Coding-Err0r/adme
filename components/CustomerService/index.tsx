@@ -21,7 +21,7 @@ const CustomerService = () => {
         <div className="xl:col-span-2 md:col-span-3">
           <Chatbox />
         </div>
-        <div className="relative w-full h-48 overflow-hidden text-white md:h-full xl:col-span-4 rounded-2xl md:col-span-6">
+        <div className="relative w-full overflow-hidden text-white h-52 md:h-full xl:col-span-4 rounded-2xl md:col-span-6">
           <div className="absolute flex items-center md:right-12 md:top-12 right-4 top-4">
             <Badge />
             <h1 className="text-base font-semibold md:text-5xl">Your Logo</h1>

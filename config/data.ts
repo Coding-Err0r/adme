@@ -1,7 +1,44 @@
 import images from "./images";
 
 const data = {
-  navbar: ["Overview", "Features", "Products"],
+  navbar: [
+    {
+      title: "Features",
+      href: "",
+      subMenu: [],
+    },
+    {
+      title: "Orders",
+      href: "/tracking",
+      subMenu: [],
+    },
+    {
+      title: "Products",
+      href: "/products",
+      subMenu: [
+        {
+          title: "All Products",
+          href: "/all-products",
+        },
+        {
+          title: "Corporate",
+          href: "/corporate",
+        },
+        {
+          title: "Elegant",
+          href: "/elegant",
+        },
+        {
+          title: "Modern",
+          href: "/modern",
+        },
+        {
+          title: "Futuristic",
+          href: "/futuristic",
+        },
+      ],
+    },
+  ],
 
   swiper: [
     {
@@ -244,6 +281,46 @@ const data = {
       price: 2399.0,
       id: 1,
     },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
+    {
+      title:
+        "Mandana Gold - Metal Business Card | QR Support | NFC-enabled | Premium Quality Metal",
+      image: images.cartImage,
+      amount: 1,
+      price: 2399.0,
+      id: 1,
+    },
   ],
   productPreview: [
     images.productOne,
@@ -353,7 +430,52 @@ Site, you (i) represent that you are eighteen (18) years of age or older and hav
       price: 2399.0,
       id: 1,
     },
-
+  ],
+  profile: [
+    {
+      title: "isNotAuthorized",
+      value: [
+        {
+          title: "Login",
+          href: "/auth/login",
+        },
+        {
+          title: "Sign Up",
+          href: "/auth/signup",
+        },
+      ],
+    },
+    {
+      title: "isAuthorized",
+      value: [
+        {
+          title: "Your profile",
+          href: "/editprofile",
+        },
+        {
+          title: "Orders",
+          href: "/tracking",
+        },
+        {
+          title: "Logout",
+          href: "/logout",
+        },
+      ],
+    },
+  ],
+  currency: [
+    {
+      title: "BDT",
+      value: "BDT ৳",
+    },
+    {
+      title: "USD",
+      value: "USD $",
+    },
+    {
+      title: "EUR",
+      value: "EUR €",
+    },
   ],
 };
 

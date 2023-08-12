@@ -1,9 +1,9 @@
-import React from 'react'
-import EstimatedDate from '../EstimatedDate';
-import Invoice from '../Invoice';
-import TrackPayment from '../TrackPayment';
-import TrackingHeader from '../TrackingHeader';
-import TrackingProducts from '../TrackingProducts';
+import React from "react";
+import EstimatedDate from "../EstimatedDate";
+import Invoice from "../Invoice";
+import TrackPayment from "../TrackPayment";
+import TrackingHeader from "../TrackingHeader";
+import TrackingProducts from "../TrackingProducts";
 
 const TrackOrder = () => {
   return (
@@ -25,6 +25,6 @@ const TrackOrder = () => {
       </div>
     </div>
   );
-}
+};
 
-export default TrackOrder
+export default TrackOrder;
