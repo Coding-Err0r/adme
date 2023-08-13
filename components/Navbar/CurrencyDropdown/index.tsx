@@ -3,7 +3,7 @@ import data from "@/config/data";
 import { toggleDropdown } from "@/redux/DropdownSlice";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
@@ -16,8 +16,22 @@ const CurrencyDropdown = ({ textColor }: Props) => {
   const [selected, setSelected] = useState(data.currency[0].title);
   const dispatch = useDispatch();
   const dropdown = useSelector((state: any) => state.dropdown);
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setOpen(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
   return (
-    <div className={`relative flex items-center ${textColor}`}>
+    <div className={`relative flex items-center ${textColor}`} ref={ref}>
       <p className="font-semibold font-sunflower text-[1.25rem]">{selected}</p>
       <FontAwesomeIcon
         icon={

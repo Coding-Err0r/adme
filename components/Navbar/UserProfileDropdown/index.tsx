@@ -3,7 +3,7 @@ import data from "@/config/data";
 import images from "@/config/images";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { toggleDropdown } from "@/redux/DropdownSlice";
@@ -16,8 +16,24 @@ const UserProfileDropdown = ({ auth, textColor }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
   const dispatch = useDispatch();
   const dropdown = useSelector((state: any) => state.dropdown);
+
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setOpen(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
+
   return (
-    <div className={`relative flex items-center ${textColor}`}>
+    <div className={`relative flex items-center ${textColor}`} ref={ref}>
       <a href="https://drake-white.netlify.app/">
         <img
           src={images.person}

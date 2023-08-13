@@ -5,7 +5,7 @@ import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MobileNavbar from "./Mobile";
 import Cart from "../Cart";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DropdownMenu from "./DropdownMenu";
 import { useDispatch } from "react-redux";
 import { toggleDropdown } from "@/redux/DropdownSlice";
@@ -21,6 +21,22 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const dropdown = useSelector((state: any) => state.dropdown);
   const [textColor, setTextColor] = useState<string>("");
+
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setOpen(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
+
   const onScroll = () => {
     const winScroll = document.documentElement.scrollTop;
     const height =
@@ -45,7 +61,7 @@ const Navbar = () => {
   }, [scrollTop]);
 
   return (
-    <section className="fixed z-30 w-full">
+    <section className="fixed z-30 w-full" ref={ref}>
       <div
         className={`flex items-center justify-between px-4 py-2  backdrop-blur-md font-sunflower ${
           scrollTop > 4 ? "bg-zinc-950/90" : "bg-transparent"
