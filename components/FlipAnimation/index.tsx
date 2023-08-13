@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 interface Props {
@@ -19,6 +19,28 @@ const FlipAnimation = ({
   componentBack,
 }: Props) => {
   const [open, setopen] = useState(false);
+  const [scrollTop, setScrollTop] = useState(0);
+  const onScroll = () => {
+    const winScroll = document.documentElement.scrollTop;
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+
+    setScrollTop(scrolled);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (scrollTop > 50) {
+      setopen(false);
+    }
+  }, [scrollTop]);
+
   return (
     <div className="">
       <div

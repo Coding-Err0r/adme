@@ -28,7 +28,7 @@ const Hero = () => {
       <motion.img
         src={images.banner3}
         alt=""
-        className="relative z-0 w-full lg:min-h-screen h-[30rem] md:h-[50rem] object-cover object-top"
+        className="relative z-0 object-cover object-top w-full min-h-screen"
         style={{ objectPosition: objectPosition }}
       />
       <div className="absolute bottom-0 flex items-center justify-center w-full py-4 space-x-1 text-[0.625rem] font-medium text-white  lg:text-[1.5rem] md:text-[1rem] font-poppins bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 md:py-6">
