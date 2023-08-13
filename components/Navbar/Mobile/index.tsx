@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   faBars,
@@ -24,6 +24,20 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
   const dispatch = useDispatch();
   const dropdown = useSelector((state: any) => state.dropdown);
   const [selected, setSelected] = useState(data.currency[0].title);
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setShowSidebar(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
   return (
     <>
       <button
@@ -49,7 +63,10 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
             className="fixed top-0 right-0 w-full h-screen p-2 mt-12"
           >
-            <ul className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
+            <ul
+              className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins"
+              ref={ref}
+            >
               {items.map((item: any, index: number) => (
                 <li key={index} className="py-2 cursor-pointer">
                   <div className="flex items-center justify-between">
