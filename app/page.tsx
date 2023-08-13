@@ -12,6 +12,7 @@ import Review from "@/components/Review";
 const Home = () => {
   return (
     <Layout>
+      <div className="bg-[#f2f2f2] w-full h-full fixed -z-30" />
       <Hero />
       <Carousel />
       <Instruction />

@@ -85,8 +85,8 @@ const data = {
 
   features: [
     {
-      imagefront: images.cardFour,
-      imageback: images.cardFour,
+      imagefront: images.card1,
+      imageback: images.card1,
       text: [
         "Stories and collections",
         "That inform, help, and Inspire.",
@@ -99,8 +99,8 @@ const data = {
       bottomToTop: true,
     },
     {
-      imagefront: images.cardThree,
-      imageback: images.cardThree,
+      imagefront: images.card1,
+      imageback: images.card1,
       text: ["Curated by experts.", "Handpic ked for you."],
       position: "bottom",
       size: "small",
@@ -109,8 +109,8 @@ const data = {
       bottomToTop: false,
     },
     {
-      imagefront: images.cardTwo,
-      imageback: images.cardTwo,
+      imagefront: images.card1,
+      imageback: images.card1,
       text: ["Curated by experts.", "Handpic ked for you."],
       position: "top",
       size: "small",
@@ -120,8 +120,8 @@ const data = {
     },
 
     {
-      imagefront: images.cardOne,
-      imageback: images.cardOne,
+      imagefront: images.card1,
+      imageback: images.card1,
       text: [
         "Stories and collections",
         "That inform, help, and Inspire.",

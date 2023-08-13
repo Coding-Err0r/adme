@@ -12,10 +12,10 @@ const QRCode = () => {
   });
 
   return (
-    <section className="w-full">
+    <section className="w-full ">
       <div className="flex flex-col items-center w-full py-12">
-        <div className=" w-[80%] max-w-7xl">
-          <div className="flex flex-col items-start ">
+        <div className="w-full px-8 lg:max-w-screen-xl md:max-w-screen-md">
+          <div className="flex flex-col items-start">
             <h1 className="py-6 text-3xl font-bold text-left text-gray-800 lg:text-5xl md:text-4xl">
               Next genaration QR codes
             </h1>
@@ -26,8 +26,8 @@ const QRCode = () => {
               business cards now.
             </p>
           </div>
-          <div className="grid grid-rows-2 py-12 md:justify-between md:flex gap-y-6 ">
-            <div className="flex flex-col space-y-6 ">
+          <div className="grid grid-rows-2 py-12 lg:justify-between lg:flex gap-y-6 ">
+            <div className="flex flex-col items-center space-y-6 md:items-start">
               {data.qrCodes.map((item: any, index: number) => (
                 <div
                   className="relative z-10 flex items-center cursor-pointer"
@@ -72,13 +72,20 @@ const QRCode = () => {
             <Slideup
               duration={1}
               component={
-                <div className="flex items-center justify-center bg-white shadow-xl md:w-[30rem] rounded-2xl w-full md:h-[17rem]">
+                <div className="relative flex items-center justify-center w-full md:h-[18rem] rounded-xl overflow-hidden">
+                  <Image
+                    src={images.serviceBG}
+                    alt=""
+                    width={2000}
+                    height={2000}
+                    className="relative z-0 w-full h-full"
+                  />
                   <Image
                     src={selectedQR.qrImage}
                     alt=""
                     width={2000}
                     height={2000}
-                    className="p-4 w-52 h-52"
+                    className="absolute z-10 p-4 w-36 h-36 md:w-52 md:h-52"
                   />
                 </div>
               }

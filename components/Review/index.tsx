@@ -8,7 +8,7 @@ const Review = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col items-center w-full py-6">
-        <div className="w-[80%] max-w-7xl">
+        <div className="w-full px-8 lg:max-w-screen-xl md:max-w-screen-md">
           <div className="flex flex-col items-start ">
             <h1 className="py-4 text-2xl font-bold text-left text-gray-800 lg:text-4xl md:text-3xl">
               What Our Happy Clients Say About Us

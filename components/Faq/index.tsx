@@ -11,7 +11,7 @@ const Faq = () => {
   return (
     <section className="w-full">
       <div className="flex flex-col items-center w-full py-12">
-        <div className="w-[80%]  max-w-7xl">
+        <div className="w-full px-8 lg:max-w-screen-xl md:max-w-screen-md">
           <div className="flex flex-col items-start ">
             <h1 className="py-12 text-3xl font-bold text-left text-gray-800 lg:text-5xl md:text-4xl">
               Frequently Asked Question

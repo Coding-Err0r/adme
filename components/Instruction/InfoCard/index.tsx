@@ -12,6 +12,7 @@ type Props = {
 const InfoCard = ({ image, description, link, id, title }: Props) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-5 cursor-pointer">
+      {/* <div className="w-[12.5rem] bg-[#D9D9D9] h-[18.75rem]" /> */}
       <div className="w-24 h-32 lg:w-44 lg:h-60 md:w-36 md:h-52">
         <Image
           src={image}

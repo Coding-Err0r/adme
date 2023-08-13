@@ -67,7 +67,7 @@ const FlipAnimation = ({
             {componentFront}
           </div>
           <div
-            className={`relative h-full w-full overflow-hidden backface-hidden rounded-[40px]  ${
+            className={`relative h-full w-full overflow-hidden backface-hidden   ${
               (leftToRight && "leftToRight") ||
               (rightToLeft && "rightToLeft") ||
               (topToBottom && "topToBottom") ||

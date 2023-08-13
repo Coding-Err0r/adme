@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Logo = () => {
   return (
@@ -8,6 +8,7 @@ const Logo = () => {
       viewBox="0 0 223 201"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-32 h-32 md:w-64 md:h-64"
     >
       <g filter="url(#filter0_d_539_5321)">
         <path
@@ -71,6 +72,6 @@ const Logo = () => {
       </defs>
     </svg>
   );
-}
+};
 
-export default Logo
+export default Logo;

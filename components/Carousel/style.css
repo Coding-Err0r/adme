@@ -10,7 +10,6 @@
     width: 300px !important;
     height: 170px !important;
     position: relative;
-    z-index: 5;
   }
   .swiper {
     width: 95%;

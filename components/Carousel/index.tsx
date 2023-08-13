@@ -28,13 +28,13 @@ const Carousel = () => {
     };
   });
   return (
-    <section className="w-full">
+    <section className="w-full font-poppins">
       <div className="flex flex-col items-center ">
-        <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-4xl lg:py-14 md:py-8">
+        <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-[2.25rem] lg:py-14 md:py-8">
           <p className="font-bold">
             Take A Look At Our Designed Products Or Have
           </p>
-          <p className="font-medium">A Customised Design Made Just For You</p>
+          <p className="font-normal ">A Customised Design Made Just For You</p>
         </div>
         <Swiper
           effect={"coverflow"}

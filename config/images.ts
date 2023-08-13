@@ -19,10 +19,13 @@ const images = {
   infoCardThree: "/assets/images/items/item (3).png",
   infoCardFour: "/assets/images/items/item (4).png",
 
-  cardOne: "/assets/images/cards/card (1).png",
-  cardTwo: "/assets/images/cards/card (2).png",
-  cardThree: "/assets/images/cards/card (3).png",
-  cardFour: "/assets/images/cards/card (4).png",
+  card1: "/assets/images/cards/card (1).png",
+  card2: "/assets/images/cards/card (2).png",
+  card3: "/assets/images/cards/card (3).png",
+  card4: "/assets/images/cards/card (4).png",
+  card5: "/assets/images/cards/card (5).png",
+  card6: "/assets/images/cards/card (6).png",
+  card7: "/assets/images/cards/card (7).png",
 
   qrOne: "/assets/images/QR/qr (1).png",
   qrTwo: "/assets/images/QR/qr (2).png",

@@ -10,12 +10,12 @@ interface Props {
 }
 const Slide = ({ image, description, index, id }: Props) => {
   return (
-    <section className="flex flex-col items-center w-full h-full cursor-move group">
+    <section className="flex flex-col items-center w-full h-full cursor-move group font-poppins">
       <a
         href="/product"
-        className="absolute hidden px-2 py-1 text-xs font-bold text-white -translate-y-1/2 rounded-full md:py-2 md:px-4 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 top-1/2 group-hover:group-[.swiper-slide-active]:block lg:text-base md:text-sm"
+        className="absolute hidden px-4 py-1 text-xl font-medium text-black -translate-y-1/2 rounded-full md:py-2 md:px-8 bg-gray-300 top-1/2 group-hover:group-[.swiper-slide-active]:block lg:text-3xl md:text-2xl hover:no-underline hover:text-black"
       >
-        View Product
+        Order Now
       </a>
       <Image
         src={image}

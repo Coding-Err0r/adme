@@ -23,7 +23,7 @@ const ReviewCard = ({
 }: Props) => {
   return (
     <div className="relative z-10 w-full h-full p-1 bg-white shadow-lg cursor-move ">
-      <div className="flex flex-col px-1 py-3 space-y-6 md:p-8">
+      <div className="flex flex-col px-1 py-3 space-y-6 md:p-6">
         <Rating style={{ maxWidth: 130 }} value={rating} readOnly />
         <p className="px-3 text-xs md:text-base ">{review}</p>
         <div className="flex items-center w-full">

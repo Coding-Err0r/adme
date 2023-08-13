@@ -102,13 +102,13 @@ const Navbar = () => {
             </div>
           ))}
         </div>
-        {/* <div className="block md:hidden lg:hidden">
+        <div className="block md:hidden lg:hidden">
           <MobileNavbar
             items={data.navbar}
             auth={"isNotAuthorized"}
             textColor={textColor}
           />
-        </div> */}
+        </div>
         <div className="items-center hidden space-x-6 md:flex">
           <CurrencyDropdown textColor={textColor} />
           <div className="flex items-center">

@@ -18,26 +18,23 @@ const Hero = () => {
     ["0px 0%", "0px 50%", "0px 100%", "0px 150%", "0px 200%"]
   );
   return (
-    <section className="flex flex-col items-center justify-center">
-      <div className="absolute z-10 flex flex-col items-center md:space-y-36 lg:space-y-[20rem] space-y-28 lg:mt-2 md:mt-12 mt-14">
-        <Image
-          src={images.logoOne}
-          alt=""
-          className="lg:w-[600px] md:w-[350px] w-[200px] "
-          width={2000}
-          height={2000}
-        />
-        {/* <Logo /> */}
-        <div className="w-32 py-2 text-lg text-center text-white rounded-full cursor-pointer lg:py-5 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 lg:w-60 lg:text-2xl md:text-xl md:py-3 md:w-44 ">
-          BUY NOW
+    <section className="relative flex flex-col items-center justify-center">
+      <div className="absolute z-10 flex flex-col items-center justify-center space-y-4">
+        <Logo />
+        <div className="px-6 py-2 text-[0.75rem] font-semibold text-center text-white rounded-full cursor-pointer md:px-8 bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 md:text-[1.5rem]  font-sunflower">
+          {"Create your profile >"}
         </div>
       </div>
       <motion.img
         src={images.banner3}
         alt=""
-        className="relative z-0 w-full lg:h-[90rem] h-[30rem] md:h-[50rem] object-cover object-top"
+        className="relative z-0 w-full lg:min-h-screen h-[30rem] md:h-[50rem] object-cover object-top"
         style={{ objectPosition: objectPosition }}
       />
+      <div className="absolute bottom-0 flex items-center justify-center w-full py-4 space-x-1 text-[0.625rem] font-medium text-white  lg:text-[1.5rem] md:text-[1rem] font-poppins bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 md:py-6">
+        <span>Bangladesh’s no 1 digital smart business card platform .</span>
+        <span className="text-blue-600">{"Order Now >"}</span>
+      </div>
     </section>
   );
 };
