@@ -1,80 +1,129 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import Slide from "./Slide";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "./style.css";
+import React, { useState, useRef, useEffect, memo } from "react";
 import data from "@/config/data";
-import { useRouter } from "next/navigation";
+import {
+  StackedCarousel,
+  ResponsiveContainer,
+  StackedCarouselSlideProps,
+} from "react-stacked-center-carousel";
+import Image from "next/image";
+import "./style.css";
+
+function Pagination(props: any) {
+  const { centerSlideDataIndex, updatePosition } = props;
+  console.log("🚀 ~ centerSlideDataIndex--000", centerSlideDataIndex);
+  return (
+    <div className="flex justify-center space-x-2 md:space-x-4 md:mt-4">
+      {data.swiper.map((_, index) => {
+        const isCenterSlide = props.centerSlideDataIndex === index;
+        return (
+          <div
+            key={index}
+            onClick={() => {
+              updatePosition(index);
+            }}
+            className={`md:w-4 md:h-4 rounded-full border-[2px] border-gray-600 cursor-pointer w-3 h-3 ${
+              isCenterSlide ? "bg-gray-700" : "bg-gray-200"
+            }`}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+const Slide = (props: any) => {
+  console.log(props);
+  const { data, dataIndex } = props;
+  const { image, description } = data[dataIndex];
+  return (
+    <div className="md:w-[37.4rem] md:h-[26rem] rounded-2xl overflow-hidden  relative flex flex-col items-center  font-poppins w-[16rem] h-[10rem] ">
+      <Image
+        src={image}
+        width={500}
+        height={500}
+        className="object-cover md:w-full  h-[7rem] md:h-[21.5rem]"
+        draggable={false}
+        alt={image}
+      />
+      <a
+        href="/product"
+        className="absolute px-4 py-1 my-auto -mt-8 text-xs font-medium text-black -translate-y-1/2 bg-gray-300 rounded-full md:py-2 md:px-6 top-1/2 lg:text-2xl md:text-xl hover:no-underline hover:text-black div-hover"
+      >
+        Order Now
+      </a>
+      <p className="absolute bottom-0 py-4 mt-16 text-xs font-medium text-blue-600 md:text-2xl div-show ">
+        {description}
+      </p>
+    </div>
+  );
+};
 
 const Carousel = () => {
-  const ref = useRef<any | null>(null);
-  const route = useRouter();
-  const [activeSlide, setActiveSlide] = useState<number>(0);
-  const [swiperModifier, setSwiperModifier] = useState<number>(4);
-
-  const handleResize = () => {
-    if (window.innerWidth < 1000) {
-      setSwiperModifier(5);
-    }
+  const ref = React.useRef<any>();
+  const [centerSlideDataIndex, setCenterSlideDataIndex] = React.useState(0);
+  const onCenterSlideDataIndexChange = (newIndex: number) => {
+    setCenterSlideDataIndex(newIndex);
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+  const updatePosition = (index: number) => {
+    ref?.current?.swipeTo(index - centerSlideDataIndex);
+  };
+
   return (
-    <section className="w-full font-poppins">
-      <div className="flex flex-col items-center ">
-        <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-[2.25rem] lg:py-14 md:py-8">
-          <p className="font-bold">
-            Take A Look At Our Designed Products Or Have
-          </p>
-          <p className="font-normal ">A Customised Design Made Just For You</p>
-        </div>
-        <Swiper
-          effect={"coverflow"}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 100,
-            depth: 100,
-            modifier: swiperModifier,
-            slideShadows: false,
-          }}
-          pagination={{ enabled: true, clickable: true }}
-          modules={[EffectCoverflow, Pagination]}
-          loop={false}
-          ref={ref}
-          initialSlide={2}
-          onSlideChange={(swiper) => {
-            setActiveSlide(swiper.activeIndex);
-          }}
-          className="w-auto"
-        >
-          {Object.values(data.swiper).map((item: any, index: number) => (
-            <SwiperSlide key={index} className="group ">
-              <Slide
-                image={item.image}
-                description={item.description}
-                index={index}
-                id={activeSlide - 1}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="relative z-0 flex justify-center py-6 space-x-6 text-sm font-bold lg:text-2xl md:text-lg">
-          <button className="px-5 py-2 text-gray-500 bg-white border-2 border-gray-400 rounded-lg cursor-pointer lg:py-6 lg:px-12 md:rounded-xl md:px-8 md:py-3">
-            FRONT / BACK
-          </button>
-          <button className="px-5 py-2 text-white rounded-lg lg:py-6 lg:px-12 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 md:rounded-xl md:px-8 md:py-3">
-            DESIGN MY OWN
-          </button>
+    <section className="w-full ">
+      <div className="flex flex-col items-center w-full py-12">
+        <div className="w-full px-8 lg:max-w-screen-xl md:max-w-screen-md">
+          <div className="flex flex-col items-center ">
+            <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-[2.25rem] lg:py-14 md:py-8">
+              <p className="font-bold">
+                Take A Look At Our Designed Products Or Have
+              </p>
+              <p className="font-normal ">
+                A Customised Design Made Just For You
+              </p>
+            </div>
+            <div className="w-full h-full">
+              <div className="flex flex-col items-center ">
+                <ResponsiveContainer
+                  carouselRef={ref}
+                  render={(parentWidth, carouselRef) => {
+                    let currentVisibleSlide = 5;
+                    let slideWidth = 600;
+                    if (parentWidth <= 480) {
+                      currentVisibleSlide = 1;
+                      slideWidth = 200;
+                    }
+                    return (
+                      <StackedCarousel
+                        ref={carouselRef}
+                        data={data.swiper}
+                        carouselWidth={parentWidth}
+                        slideWidth={slideWidth}
+                        slideComponent={Slide}
+                        maxVisibleSlide={5}
+                        currentVisibleSlide={currentVisibleSlide}
+                        useGrabCursor={true}
+                        onActiveSlideChange={onCenterSlideDataIndexChange}
+                      />
+                    );
+                  }}
+                />
+                <Pagination
+                  updatePosition={updatePosition}
+                  centerSlideDataIndex={centerSlideDataIndex}
+                />
+              </div>
+            </div>
+            <div className="relative z-0 flex justify-center py-6 space-x-6 text-sm font-bold lg:text-2xl md:text-lg">
+              <button className="px-5 py-2 text-gray-500 bg-white border-2 border-gray-400 rounded-lg cursor-pointer lg:py-6 lg:px-12 md:rounded-xl md:px-8 md:py-3">
+                FRONT / BACK
+              </button>
+              <button className="px-5 py-2 text-white rounded-lg lg:py-6 lg:px-12 bg-gradient-to-br from-indigo-500 via-indigo-400 to-cyan-400 md:rounded-xl md:px-8 md:py-3">
+                DESIGN MY OWN
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
