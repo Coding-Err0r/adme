@@ -37,15 +37,16 @@ const Slide = (props: any) => {
   const { data, dataIndex } = props;
   const { image, description } = data[dataIndex];
   return (
-    <div className="md:w-[37.4rem] md:h-[26rem] rounded-2xl overflow-hidden  relative flex flex-col items-center  font-poppins w-[16rem] h-[10rem] ">
+    <div className="md:w-[37.4rem] md:h-[26rem] rounded-2xl overflow-hidden  relative flex flex-col items-center  font-poppins w-[16rem] h-[10rem]">
       <Image
         src={image}
         width={500}
         height={500}
-        className="object-cover md:w-full  h-[7rem] md:h-[21.5rem]"
+        className="object-cover md:w-full  h-[7rem] md:h-[21.5rem]  relative z-0"
         draggable={false}
         alt={image}
       />
+      <div className="w-full  h-[7rem] md:h-[21.5rem] z-5  absolute  bg-gradient-to-l from-cyan-300/50 via-sky-600/50 to-indigo-500/50 md:rounded-[40px] div-hover-gradient rounded-2xl" />
       <a
         href="/product"
         className="absolute px-4 py-1 my-auto -mt-8 text-xs font-medium text-black -translate-y-1/2 bg-gray-300 rounded-full md:py-2 md:px-6 top-1/2 lg:text-2xl md:text-xl hover:no-underline hover:text-black div-hover"
