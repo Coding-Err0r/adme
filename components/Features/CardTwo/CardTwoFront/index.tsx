@@ -4,7 +4,7 @@ import React from "react";
 
 const CardTwoFront = () => {
   return (
-    <div className="xl:w-[23rem] xl:h-[27rem] md:h-[25.3rem] md:w-[20.3rem] bg-white md:rounded-[40px] overflow-hidden p-6 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-3xl">
+    <div className="xl:w-[23rem] xl:h-[27rem] md:h-[25.3rem] md:w-[20.3rem] bg-white md:rounded-[20px] overflow-hidden p-6 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-2xl">
       <div className="flex flex-col items-start space-y-2 md:space-y-8">
         <Image
           src={images.card5}

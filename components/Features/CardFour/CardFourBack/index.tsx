@@ -4,7 +4,7 @@ import React from "react";
 
 const CardFourBack = () => {
   return (
-    <div className="xl:w-full xl:h-[27rem] md:h-[25.3125rem] md:w-[43.125rem] bg-white md:rounded-[40px] overflow-hidden p-8 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-3xl">
+    <div className="xl:w-full xl:h-[27rem] md:h-[25.3125rem] md:w-[43.125rem] bg-white md:rounded-[20px] overflow-hidden p-8 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-2xl">
       <div className="absolute flex flex-col space-y-4 md:px-12 md:top-12">
         <h1 className="col-span-3 text-xs font-medium text-black md:text-3xl md:font-semibold">
           Handles your Personal and Corporate needs

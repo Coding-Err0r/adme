@@ -49,11 +49,11 @@ const Slide = (props: any) => {
       <div className="w-full  h-[7rem] md:h-[21.5rem] z-5  absolute  bg-gradient-to-l from-cyan-300/50 via-sky-600/50 to-indigo-500/50 md:rounded-[40px] div-hover-gradient rounded-2xl" />
       <a
         href="/product"
-        className="absolute px-4 py-1 my-auto -mt-8 text-xs font-medium text-black -translate-y-1/2 bg-gray-300 rounded-full md:py-2 md:px-6 top-1/2 lg:text-2xl md:text-xl hover:no-underline hover:text-black div-hover"
+        className="absolute px-4 py-1 my-auto -mt-8 text-[0.625rem] font-medium text-black font-poppins -translate-y-1/2 bg-gray-300 rounded-full md:py-2 md:px-6 top-1/2 lg:text-[1.5rem] md:text-[1rem] hover:no-underline hover:text-black div-hover"
       >
         Order Now
       </a>
-      <p className="absolute bottom-0 py-4 mt-16 text-xs font-medium text-blue-600 md:text-2xl div-show ">
+      <p className="absolute bottom-0 py-4 mt-16 text-[0.75rem] font-medium text-blue-600 md:text-[1.5rem] div-show ">
         {description}
       </p>
     </div>
@@ -76,7 +76,7 @@ const Carousel = () => {
       <div className="flex flex-col items-center w-full py-12">
         <div className="w-full px-8 lg:max-w-screen-xl md:max-w-screen-md">
           <div className="flex flex-col items-center ">
-            <div className="flex flex-col items-center px-4 py-8 text-lg text-center text-gray-900 md:text-[2.25rem] lg:py-14 md:py-8">
+            <div className="flex flex-col items-center px-4 py-8 text-[0.75rem] font-poppins text-center text-gray-900 lg:text-[2.25rem] lg:py-14 md:py-8 md:text-[1.5rem ]">
               <p className="font-bold">
                 Take A Look At Our Designed Products Or Have
               </p>

@@ -44,7 +44,7 @@ const UserProfileDropdown = ({ auth, textColor }: Props) => {
       />
       <div className="absolute right-0 z-10 w-44 top-12">
         {dropdown.id === String(auth).toLowerCase() && open === true ? (
-          <ul className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
+          <ul className="w-full p-4 px-4 text-[1rem] font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
             {data.profile
               .filter((profileValue: any) => String(profileValue.title) == auth)
               .map((profileValue: any) =>

@@ -18,7 +18,7 @@ const CurrencyDropdown = ({ textColor }: Props) => {
   const dropdown = useSelector((state: any) => state.dropdown);
   return (
     <div className={`relative flex items-center ${textColor}`}>
-      <p className="xl:text-xl font-poppins md:text-lg">{selected}</p>
+      <p className="font-semibold font-sunflower text-[1.25rem]">{selected}</p>
       <FontAwesomeIcon
         icon={
           dropdown.id === selected && open === true
@@ -38,7 +38,7 @@ const CurrencyDropdown = ({ textColor }: Props) => {
       />
       <div className="absolute right-0 z-10 w-44 top-12">
         {dropdown.id === selected && open === true ? (
-          <ul className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
+          <ul className="w-full p-4 px-4 text-[1rem] font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
             {data.currency.map((item: any, index: number) => (
               <li
                 key={index}

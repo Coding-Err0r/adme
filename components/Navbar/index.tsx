@@ -54,20 +54,17 @@ const Navbar = () => {
         <div className="flex items-center md:space-x-6 lg:space-x-14 ">
           <a href="/" className={`${textColor} flex items-center  space-x-2`}>
             {scrollTop > 4 ? <LogoLight /> : <LogoDark />}
-            <p className="hidden font-light xl:text-2xl font-syncopate md:block lg:block xl:block md:text-xl">
+            <p className="hidden font-light md:text-[1.5rem] font-syncopate md:block lg:block xl:block">
               Rezoome
             </p>
           </a>
 
           {data.navbar.map((nav: any, index: number) => (
-            <div
-              className="relative hidden text-xl font-medium md:block lg:block"
-              key={index}
-            >
+            <div className="relative hidden md:block lg:block" key={index}>
               <div className="flex items-center">
                 <a
                   href={nav.href}
-                  className={`text-xl  font-poppins hover:no-underline hover:${textColor} ${textColor} focus:outline-none`}
+                  className={`text-[1.25rem] font-semibold font-sunflower hover:no-underline hover:${textColor} ${textColor} focus:outline-none`}
                 >
                   {nav.title}
                 </a>

@@ -4,7 +4,7 @@ import React from "react";
 
 const CardOneFront = () => {
   return (
-    <div className="xl:w-full xl:h-[27rem] md:h-[25.3125rem] md:w-[43.125rem] bg-gradient-to-br from-slate-900 via-slate-500 to-slate-900 md:rounded-[40px] overflow-hidden p-6 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-3xl">
+    <div className="xl:w-full xl:h-[27rem] md:h-[25.3125rem] md:w-[43.125rem] bg-gradient-to-br from-slate-900 via-slate-500 to-slate-900 md:rounded-[20px] overflow-hidden p-6 flex items-center justify-center font-poppins w-[19.5rem] h-[11rem] rounded-2xl">
       <div className="flex items-center justify-between space-x-16">
         <h1 className="col-span-3 text-sm font-semibold text-white md:text-4xl md:font-bold">
           Link all your social sites, contact info, and websites to your Adme
