@@ -101,7 +101,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
                 </li>
               ))}
               <div>
-                <li className="py-2 cursor-pointer">
+                <li className="py-1 cursor-pointer">
                   <div className="flex items-center justify-between">
                     <p>{selected}</p>
                     <FontAwesomeIcon

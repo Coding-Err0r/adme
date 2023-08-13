@@ -90,7 +90,7 @@ const Carousel = () => {
                   render={(parentWidth, carouselRef) => {
                     let currentVisibleSlide = 5;
                     let slideWidth = 600;
-                    if (parentWidth <= 480) {
+                    if (parentWidth <= 702) {
                       currentVisibleSlide = 1;
                       slideWidth = 200;
                     }
