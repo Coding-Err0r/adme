@@ -116,7 +116,7 @@ const Carousel = () => {
                 />
               </div>
             </div>
-            <div className="relative z-0 flex justify-center py-6 space-x-6 text-sm font-bold lg:text-2xl md:text-lg">
+            <div className="relative z-0 flex justify-center py-6 space-x-6 text-[0.625rem] font-bold md:text-[1.5rem]">
               <button className="px-5 py-2 text-gray-500 bg-white border-2 border-gray-400 rounded-lg cursor-pointer lg:py-6 lg:px-12 md:rounded-xl md:px-8 md:py-3">
                 FRONT / BACK
               </button>
