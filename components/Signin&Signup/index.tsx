@@ -24,13 +24,15 @@ const SignInSignUp = () => {
       title: "Login to Your Account.",
       message: "Don't have an account?",
       toggleBtn: "Sign Up",
-      SubmitBtn: "Sign In",
+      submitBtn: "Sign In",
+      checkbox: "Remember me",
     },
     {
       title: "Create your account.",
       message: "Already have an account?",
       toggleBtn: "Sign In",
-      SubmitBtn: "Sign Up ",
+      submitBtn: "Sign Up ",
+      checkbox: "I agree to the terms and condition",
     },
   ];
 
@@ -124,13 +126,31 @@ const SignInSignUp = () => {
                       <SignupComponent />
                     )}
 
-                    <div className="-mt-4 -ml-2">
-                      <Checkbox> I agree to the terms and condition</Checkbox>
+                    <div className="flex items-center justify-between">
+                      <div className="-mt-4 -ml-2">
+                        <Checkbox>
+                          {" "}
+                          {toggleSigninSignup === true
+                            ? SignInSignUpState[0].checkbox
+                            : SignInSignUpState[1].checkbox}
+                        </Checkbox>
+                      </div>
+                      <div className="-mt-4 -ml-2">
+                        <a
+                          href="#"
+                          className="text-blue-500 hover:no-underline hover:text-blue-700 focus:outline-none focus:text-blue-700"
+                        >
+                          {" "}
+                          {toggleSigninSignup === true
+                            ? "Forgot Password"
+                            : null}
+                        </a>
+                      </div>
                     </div>
                     <button className="w-full p-2 text-2xl text-white rounded-full bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500">
                       {toggleSigninSignup === true
-                        ? SignInSignUpState[0].SubmitBtn
-                        : SignInSignUpState[1].SubmitBtn}
+                        ? SignInSignUpState[0].submitBtn
+                        : SignInSignUpState[1].submitBtn}
                     </button>
                     <section className="relative flex items-center mt-2">
                       <div className="flex-grow border-t border-gray-500" />
