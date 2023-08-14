@@ -7,11 +7,6 @@ import SkillDrawer from "./SkillDrawer";
 import TipsMobile from "../Tips/TipMobile";
 import TipsDesktop from "../Tips/TipsDesktop";
 
-
-
-
-
-
 const skills = [
   {
     title: "PHP",
@@ -58,49 +53,53 @@ const skills = [
 const Skill = () => {
   return (
     <section className="w-full font-light bg-white font-sunflower">
-      <div className="flex justify-center w-full">
-        <div className="xl:w-[90%]  xl:max-w-7xl xl:py-10 xl:px-12 md:p-4 w-full p-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <AtomIcon />
-              <h1 className="py-4 text-lg font-= text-left text-gray-800 lg:text-4xl md:text-3xl">
-                Skills
-              </h1>
-            </div>
-            <SkillDrawer />
-          </div>
-          <Card elevation={Elevation.ONE} className="rounded-lg">
-            <div className="grid grid-cols-1 py-8 md:grid-cols-2">
-              {skills.length > 0 ? (
-                skills.map((skill: any, index: number) => (
-                  <SkillList
-                    key={index}
-                    title={skill.title}
-                    percentage={skill.percentage}
-                  />
-                ))
-              ) : (
-                <Required
-                  message={"You haven’t added any work experience yet"}
+      <div className="flex justify-center">
+        <div className="w-full  xl:max-w-[118.75rem] xl:py-10 xl:px-12 md:p-4  p-2">
+          <div className="grid grid-cols-9 gap-6">
+            <div className="flex flex-col col-span-9 xl:col-span-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <AtomIcon />
+                  <h1 className="py-4 text-lg font-= text-left text-gray-800 lg:text-4xl md:text-3xl">
+                    Skills
+                  </h1>
+                </div>
+                <SkillDrawer />
+              </div>
+              <Card elevation={Elevation.ONE} className="rounded-lg">
+                <div className="grid grid-cols-1 py-8 md:grid-cols-2">
+                  {skills.length > 0 ? (
+                    skills.map((skill: any, index: number) => (
+                      <SkillList
+                        key={index}
+                        title={skill.title}
+                        percentage={skill.percentage}
+                      />
+                    ))
+                  ) : (
+                    <Required
+                      message={"You haven’t added any work experience yet"}
+                    />
+                  )}
+                </div>
+                <TipsMobile
+                  text={`To make your profile look professional please follow the below
+            guideline`}
+                  list={[
+                    `Upload a high quality profile picture where your face is visible`,
+                  ]}
                 />
-              )}
+              </Card>
             </div>
-            <TipsMobile
+            <TipsDesktop
               text={`To make your profile look professional please follow the below
             guideline`}
               list={[
                 `Upload a high quality profile picture where your face is visible`,
               ]}
             />
-          </Card>
+          </div>
         </div>
-        <TipsDesktop
-          text={`To make your profile look professional please follow the below
-            guideline`}
-          list={[
-            `Upload a high quality profile picture where your face is visible`,
-          ]}
-        />
       </div>
     </section>
   );

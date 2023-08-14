@@ -33,11 +33,10 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
     if (ref.current !== null) {
       if (!ref.current.contains(event.target)) {
         setShowSidebar(false);
-      } else {
-        console.log("Click outside");
       }
     }
   };
+
   return (
     <>
       <button
@@ -61,7 +60,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
               x: "100%",
             }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="fixed top-0 right-0 w-full h-screen p-2 mt-12"
+            className="fixed top-0 right-0 w-full h-screen p-2 mt-12 "
           >
             <ul
               className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins"

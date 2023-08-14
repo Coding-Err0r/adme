@@ -28,8 +28,6 @@ const Cart = ({ textColor }: Props) => {
     if (ref.current !== null) {
       if (!ref.current.contains(event.target)) {
         setShowSidebar(false);
-      } else {
-        console.log("Click outside");
       }
     }
   };

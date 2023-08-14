@@ -477,6 +477,16 @@ Site, you (i) represent that you are eighteen (18) years of age or older and hav
       value: "EUR €",
     },
   ],
+  portfolios: [
+    {
+      title: "Portfolio 1",
+      image: images.profile1,
+    },
+    {
+      title: "Portfolio 2",
+      image: images.profile2,
+    },
+  ],
 };
 
 export default data;

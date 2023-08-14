@@ -18,8 +18,6 @@ const Dropdown = ({ items, header }: Props) => {
     if (ref.current !== null) {
       if (!ref.current.contains(event.target)) {
         setOpen(false);
-      } else {
-        console.log("Click outside");
       }
     }
   };

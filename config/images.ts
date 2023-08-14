@@ -80,6 +80,9 @@ const images = {
   paymentThree: "/assets/images/payment/payment (3).png",
   paymentFour: "/assets/images/payment/payment (4).png",
 
+  profile1: "/assets/images/profile/profile (1).png",
+  profile2: "/assets/images/profile/profile (2).png",
+
   emptyTracking: "/assets/images/tracking/empty-box 1.png",
   // images for testing
   test1: "/assets/test/test (1).jpg",

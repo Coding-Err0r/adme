@@ -7,7 +7,6 @@ import ProjectDrawer from "./ProjectDrawer";
 import TipsMobile from "../Tips/TipMobile";
 import TipsDesktop from "../Tips/TipsDesktop";
 
-
 const projects = [
   {
     title: "ZORRO - 2023",
@@ -28,52 +27,56 @@ const projects = [
 const Projects = () => {
   return (
     <section className="w-full font-light bg-white font-sunflower">
-      <div className="flex justify-center w-full">
-        <div className="xl:w-[90%]  xl:max-w-7xl xl:py-10 xl:px-12 md:p-4 w-full p-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <ProjectIcon />
-              <h1 className="py-4 text-lg font-= text-left text-gray-800 lg:text-4xl md:text-3xl">
-                Projects
-              </h1>
-            </div>
-            <ProjectDrawer />
-          </div>
-          <Card elevation={Elevation.ONE} className="rounded-lg">
-            <div className="flex flex-col py-8 space-y-6">
-              {projects.length > 0 ? (
-                projects.map((project: any, index: number) => (
-                  <ProjectList
-                    key={index}
-                    title={project.title}
-                    department={project.department}
-                    toolsUsed={project.toolsUsed}
-                    description={project.description}
-                    images={project.images}
-                  />
-                ))
-              ) : (
-                <Required
-                  message={"You haven’t added any work experience yet"}
+      <div className="flex justify-center">
+        <div className="w-full  xl:max-w-[118.75rem] xl:py-10 xl:px-12 md:p-4  p-2">
+          <div className="grid grid-cols-9 gap-6">
+            <div className="flex flex-col col-span-9 xl:col-span-6">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-4">
+                  <ProjectIcon />
+                  <h1 className="py-4 text-lg font-= text-left text-gray-800 lg:text-4xl md:text-3xl">
+                    Projects
+                  </h1>
+                </div>
+                <ProjectDrawer />
+              </div>
+              <Card elevation={Elevation.ONE} className="rounded-lg">
+                <div className="flex flex-col py-8 space-y-6">
+                  {projects.length > 0 ? (
+                    projects.map((project: any, index: number) => (
+                      <ProjectList
+                        key={index}
+                        title={project.title}
+                        department={project.department}
+                        toolsUsed={project.toolsUsed}
+                        description={project.description}
+                        images={project.images}
+                      />
+                    ))
+                  ) : (
+                    <Required
+                      message={"You haven’t added any work experience yet"}
+                    />
+                  )}
+                </div>
+                <TipsMobile
+                  text={`To make your profile look professional please follow the below
+            guideline`}
+                  list={[
+                    `Upload a high quality profile picture where your face is visible`,
+                  ]}
                 />
-              )}
+              </Card>
             </div>
-            <TipsMobile
+            <TipsDesktop
               text={`To make your profile look professional please follow the below
             guideline`}
               list={[
                 `Upload a high quality profile picture where your face is visible`,
               ]}
             />
-          </Card>
+          </div>
         </div>
-        <TipsDesktop
-          text={`To make your profile look professional please follow the below
-            guideline`}
-          list={[
-            `Upload a high quality profile picture where your face is visible`,
-          ]}
-        />
       </div>
     </section>
   );

@@ -1,15 +1,18 @@
 "use client";
+import { store } from "@/redux/Store";
+import { Provider } from "react-redux";
 import BasicInformation from "./BasicInformation";
 import Breadcrumb from "./Breadcrumb";
 import Education from "./Education";
 import Projects from "./Projects";
+import SelectProfile from "./SelectProfile";
 import Skill from "./Skills";
 import Specialization from "./Specialization";
 import WorkExperience from "./WorkExperience";
 
 const EditPage = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Breadcrumb />
       <BasicInformation />
       <Education />
@@ -17,7 +20,8 @@ const EditPage = () => {
       <Specialization />
       <Skill />
       <Projects />
-    </div>
+      <SelectProfile />
+    </Provider>
   );
 };
 

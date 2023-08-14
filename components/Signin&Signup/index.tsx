@@ -72,11 +72,11 @@ const SignInSignUp = () => {
   };
 
   return (
-    <section className="relative grid w-full h-screen overflow-y-auto bg-gray-200 lg:fixed place-items-center">
-      <div className="w-full h-full lg:max-w-screen-xl">
-        <div className="flex flex-col items-center justify-center w-full h-full">
-          <div className="w-full h-full mt-24 lg:p-4 md:mt-0 md:p-28">
-            <div className="relative flex items-center justify-center h-full md:bottom-0 ">
+    <section className="relative grid w-full h-full bg-gray-200 lg:fixed place-items-center ">
+      <div className="w-full h-full lg:max-w-screen-xl ">
+        <div className="flex flex-col items-center justify-center w-full h-full ">
+          <div className="w-full h-screen mt-16 lg:p-4 md:mt-0 md:p-28">
+            <div className="relative flex items-center justify-center h-full md:bottom-0">
               <div className="flex bg-white   md:rounded-[30px] shadow-xl lg:h-[45rem] absolute z-10 w-full h-[42rem] md:rounded-t-0 rounded-t-[30px] xl:w-[85.375rem]  bottom-0 md:relative">
                 <div className="relative flex flex-col w-full h-full overflow-hidden lg:rounded-l-[30px] items-center justify-center md:rounded-[30px] lg:rounded-none">
                   <img
