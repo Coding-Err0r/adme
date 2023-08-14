@@ -19,6 +19,20 @@ const Cart = ({ textColor }: Props) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const dispatch = useDispatch();
   const dropdown = useSelector((state: any) => state.dropdown);
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setShowSidebar(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
   return (
     <>
       <button
@@ -39,6 +53,7 @@ const Cart = ({ textColor }: Props) => {
       <AnimatePresence>
         {dropdown.id == "cart" && showSidebar === true ? (
           <motion.div
+            ref={ref}
             initial={{ x: "100%" }}
             animate={{
               x: 0,
