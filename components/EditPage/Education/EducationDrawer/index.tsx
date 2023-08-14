@@ -34,7 +34,7 @@ const EducationDrawer = () => {
   return (
     <div>
       <button
-        className="py-2 text-sm text-white rounded-lg cursor-pointer bg-sky-600 md:text-xl px-7 hover:bg-sky-800"
+        className="py-2 text-sm text-white rounded-lg cursor-pointer bg-zinc-800 md:text-xl px-7 hover:bg-zinc-600"
         onClick={() => setIsOpen(true)}
       >
         Add

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const Breadcrumb = () => {
   return (
-    <div className="flex flex-wrap items-center p-4 bg-white">
+    <div className="flex flex-wrap items-center p-4 bg-white text-[1.125rem] justify-between w-full">
       <ul className="flex items-center">
         <li className="inline-flex items-center">
           <a href="/" className="text-gray-600 hover:text-blue-500">
             <svg
-              className="w-5 h-auto mx-2 text-gray-400 fill-current"
+              className="w-5 h-auto text-gray-400 fill-current"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="#000000"
@@ -18,7 +18,7 @@ const Breadcrumb = () => {
           </a>
 
           <svg
-            className="w-5 h-auto mx-2 text-gray-400 fill-current"
+            className="w-5 h-auto text-gray-400 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -33,7 +33,7 @@ const Breadcrumb = () => {
           </a>
 
           <svg
-            className="w-5 h-auto mx-2 text-gray-400 fill-current"
+            className="w-5 h-auto text-gray-400 fill-current"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -42,8 +42,11 @@ const Breadcrumb = () => {
           </svg>
         </li>
       </ul>
+      <button className="w-32 h-8 text-white rounded-md bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 text-[1.125rem] font-medium -mt-2">
+        View Profile
+      </button>
     </div>
   );
-}
+};
 
-export default Breadcrumb
+export default Breadcrumb;
