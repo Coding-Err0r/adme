@@ -36,7 +36,7 @@ const FlipAnimation = ({
   }, []);
 
   useEffect(() => {
-    if (scrollTop > 50) {
+    if (scrollTop) {
       setopen(false);
     }
   }, [scrollTop]);
