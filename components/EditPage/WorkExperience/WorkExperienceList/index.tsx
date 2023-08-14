@@ -14,7 +14,7 @@ const WorkExperienceList = ({
 }: Props) => {
   return (
     <div className="w-full text-[18px] font-light text-black bg-white font-sunflower ">
-      <div className="px-6 py-10 rounded-lg hover:bg-cyan-100 md:px-10 lg:px-14 group">
+      <div className="px-6 py-10 rounded-lg hover:bg-[#eceafe] md:px-10 lg:px-14 group">
         <div className="flex items-start space-x-3">
           <div>
             <CubeIcon />

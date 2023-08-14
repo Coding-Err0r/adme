@@ -23,7 +23,7 @@ const Preview = ({ imagesPreviewUrls, deleteImage }) => {
     setPreviewImages(imagesPreviewUrls);
   }, [imagesPreviewUrls]);
 
-  // console.log("Array Update ", previewImages);
+  console.log("Array Update ", previewImages);
   return (
     <div>
       <DragDropContext onDragEnd={handleOnDragEnd}>

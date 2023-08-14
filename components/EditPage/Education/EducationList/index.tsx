@@ -8,7 +8,7 @@ interface Props {
 const EducationList = ({ university, degree, year }: Props) => {
   return (
     <div className="w-full text-[18px] font-light text-black bg-white font-sunflower ">
-      <div className="grid grid-rows-2 p-6 rounded-lg md:py-10 md:justify-between md:items-center md:flex hover:bg-cyan-100 md:px-10 lg:px-14 group">
+      <div className="grid grid-rows-2 p-6 rounded-lg md:py-10 md:justify-between md:items-center md:flex hover:bg-[#eceafe] md:px-10 lg:px-14 group">
         <div className="flex flex-col space-y-3">
           <p className="font-bold">{university}</p>
           <p>{degree}</p>
