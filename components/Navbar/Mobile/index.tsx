@@ -72,7 +72,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
                   <div className="flex items-center justify-between">
                     <a
                       href={item.href}
-                      className="text-white hover:no-underline"
+                      className="text-white hover:no-underline hover:text-white focus:outline-none focus:text-white focus:no-underline"
                     >
                       {item.title}
                     </a>
@@ -107,7 +107,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
                           <li key={i} className="py-2 cursor-pointer">
                             <a
                               href={sub.href}
-                              className="text-white hover:no-underline"
+                              className="text-white hover:no-underline hover:text-white focus:outline-none"
                             ></a>
                             {sub.title}
                             <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
@@ -144,7 +144,14 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
                 </li>
                 {dropdown.id === String(selected).toLowerCase() && open === true
                   ? data.currency.map((item: any, index: number) => (
-                      <li key={index} className="py-2 pl-6 cursor-pointer">
+                      <li
+                        key={index}
+                        className="py-2 pl-6 cursor-pointer"
+                        onClick={() => {
+                          setSelected(item.title);
+                          setOpen(false);
+                        }}
+                      >
                         <p>{item.value}</p>
 
                         <div className="h-[1px] bg-gradient-to-l from-cyan-300 via-sky-600 to-indigo-500 mt-1" />
@@ -160,7 +167,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
                     <li key={index} className="py-2 cursor-pointer">
                       <a
                         href={item.href}
-                        className="text-white hover:no-underline"
+                        className="text-white hover:no-underline hover:text-white focus:outline-none focus:text-white focus:no-underline"
                       >
                         {item.title}
                       </a>

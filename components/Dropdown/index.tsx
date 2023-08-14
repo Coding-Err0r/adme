@@ -1,7 +1,7 @@
 "use client";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 interface Props {
   items: string[];
   header: string;
@@ -9,6 +9,20 @@ interface Props {
 const Dropdown = ({ items, header }: Props) => {
   const [open, setOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>("");
+  const ref = useRef<any>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  }, []);
+  const handleClickOutside = (event: any) => {
+    if (ref.current !== null) {
+      if (!ref.current.contains(event.target)) {
+        setOpen(false);
+      } else {
+        console.log("Click outside");
+      }
+    }
+  };
   return (
     <div className="relative font-poppins">
       <div
@@ -23,7 +37,10 @@ const Dropdown = ({ items, header }: Props) => {
         <FontAwesomeIcon icon={faChevronDown} />
       </div>
       {open && (
-        <ul className="absolute z-10 w-full p-4 px-4 mt-2 text-sm font-medium text-white md:text-lg rounded-2xl bg-zinc-800 font-poppins">
+        <ul
+          className="absolute z-10 w-full p-4 px-4 mt-2 text-sm font-medium text-white md:text-lg rounded-2xl bg-zinc-800 font-poppins"
+          ref={ref}
+        >
           {items.map((item: string, index: number) => (
             <li
               key={index}
