@@ -28,7 +28,10 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
-  }, []);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  });
   const handleClickOutside = (event: any) => {
     if (ref.current !== null) {
       if (!ref.current.contains(event.target)) {
@@ -42,6 +45,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
       <button
         onClick={() => setShowSidebar(!showSidebar)}
         className="relative cursor-pointer focus:outline-none"
+        ref={ref}
       >
         <FontAwesomeIcon
           icon={showSidebar === true ? faX : faBars}
@@ -62,10 +66,7 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
             className="fixed top-0 right-0 w-full h-screen p-2 mt-12 "
           >
-            <ul
-              className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins"
-              ref={ref}
-            >
+            <ul className="w-full p-4 px-4 text-sm font-medium text-white rounded-2xl bg-zinc-800 font-poppins">
               {items.map((item: any, index: number) => (
                 <li key={index} className="py-2 cursor-pointer">
                   <div className="flex items-center justify-between">
