@@ -1,4 +1,5 @@
-import Auth0 from "@/components/Auth0";
+
+import Auth0 from "@/components/Global Components/Auth0";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
