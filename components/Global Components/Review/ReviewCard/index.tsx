@@ -1,4 +1,4 @@
-import Star from "@/components/SVGs/Star";
+
 import Image from "next/image";
 import React from "react";
 import { Rating } from "@smastrom/react-rating";
