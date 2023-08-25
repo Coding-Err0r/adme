@@ -28,6 +28,10 @@ const MobileNavbar = ({ items, auth, textColor }: Props) => {
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
+    if (open) {
+      setShowSidebar(true);
+    }
+
     return () => {
       document.removeEventListener("click", handleClickOutside, true);
     };
